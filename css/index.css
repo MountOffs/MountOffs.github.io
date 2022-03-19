@@ -6,3 +6,8 @@
 h1 {
     text-align: center;
 }
+
+#container {
+    margin: auto;
+    width: 800px;
+}

@@ -8,7 +8,7 @@ data.forEach(entry => {
     let text = document.createTextNode(entry.date);
     a.appendChild(text);
     a.title = entry.date;
-    a.href = entry.url;
+    a.href = "/mountoffs/episode.html?id=" + entry.id;
 
     li.appendChild(a);
 
