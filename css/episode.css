@@ -1,0 +1,52 @@
+* {
+    background-color: black;
+    color: lightgray;
+}
+
+h1 {
+    text-align: center;
+}
+
+#player {
+    margin: auto;
+    width: 800px;
+    display: block;
+}
+
+#back {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+
+.data {
+    position: absolute;
+    border: lightgray solid 1px;
+    width: 200px;
+    height: 100px;
+    top: 40%;
+}
+
+.data div {
+    text-align: center;
+}
+
+#players {
+    font-size: 70px;
+}
+
+#mount {
+    font-size: 30px;
+}
+
+.label {
+    font-size: 12px;
+}
+
+#mountContainer {
+    left: 20px;
+}
+
+#playersContainer {
+    right: 20px;
+}

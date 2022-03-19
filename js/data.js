@@ -1,5 +1,9 @@
 let data = [
-    {"id": "1", "youtubeId": "VJDN9YHcbE8", "date": "13.08.2016"},
+    {"id": "1", "youtubeId": "VJDN9YHcbE8", "date": "13.08.2016", "timepoints": [
+        {"timestamp": 0, "players": 40},
+        {"timestamp": 51, "players": 40, "mount": "Snowy Gryphon"},
+        {"timestamp": 130, "players": 40, "mount": "Stormpike Battle Charger"}
+    ]},
     {"id": "2", "youtubeId": "qARP1RXNe1k", "date": "19.08.2016"},
     {"id": "3", "youtubeId": "-RfYmS-lUQA", "date": "23.08.2016"},
     {"id": "4", "youtubeId": "m2lXjB9-Ay8", "date": "24.08.2016"},

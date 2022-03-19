@@ -6,15 +6,3 @@
 h1 {
     text-align: center;
 }
-
-#player {
-    margin: auto;
-    width: 800px;
-    display: block;
-}
-
-#back {
-    position: absolute;
-    top: 20px;
-    left: 10px;
-}
