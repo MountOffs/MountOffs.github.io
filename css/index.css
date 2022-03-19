@@ -7,9 +7,10 @@ h1 {
     text-align: center;
 }
 
-#container {
+#player {
     margin: auto;
     width: 800px;
+    display: block;
 }
 
 #back {
