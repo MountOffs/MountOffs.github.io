@@ -15,10 +15,19 @@ function initIframeAPI() {
 
 setInterval(update, 500);
 
+function transformTime(time) {
+    let parts = time.split(":");
+    if (parts.length === 3) {
+        return parts[0] * 60 * 60 + parts[1] * 60 + parts[2] * 1;
+    } else {
+        return parts[0] * 60 + parts[1] * 1;
+    }
+}
+
 function getTimepoint() {
     let time = player.getCurrentTime();
 
-    return episode.timepoints.slice().reverse().find(timepoint => timepoint.timestamp <= time);
+    return episode.timepoints.slice().reverse().find(timepoint => transformTime(timepoint.timestamp) <= time);
 }
 
 function update() {
