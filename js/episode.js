@@ -24,17 +24,29 @@ function transformTime(time) {
     }
 }
 
-function getTimepoint() {
+function getEvent(type) {
     let time = player.getCurrentTime();
-
-    return episode.timepoints.slice().reverse().find(timepoint => transformTime(timepoint.timestamp) <= time);
+    console.log(time);
+    return episode.events.slice().reverse().find(event => transformTime(event.time) <= time && event.event === type);
 }
 
 function update() {
-    let timepoint = getTimepoint();
-    console.log(timepoint);
-    setMount(timepoint.mount);
-    setPlayers(timepoint.players);
+    if (!player) return;
+
+    let mount = getEvent("MOUNT");
+    let players = getEvent("PLAYER");
+
+    if (mount) {
+        setMount(mount.mount);
+    } else {
+        setMount("-");
+    }
+
+    if (players) {
+        setPlayers(players.players);
+    } else {
+        setPlayers("-");
+    }
 }
 
 function onYouTubeIframeAPIReady() {

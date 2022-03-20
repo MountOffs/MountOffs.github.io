@@ -22,9 +22,9 @@ Example configuration:
         "id": 1,
         "youtubeId": "abcdef",
         "date": "20.10.2010",
-        "timepoints": [
-            {"timestamp": 0, "players": 40}
-            {"timestamp": 25, "players": 30, "mount": "Red Drake"}
+        "events": [
+            {"time": "0:00", "event": "PLAYER", "players": 40}
+            {"time": "0:25", "event": "MOUNT", "mount": "Red Drake"}
         ]
     } 
 * track all players
