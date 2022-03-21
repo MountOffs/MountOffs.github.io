@@ -6,11 +6,9 @@
 
 ### Mount off page
 * description
+* models of mounts
 * script/visualization
-* track current state by video time
-    * current mount
-    * ppl remaining
-    * how to overlay when youtube embed is fullscreen
+* how to overlay when youtube embed is fullscreen
 ### Armory Sync
 * track overall progress (semifinal/final/victory)
 * track progress in given mount off
