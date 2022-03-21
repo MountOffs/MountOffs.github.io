@@ -56,7 +56,8 @@ function onYouTubeIframeAPIReady() {
         width: '800',
         videoId: episode.youtubeId,
         playerVars: {
-            'playsinline': 1
+            'playsinline': 1,
+            'modestbranding': 1
         },
         events: {
             'onReady': onPlayerReady,
