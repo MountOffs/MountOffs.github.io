@@ -14,3 +14,7 @@ data.forEach(entry => {
 
     ul.appendChild(li);
 });
+
+fetchMounts("eu", "twisting-nether", "treogfyrre", (data) => {
+    console.log(data);
+});
