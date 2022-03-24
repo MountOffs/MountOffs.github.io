@@ -12,7 +12,8 @@
 ### Armory Sync
 * track overall progress (semifinal/final/victory)
 * track progress in given mount off
-* devise a way to track alliance/horde mounts (currently wow api scrapes mounts only for current faction)
+* login page
+* separately login horde/alliance characters
 
 ### Configuration
 Example configuration:
