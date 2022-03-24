@@ -6,3 +6,15 @@
 h1 {
     text-align: center;
 }
+
+.done {
+    color: lightgreen;
+}
+
+.wip {
+    color: yellow;
+}
+
+.broken {
+    color: indianred;
+}
