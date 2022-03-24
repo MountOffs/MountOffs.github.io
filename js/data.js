@@ -40,7 +40,7 @@ let data = [
             {"time": "14:44", "event": "PLAYER", "players": 2},
             {"time": "14:46", "event": "PLAYER", "players": 1}
     ]},
-    {"id": "2", "youtubeId": "qARP1RXNe1k", "status": "wip", "date": "19.08.2016", "events": [
+    {"id": "2", "youtubeId": "qARP1RXNe1k", "status": "done", "date": "19.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 40},
             {"time": "0:45", "event": "MOUNT", "mount": "Pinto"},
             {"time": "0:53", "event": "PLAYER", "players": 39},
@@ -95,9 +95,12 @@ let data = [
             {"time": "11:43", "event": "PLAYER", "players": 4},
             {"time": "11:47", "event": "PLAYER", "players": 3},
             {"time": "11:53", "event": "PLAYER", "players": 2},
-            {"time": "11:54", "event": "PLAYER", "players": 1},
+            {"time": "11:54", "event": "PLAYER", "players": 1}
     ]},
-    {"id": "3", "youtubeId": "-RfYmS-lUQA", "date": "23.08.2016"},
+    {"id": "3", "youtubeId": "-RfYmS-lUQA", "status": "wip", "date": "23.08.2016", "events": [
+        {"time": "0:00", "event": "PLAYER", "players": 40},
+        {"time": "1:00", "event": "MOUNT", "mount": "Brown Horse"},
+    ]},
     {"id": "4", "youtubeId": "m2lXjB9-Ay8", "date": "24.08.2016"},
     {"id": "5", "youtubeId": "S9E_xFxKsIs", "date": "25.08.2016"},
     {"id": "6", "youtubeId": "kvi0U0FeTaY", "date": "27.08.2016"},

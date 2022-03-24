@@ -89,7 +89,16 @@ function setHeader(header) {
 }
 
 function setMount(mount) {
-    document.getElementById("mount").innerText = mount || "";
+    let mountPanel = document.getElementById("mount");
+    mountPanel.innerText = mount || "";
+    mountPanel.classList.remove("obtained", "missing");
+    if (!mount || mount === "-") return;
+
+    if (hasMount(mount)) {
+        mountPanel.classList.add("obtained");
+    } else {
+        mountPanel.classList.add("missing");
+    }
 }
 
 function setPlayers(players) {

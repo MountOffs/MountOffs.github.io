@@ -21,9 +21,3 @@ data.forEach(entry => {
 
     ul.appendChild(li);
 });
-
-window.addEventListener('DOMContentLoaded', (event) => {
-    getMounts("eu", "twisting-nether", "treogfyrre", (data) => {
-        console.log(data);
-    });
-});

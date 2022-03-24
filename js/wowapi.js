@@ -38,7 +38,6 @@ function getToken(callback) {
     } else {
         callback(token);
     }
-
 }
 
 function authorize(callback) {
