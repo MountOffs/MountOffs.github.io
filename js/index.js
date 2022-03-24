@@ -4,7 +4,7 @@ function getClass(entry) {
     switch (entry.status) {
         case "done": return "done";
         case "wip": return "wip";
-        default: return "broken";
+        default: return "incomplete";
     }
 }
 

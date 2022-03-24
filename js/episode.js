@@ -1,9 +1,19 @@
 let episode = getEpisode();
 let player;
-console.log(episode);
-setHeader(episode.date);
-initIframeAPI();
 
+init();
+
+function init() {
+    setHeader(episode.date);
+    initUI();
+    initIframeAPI();
+}
+
+function initUI() {
+    let enable = (episode.status === "done" || episode.status === "WIP");
+    document.getElementById("mountContainer").style.display = enable ? "block" : "none";
+    document.getElementById("playersContainer").style.display = enable ? "block" : "none";
+}
 
 function initIframeAPI() {
     let tag = document.createElement('script');
