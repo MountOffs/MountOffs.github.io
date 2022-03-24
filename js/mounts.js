@@ -13,7 +13,7 @@ function hasMount(mount) {
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    getMounts("eu", "twisting-nether", "treogfyrre", (data) => {
-        mounts = data;
-    });
+    // getMounts("eu", "twisting-nether", "treogfyrre", (data) => {
+    //     mounts = data;
+    // });
 });

@@ -87,13 +87,16 @@ function setHeader(header) {
 function setMount(mount) {
     let mountPanel = document.getElementById("mount");
     mountPanel.innerText = mount || "";
-    mountPanel.classList.remove("obtained", "missing");
-    if (!mount || mount === "-") return;
 
-    if (hasMount(mount)) {
-        mountPanel.classList.add("obtained");
-    } else {
-        mountPanel.classList.add("missing");
+    if (mounts) {
+        mountPanel.classList.remove("obtained", "missing");
+        if (!mount || mount === "-") return;
+
+        if (hasMount(mount)) {
+            mountPanel.classList.add("obtained");
+        } else {
+            mountPanel.classList.add("missing");
+        }
     }
 }
 
