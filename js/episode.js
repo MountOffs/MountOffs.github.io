@@ -13,8 +13,6 @@ function initIframeAPI() {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
 
-setInterval(update, 500);
-
 function transformTime(time) {
     let parts = time.split(":");
     if (parts.length === 3) {
@@ -26,7 +24,6 @@ function transformTime(time) {
 
 function getEvent(type) {
     let time = player.getCurrentTime();
-    console.log(time);
     return episode.events.slice().reverse().find(event => transformTime(event.time) <= time && event.event === type);
 }
 
@@ -67,11 +64,10 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
-    //console.log("player ready", event);
+    setInterval(update, 500);
 }
 
 function onPlayerStateChange(event) {
-    //console.log("player state change", event);
 }
 
 function getId() {
@@ -81,7 +77,7 @@ function getId() {
 }
 
 function getEpisode() {
-    return data.filter(entry => entry.id === getId())[0];
+    return episodes.filter(entry => entry.id === getId())[0];
 }
 
 function setHeader(header) {

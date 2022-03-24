@@ -1,4 +1,4 @@
-let data = [
+let episodes = [
     {"id": "1", "youtubeId": "VJDN9YHcbE8", "status": "done", "date": "13.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 40},
             {"time": "0:51", "event": "MOUNT", "mount": "Snowy Gryphon"},

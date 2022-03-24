@@ -8,7 +8,7 @@ function getClass(entry) {
     }
 }
 
-data.forEach(entry => {
+episodes.forEach(entry => {
     let li = document.createElement("li");
     let a = document.createElement("a");
     let text = document.createTextNode(entry.date);
