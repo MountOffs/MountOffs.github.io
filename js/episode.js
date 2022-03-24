@@ -30,6 +30,8 @@ function getEvent(type) {
 function update() {
     if (!player) return;
 
+    if (!episode.events) return;
+
     let mount = getEvent("MOUNT");
     let players = getEvent("PLAYER");
 
