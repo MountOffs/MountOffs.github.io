@@ -1,4 +1,5 @@
-let ul = document.getElementById("list");
+let done = document.getElementById("doneList");
+let incomplete = document.getElementById("incompleteList");
 
 function getClass(entry) {
     switch (entry.status) {
@@ -19,5 +20,9 @@ episodes.forEach(entry => {
 
     li.appendChild(a);
 
-    ul.appendChild(li);
+    if (entry.status === "done") {
+        done.appendChild(li);
+    } else {
+        incomplete.appendChild(li);
+    }
 });
