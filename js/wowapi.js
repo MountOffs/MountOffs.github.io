@@ -8,21 +8,42 @@ function locale(region) {
     }
 }
 
-// function setCookieToken(token) {
-//     document.cookie
-// }
-//
-// function getCookieToken() {
-//
-// }
-//
-// function getToken(callback) {
-//
-// }
+function setCookieToken(token, expires) {
+    let date = new Date();
+    date.setTime(date.getTime() + expires * 1000);
+    document.cookie = 'token=' + (token || "") + "; expires=" + date.toUTCString();
+}
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+function getCookieToken() {
+    return getCookie("token");
+}
+
+function getToken(callback) {
+    let token = getCookieToken();
+    if (!token) {
+        authorize((response) => {
+            let payload = JSON.parse(response);
+            token = payload.access_token;
+            let expires = payload.expires_in;
+            setCookieToken(token, expires);
+
+            callback(token);
+        });
+    } else {
+        callback(token);
+    }
+
+}
 
 function authorize(callback) {
     post("https://us.battle.net/oauth/token", (response) => {
-        console.log(response);
+        callback(response);
     })
 }
 
@@ -42,9 +63,10 @@ function post(url, callback) {
 }
 
 function fetchMounts(region, realm, character, callback) {
-    let url = urlTemplate(region, realm, character, locale(region), token);
-    console.log(url);
-    get(url, callback);
+    getToken((token) => {
+        let url = urlTemplate(region, realm, character, locale(region), token);
+        get(url, callback);
+    });
 }
 
 function get(url, callback) {

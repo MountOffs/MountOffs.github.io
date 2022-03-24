@@ -1,8 +1,3 @@
-
-function init() {
-    console.log(document.cookie);
-}
-
 function getMounts(region, realm, character, callback) {
     fetchMounts(region, realm, character, (response) => {
         let data = JSON.parse(response);
@@ -10,5 +5,3 @@ function getMounts(region, realm, character, callback) {
         callback(mounts);
     });
 }
-
-init();

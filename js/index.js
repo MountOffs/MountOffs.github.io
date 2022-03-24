@@ -1,5 +1,3 @@
-console.log("Initialize");
-
 let ul = document.getElementById("list");
 
 data.forEach(entry => {
@@ -16,8 +14,7 @@ data.forEach(entry => {
 });
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    // getMounts("eu", "twisting-nether", "treogfyrre", (data) => {
-    //     console.log(data);
-    // });
-    authorize();
+    getMounts("eu", "twisting-nether", "treogfyrre", (data) => {
+        console.log(data);
+    });
 });
