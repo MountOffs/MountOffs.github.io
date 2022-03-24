@@ -1,5 +1,5 @@
 let data = [
-    {"id": "1", "youtubeId": "VJDN9YHcbE8", "date": "13.08.2016", "events": [
+    {"id": "1", "youtubeId": "VJDN9YHcbE8", "status": "done", "date": "13.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 40},
             {"time": "0:51", "event": "MOUNT", "mount": "Snowy Gryphon"},
             {"time": "1:35", "event": "PLAYER", "players": 39},
@@ -40,7 +40,20 @@ let data = [
             {"time": "14:44", "event": "PLAYER", "players": 2},
             {"time": "14:46", "event": "PLAYER", "players": 1}
     ]},
-    {"id": "2", "youtubeId": "qARP1RXNe1k", "date": "19.08.2016"},
+    {"id": "2", "youtubeId": "qARP1RXNe1k", "status": "wip", "date": "19.08.2016", "events": [
+            {"time": "0:00", "event": "PLAYER", "players": 40},
+            {"time": "0:45", "event": "MOUNT", "mount": "Pinto"},
+            {"time": "0:53", "event": "PLAYER", "players": 39},
+            {"time": "0:55", "event": "PLAYER", "players": 38},
+            {"time": "0:57", "event": "PLAYER", "players": 37},
+            {"time": "1:14", "event": "MOUNT", "mount": "Gray Ram"},
+            {"time": "1:21", "event": "PLAYER", "players": 36},
+            {"time": "1:37", "event": "PLAYER", "players": 35},
+            {"time": "1:39", "event": "PLAYER", "players": 34},
+            {"time": "1:42", "event": "PLAYER", "players": 33},
+            {"time": "1:48", "event": "PLAYER", "players": 32},
+            {"time": "1:54", "event": "PLAYER", "players": 31},
+    ]},
     {"id": "3", "youtubeId": "-RfYmS-lUQA", "date": "23.08.2016"},
     {"id": "4", "youtubeId": "m2lXjB9-Ay8", "date": "24.08.2016"},
     {"id": "5", "youtubeId": "S9E_xFxKsIs", "date": "25.08.2016"},
