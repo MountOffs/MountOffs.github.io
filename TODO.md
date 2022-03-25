@@ -1,7 +1,5 @@
 # TODO
 ### Landing page
-* title
-* list of mount offs
 * socials
 
 ### Mount off page
@@ -19,3 +17,7 @@
 * track all players
 * track extra events
 * semifinal/final tracking (score)
+
+### Misc
+* dynamic navbar fill in js
+* Play carousel

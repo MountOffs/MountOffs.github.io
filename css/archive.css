@@ -9,3 +9,11 @@
 .incomplete {
     color: indianred;
 }
+
+#list {
+    column-count: 3;
+}
+
+li {
+    margin: 0.2em;
+}
