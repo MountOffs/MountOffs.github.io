@@ -42,7 +42,7 @@ div {
     font-family: Arial,Helvetica,sans-serif;
     font-style: italic;
     font-size: 1.5em;
-    color: dimgray;
+    color: lightslategray;
 }
 
 .transcription {
@@ -59,8 +59,7 @@ div {
 
 body {
     background-attachment: fixed;
-    background-position: center center;
     background-repeat: no-repeat;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 255, 0)), url("../images/icecrown_citadel.jpg");
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 255, 0)), url("../images/icecrown_citadel.jpg") center center;
     background-size: cover;
 }
