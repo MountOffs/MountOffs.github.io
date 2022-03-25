@@ -8,25 +8,34 @@
 body { font-family: sans-serif; }
 
 .gallery {
-    background: rgba(50, 50, 50, 0.7);
+    background: rgba(50, 50, 50, 0.1);
+}
+
+.backdrop {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(30, 30, 30, 0.85);
+    z-index: -1;
+    mix-blend-mode: multiply;
 }
 
 .gallery-cell {
     width: 34%;
     height: 300px;
     margin-right: 10px;
-    background: rgba(50, 50, 50, 0.6);
     text-align: center;
     line-height: 300px;
     font-size: 70px;
+    background-position: center;
 }
 
 .gallery-cell > a {
     text-decoration: none;
 }
 
-.gallery-cell.is-selected {
-    background: rgba(70, 70, 70, 0.8);
+.gallery-cell.is-selected .backdrop{
+    background: rgba(50, 50, 50, 0.2);
 }
 
 .flickity-button {
