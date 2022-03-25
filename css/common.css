@@ -1,6 +1,59 @@
 * {
-    background-color: black;
     color: lightgray;
+    font-family: Bahnschrift, sans-serif;
+}
+
+.title {
+    font-size: 5em;
+    background: rgba(255, 255, 255, 0);
+}
+
+.inlineLink {
+    text-decoration: none;
+    color: lightblue;
+}
+
+body {
+    background-color: black;
+}
+
+.nav {
+    padding-bottom: 1.7em;
+    padding-top: 3.4em;
+    background-image: url('../images/icecrown_citadel.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.page {
+    padding: 1em 2em;
+}
+
+.links {
+    align-self: center;
+    text-align: center;
+    align-items: center;
+}
+
+.links > a {
+    margin: 0 0.5em;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+}
+
+.nav a {
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    color: white;
 }
 
 h1 {
@@ -8,11 +61,11 @@ h1 {
 }
 
 .footer {
-    position: absolute;
-    bottom: 5px;
+    position: fixed;
+    bottom: 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
-    left: 0;
-    right: 0;
+    left: 25%;
+    right: 25%;
 }

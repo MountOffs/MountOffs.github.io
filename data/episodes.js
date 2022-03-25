@@ -195,8 +195,7 @@ let episodes = [
             {"time": "11:25", "event": "MOUNT", "mount": "Challenger's War Yeti"},
             {"time": "11:34", "event": "MOUNT", "mount": "Darkmoon Dancing Bear"},
             {"time": "11:43", "event": "MOUNT", "mount": "Depleted-Kyparium Rocket"},
-            {"time": "11:55", "event": "PLAYER", "players": 1},
-            {"time": "11:59", "event": "VICTORY", "winner": "Rankdk"}
+            {"time": "11:55", "event": "PLAYER", "players": 1}
     ]},
     {"id": "5", "youtubeId": "S9E_xFxKsIs", "date": "25.08.2016"},
     {"id": "6", "youtubeId": "kvi0U0FeTaY", "date": "27.08.2016"},
