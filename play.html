@@ -5,6 +5,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <title>Mount Offs</title>
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/flickity.css">
+    <link rel="stylesheet" href="css/play.css" media="screen">
 </head>
 <body>
 <div class="navWrapper">
@@ -21,6 +23,9 @@
 </div>
 <div class="page">
     <ul id="list"></ul>
+    <div id="episodes" class="gallery js-flickity"
+         data-flickity-options='{ "wrapAround": true }'>
+    </div>
     <div class="footer">
         <a href="https://twitter.com/MountOffs">© 2022 MountOffs</a>
     </div>
@@ -30,4 +35,5 @@
 <script src="js/wowapi.js"></script>
 <script src="js/mounts.js"></script>
 <script src="js/play.js"></script>
+<script src="js/flickity.pkgd.min.js"></script>
 </html>

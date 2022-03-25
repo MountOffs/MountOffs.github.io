@@ -21,3 +21,4 @@
 ### Misc
 * dynamic navbar fill in js
 * Play carousel
+* Patreon

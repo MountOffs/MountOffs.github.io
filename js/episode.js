@@ -5,8 +5,18 @@ init();
 
 function init() {
     setHeader(episode.date);
+    initBackButton();
     initUI();
     initIframeAPI();
+}
+
+function initBackButton() {
+    let back = document.getElementById("back");
+    if (episode.status === "done") {
+        back.href = "/mountoffs/play.html";
+    } else {
+        back.href = "/mountoffs/archive.html";
+    }
 }
 
 function initUI() {

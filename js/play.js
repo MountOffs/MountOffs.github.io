@@ -1,13 +1,14 @@
-let list = document.getElementById("list");
+let list = document.getElementById("episodes");
 
-episodes.filter(entry => entry.status === "done").forEach(entry => {
-    let li = document.createElement("li");
+episodes.filter(e => e.status === "done").forEach(episode => {
+    let div = document.createElement("div");
+    div.classList.add("gallery-cell");
     let a = document.createElement("a");
-    let text = document.createTextNode(entry.date);
+    let text = document.createTextNode(episode.date);
     a.appendChild(text);
-    a.title = entry.date;
-    a.href = "/mountoffs/episode.html?id=" + entry.id;
+    a.title = episode.date;
+    a.href = "/mountoffs/episode.html?id=" + episode.id;
 
-    li.appendChild(a);
-    list.appendChild(li);
+    div.appendChild(a);
+    list.appendChild(div);
 });

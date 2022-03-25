@@ -1,0 +1,38 @@
+/* external css: flickity.css */
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+.gallery {
+    background: rgba(50, 50, 50, 0.7);
+}
+
+.gallery-cell {
+    width: 34%;
+    height: 300px;
+    margin-right: 10px;
+    background: rgba(50, 50, 50, 0.6);
+    text-align: center;
+    line-height: 300px;
+    font-size: 70px;
+}
+
+.gallery-cell > a {
+    text-decoration: none;
+}
+
+.gallery-cell.is-selected {
+    background: rgba(70, 70, 70, 0.8);
+}
+
+.flickity-button {
+    background: transparent;
+}
+
+.flickity-button:hover {
+    background: rgba(100, 100, 100, 0.5);
+}
