@@ -11,9 +11,16 @@
 .inlineLink {
     text-decoration: none;
     color: lightblue;
+    transition: 0.2s;
+}
+
+.inlineLink:hover {
+    color: white;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background-color: black;
 }
 

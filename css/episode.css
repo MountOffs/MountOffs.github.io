@@ -1,3 +1,15 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 255, 0)), url("../images/icecrown_citadel.jpg");
+    background-size: cover;
+}
+
 #player {
     margin: auto;
     width: 800px;
@@ -6,8 +18,15 @@
 
 #back {
     position: absolute;
-    top: 20px;
-    left: 10px;
+    top: 10px;
+    left: 20px;
+    text-decoration: none;
+    font-size: 3em;
+    transition: 0.2s;
+}
+
+#back:hover {
+    color: white;
 }
 
 .data {
