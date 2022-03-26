@@ -23,4 +23,3 @@
 * Patreon
 * Dynamic title
 * Mobile friendly
-* Staging environment
