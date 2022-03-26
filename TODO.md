@@ -20,6 +20,7 @@
 
 ### Misc
 * auto navbar/footer
-* Play carousel
 * Patreon
-* Paths for local dev
+* Dynamic title
+* Mobile friendly
+* Staging environment
