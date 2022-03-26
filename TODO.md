@@ -19,7 +19,6 @@
 * semifinal/final tracking (score)
 
 ### Misc
-* auto navbar/footer
 * Patreon
 * Dynamic title
 * Mobile friendly
