@@ -13,7 +13,7 @@ episodes.filter(e => e.status === "done").forEach(episode => {
     let text = document.createTextNode("Episode " + episode.id);
     a.appendChild(text);
     a.title = episode.date;
-    a.href = "/mountoffs/episode.html?id=" + episode.id;
+    a.href = "/episode.html?id=" + episode.id;
 
     div.appendChild(a);
     list.appendChild(div);

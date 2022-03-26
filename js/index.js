@@ -16,7 +16,7 @@ episodes.forEach(entry => {
     a.appendChild(text);
     a.classList.add(getClass(entry));
     a.title = entry.date;
-    a.href = "/mountoffs/episode.html?id=" + entry.id;
+    a.href = "/episode.html?id=" + entry.id;
 
     li.appendChild(a);
 

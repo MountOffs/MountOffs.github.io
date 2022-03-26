@@ -19,6 +19,7 @@
 * semifinal/final tracking (score)
 
 ### Misc
-* dynamic navbar fill in js
+* auto navbar/footer
 * Play carousel
 * Patreon
+* Paths for local dev
