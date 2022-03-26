@@ -6,7 +6,7 @@ episodes.filter(entry => entry.status !== "done").forEach(entry => {
     let text = document.createTextNode(entry.date);
     a.appendChild(text);
     a.title = entry.date;
-    a.href = "/episode.html?id=" + entry.id;
+    a.href = "episode.html?id=" + entry.id;
 
     li.appendChild(a);
     list.appendChild(li);
