@@ -19,6 +19,8 @@
 * semifinal/final tracking (score)
 
 ### Misc
+* Only show landing page once
 * Patreon
 * Dynamic title
 * Mobile friendly
+* SEO
