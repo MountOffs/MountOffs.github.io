@@ -296,5 +296,6 @@ let episodes = [
     {"id": "34", "youtubeId": "Wq0HUcxipjg", "date": "05.04.2021"},
     {"id": "35", "youtubeId": "r2BC5Q2g7DI", "date": "02.05.2021"},
     {"id": "36", "youtubeId": "ke6pU8gJN_4", "date": "14.05.2021"},
-    {"id": "37", "youtubeId": "Y2VfLfmuics", "date": "02.07.2021"}
+    {"id": "37", "youtubeId": "Y2VfLfmuics", "date": "02.07.2021"},
+    {"id": "38", "youtubeId": "QFzJOumsab4", "date": "10.04.2022"}
 ];
