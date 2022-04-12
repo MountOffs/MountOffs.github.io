@@ -6,6 +6,18 @@ function createLink(href, text) {
     return a;
 }
 
+function createLoginBtn() {
+    let a = document.createElement("a");
+    a.onclick = function () {
+        const modal = document.querySelector('#loginModal');
+        console.log("show login");
+        modal.showModal();
+    };
+    let textNode = document.createTextNode("LOGIN");
+    a.appendChild(textNode);
+    return a;
+}
+
 function createNav() {
     let nav = document.createElement("nav");
     nav.classList.add("nav");
@@ -21,7 +33,8 @@ function createNav() {
     links.appendChild(createLink("about.html", "ABOUT"));
     links.appendChild(createLink("play.html", "PLAY"));
     links.appendChild(createLink("archive.html", "ARCHIVE"));
-    links.appendChild(createLink("profile.html", "PROFILE"));
+    links.appendChild(createLoginBtn());
+    //links.appendChild(createLink("profile.html", "PROFILE"));
     links.appendChild(createLink("contribute.html", "CONTRIBUTE"));
     nav.appendChild(links);
 
@@ -38,10 +51,57 @@ function createFooter() {
     return footer;
 }
 
+function createNode(type, text) {
+    let node = document.createElement(type);
+    let textNode = document.createTextNode(text);
+    node.appendChild(textNode);
+    return node;
+}
+
+function createLoginDialog() {
+    let dialog = document.createElement("dialog");
+    dialog.id = "loginModal";
+    dialog.classList.add("modal");
+    let h2 = createNode("h2", "Enter realm and character");
+
+    let realmContainer = document.createElement("div");
+
+    let realmLabel = createNode("label", "Realm");
+    realmLabel.for = "realmSelect";
+
+    let realmSelect = document.createElement("select");
+    realmSelect.id = "realmSelect";
+    realmSelect.appendChild(new Option("Twisting Nether", "Twisting Nether"));
+    realmSelect.appendChild(new Option("Kazzak", "Kazzak"));
+
+    realmContainer.append(realmLabel, realmSelect);
+
+    let charContainer = document.createElement("div");
+
+    let charLabel = createNode("label", "Character");
+    charLabel.for = "charSelect";
+
+    let charText = document.createElement("input");
+    charText.type = "text";
+    charText.id = "charText";
+
+    charContainer.append(charLabel, charText);
+
+    let button = createNode("button", "CLOSE");
+    button.classList.add("modalButton");
+    button.addEventListener('click', () => {
+        console.log("close login");
+        dialog.close();
+    });
+    dialog.append(h2, realmContainer, charContainer, button);
+    return dialog;
+}
+
 
 let page = document.querySelector(".page");
 if (page) {
     document.body.insertBefore(createNav(), page);
+    document.body.appendChild(createLoginDialog());
 }
 
 document.body.appendChild(createFooter());

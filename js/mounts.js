@@ -13,7 +13,12 @@ function hasMount(mount) {
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
+
     // getMounts("eu", "twisting-nether", "treogfyrre", (data) => {
     //     mounts = data;
     // });
 });
+
+// const modal = document.querySelector('#modal');
+// console.log("show modal");
+// modal.showModal();

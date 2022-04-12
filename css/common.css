@@ -3,9 +3,29 @@
     font-family: Bahnschrift, sans-serif;
 }
 
+.modal {
+    background-color: black;
+}
+
 .title {
     font-size: 5em;
     background: rgba(255, 255, 255, 0);
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+select {
+    background-color: black;
+}
+
+input {
+    background-color: black;
+}
+
+.modalButton {
+    background-color: black;
 }
 
 .inlineLink {
