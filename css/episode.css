@@ -31,7 +31,7 @@ body {
 
 .data {
     position: absolute;
-    border: lightgray solid 1px;
+    border: var(--text-color) solid 1px;
     width: 200px;
     height: 100px;
     top: 40%;

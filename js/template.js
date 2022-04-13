@@ -62,30 +62,44 @@ function createLoginDialog() {
     let dialog = document.createElement("dialog");
     dialog.id = "loginModal";
     dialog.classList.add("modal");
+    let container = document.createElement("div");
+    container.classList.add("modalContainer");
     let h2 = createNode("h2", "Enter realm and character");
 
-    let realmContainer = document.createElement("div");
+    let regionLabel = createNode("label", "Region");
+    regionLabel.id = "regionLabel";
+    regionLabel.for = "regionSelect";
+
+    let regionSelect = document.createElement("select");
+    regionSelect.id = "regionSelect";
+    regionSelect.appendChild(new Option("EU", "eu"));
+    regionSelect.appendChild(new Option("US", "us"));
 
     let realmLabel = createNode("label", "Realm");
+    realmLabel.id = "realmLabel";
     realmLabel.for = "realmSelect";
 
     let realmSelect = document.createElement("select");
     realmSelect.id = "realmSelect";
-    realmSelect.appendChild(new Option("Twisting Nether", "Twisting Nether"));
-    realmSelect.appendChild(new Option("Kazzak", "Kazzak"));
+    realms.eu.forEach(realm => {
+        realmSelect.appendChild(new Option(realm.name, "eu-" + realm.slug));
+    });
 
-    realmContainer.append(realmLabel, realmSelect);
-
-    let charContainer = document.createElement("div");
+    regionSelect.addEventListener("change", (e) => {
+        let value = e.target.value;
+        realmSelect.innerHTML = "";
+        realms[value].forEach(realm => {
+            realmSelect.appendChild(new Option(realm.name, value + "-" + realm.slug));
+        });
+    });
 
     let charLabel = createNode("label", "Character");
+    charLabel.id = "charLabel";
     charLabel.for = "charSelect";
 
     let charText = document.createElement("input");
     charText.type = "text";
     charText.id = "charText";
-
-    charContainer.append(charLabel, charText);
 
     let button = createNode("button", "CLOSE");
     button.classList.add("modalButton");
@@ -93,7 +107,9 @@ function createLoginDialog() {
         console.log("close login");
         dialog.close();
     });
-    dialog.append(h2, realmContainer, charContainer, button);
+
+    container.append(h2, regionLabel, regionSelect, realmLabel, realmSelect, charLabel, charText, button);
+    dialog.appendChild(container);
     return dialog;
 }
 
