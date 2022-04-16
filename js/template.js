@@ -33,12 +33,23 @@ function createNav() {
     links.appendChild(createLink("about.html", "ABOUT"));
     links.appendChild(createLink("play.html", "PLAY"));
     links.appendChild(createLink("archive.html", "ARCHIVE"));
-    links.appendChild(createLoginBtn());
-    //links.appendChild(createLink("profile.html", "PROFILE"));
+    if (isLoggedIn()) {
+        links.appendChild(createLink("profile.html", "PROFILE"));
+    } else {
+        links.appendChild(createLoginBtn());
+    }
     links.appendChild(createLink("contribute.html", "CONTRIBUTE"));
     nav.appendChild(links);
 
     return nav;
+}
+
+function isLoggedIn() {
+    return false;
+    let region = localStorage.getItem("region");
+    let realm = localStorage.getItem("realm");
+    let char = localStorage.getItem("character");
+    return region != null && realm != null && char != null;
 }
 
 function createFooter() {
@@ -82,14 +93,14 @@ function createLoginDialog() {
     let realmSelect = document.createElement("select");
     realmSelect.id = "realmSelect";
     realms.eu.forEach(realm => {
-        realmSelect.appendChild(new Option(realm.name, "eu-" + realm.slug));
+        realmSelect.appendChild(new Option(realm.name, realm.slug));
     });
 
     regionSelect.addEventListener("change", (e) => {
         let value = e.target.value;
         realmSelect.innerHTML = "";
         realms[value].forEach(realm => {
-            realmSelect.appendChild(new Option(realm.name, value + "-" + realm.slug));
+            realmSelect.appendChild(new Option(realm.name, realm.slug));
         });
     });
 
@@ -97,14 +108,31 @@ function createLoginDialog() {
     charLabel.id = "charLabel";
     charLabel.for = "charSelect";
 
+    let button = createNode("button", "CLOSE");
+
     let charText = document.createElement("input");
     charText.type = "text";
     charText.id = "charText";
+    charText.addEventListener("input", (e) => {
+        let value = e.target.value;
+        button.disabled = (value === null || value === "");
+    });
 
-    let button = createNode("button", "CLOSE");
+    button.disabled = true;
     button.classList.add("modalButton");
     button.addEventListener('click', () => {
-        console.log("close login");
+        let region = regionSelect.value;
+        let realm = realmSelect.value;
+        let char = charText.value.toLowerCase();
+        console.log("Login: " + region + " " + realm + " " + char);
+        getMounts(region, realm, char, (mounts) => {
+            localStorage.setItem("region", region);
+            localStorage.setItem("realm", realm);
+            localStorage.setItem("character", char);
+            localStorage.setItem("mounts", JSON.stringify(mounts));
+            console.log(mounts);
+            //location.reload();
+        });
         dialog.close();
     });
 

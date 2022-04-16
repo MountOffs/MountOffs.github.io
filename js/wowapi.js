@@ -8,10 +8,10 @@ function locale(region) {
     }
 }
 
-function setCookieToken(token, expires) {
+function setCookie(name, value, expires = 365 * 24 * 60 * 60) {
     let date = new Date();
     date.setTime(date.getTime() + expires * 1000);
-    document.cookie = 'token=' + (token || "") + "; expires=" + date.toUTCString();
+    document.cookie = name + '=' + (value || "") + "; expires=" + date.toUTCString();
 }
 
 function getCookie(name) {
@@ -31,7 +31,7 @@ function getToken(callback) {
             let payload = JSON.parse(response);
             token = payload.access_token;
             let expires = payload.expires_in;
-            setCookieToken(token, expires);
+            setCookie("token", token, expires);
 
             callback(token);
         });
