@@ -67,6 +67,6 @@ function generateModel(modelId, aspect = 1, containerSelector = '#model_3d') {
     return new WowModelViewer(models);
 }
 
-export {
-    generateModel
-};
+// export {
+//     generateModel
+// };

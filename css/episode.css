@@ -33,8 +33,14 @@ body {
     position: absolute;
     border: var(--text-color) solid 1px;
     width: 200px;
-    height: 100px;
     top: 40%;
+}
+
+#model_3d {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    pointer-events: none !important;
 }
 
 .obtained {
@@ -63,8 +69,10 @@ body {
 
 #mountContainer {
     left: 20px;
+    height: 300px;
 }
 
 #playersContainer {
     right: 20px;
+    height: 100px;
 }

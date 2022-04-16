@@ -1,5 +1,6 @@
 let episode = getEpisode();
 let player;
+let mountDisplayId = null;
 
 init();
 
@@ -118,6 +119,16 @@ function setMount(mount) {
             mountPanel.classList.add("obtained");
         } else {
             mountPanel.classList.add("missing");
+        }
+    }
+
+    if (mount !== '-') {
+        let displayId = mountMapping[mount];
+        if (displayId && mountDisplayId !== displayId) {
+            let modelContainer = document.querySelector('#model_3d');
+            modelContainer.innerHTML = "";
+            mountDisplayId = displayId;
+            generateModel(displayId);
         }
     }
 }
