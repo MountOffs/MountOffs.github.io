@@ -38,14 +38,12 @@ function createNav() {
     } else {
         links.appendChild(createLoginBtn());
     }
-    links.appendChild(createLink("contribute.html", "CONTRIBUTE"));
     nav.appendChild(links);
 
     return nav;
 }
 
 function isLoggedIn() {
-    return false;
     let region = localStorage.getItem("region");
     let realm = localStorage.getItem("realm");
     let char = localStorage.getItem("character");
@@ -131,7 +129,7 @@ function createLoginDialog() {
             localStorage.setItem("character", char);
             localStorage.setItem("mounts", JSON.stringify(mounts));
             console.log(mounts);
-            //location.reload();
+            location.reload();
         });
         dialog.close();
     });
