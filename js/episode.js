@@ -121,15 +121,17 @@ function setMount(mount) {
             mountPanel.classList.add("missing");
         }
     }
+    let modelContainer = document.querySelector('#model_3d');
 
     if (mount !== '-') {
         let displayId = mountMapping[mount];
         if (displayId && mountDisplayId !== displayId) {
-            let modelContainer = document.querySelector('#model_3d');
             modelContainer.innerHTML = "";
             mountDisplayId = displayId;
             generateModel(displayId);
         }
+    } else {
+        modelContainer.innerHTML = "";
     }
 }
 
