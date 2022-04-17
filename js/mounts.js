@@ -1,24 +1,24 @@
-function getMounts(region, realm, character, callback) {
-    fetchMounts(region, realm, character, (response) => {
-        let data = JSON.parse(response);
-        let mounts = data.mounts.map(mount => mount.mount.name);
+function getMounts(callback) {
+    if (!isLoggedIn()) {
+        callback([]);
+        return;
+    }
+
+    let mounts = JSON.parse(localStorage.getItem("mounts"));
+    if (mounts) {
+        callback(mounts);
+        return;
+    }
+
+    let region = localStorage.getItem("region");
+    let realm = localStorage.getItem("realm");
+    let char = localStorage.getItem("character");
+    fetchMounts(region, realm, char, (mounts) => {
+        localStorage.setItem("mounts", JSON.stringify(mounts));
         callback(mounts);
     });
 }
 
-let mounts;
-
-function hasMount(mount) {
+function hasMount(mounts, mount) {
     return mounts.indexOf(mount) > -1;
 }
-
-window.addEventListener('DOMContentLoaded', (event) => {
-
-    // getMounts("eu", "twisting-nether", "treogfyrre", (data) => {
-    //     mounts = data;
-    // });
-});
-
-// const modal = document.querySelector('#modal');
-// console.log("show modal");
-// modal.showModal();

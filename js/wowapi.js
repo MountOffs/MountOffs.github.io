@@ -64,7 +64,11 @@ function post(url, callback) {
 function fetchMounts(region, realm, character, callback) {
     getToken((token) => {
         let url = urlTemplate(region, realm, character, locale(region), token);
-        get(url, callback);
+        get(url, (response) => {
+            let data = JSON.parse(response);
+            let mounts = data.mounts.map(mount => mount.mount.name);
+            callback(mounts);
+        });
     });
 }
 

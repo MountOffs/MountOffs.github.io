@@ -10,7 +10,6 @@ function createLoginBtn() {
     let a = document.createElement("a");
     a.onclick = function () {
         const modal = document.querySelector('#loginModal');
-        console.log("show login");
         modal.showModal();
     };
     let textNode = document.createTextNode("LOGIN");
@@ -123,12 +122,11 @@ function createLoginDialog() {
         let realm = realmSelect.value;
         let char = charText.value.toLowerCase();
         console.log("Login: " + region + " " + realm + " " + char);
-        getMounts(region, realm, char, (mounts) => {
+        fetchMounts(region, realm, char, (mounts) => {
             localStorage.setItem("region", region);
             localStorage.setItem("realm", realm);
             localStorage.setItem("character", char);
             localStorage.setItem("mounts", JSON.stringify(mounts));
-            console.log(mounts);
             location.reload();
         });
         dialog.close();
