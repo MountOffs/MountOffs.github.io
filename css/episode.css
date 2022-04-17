@@ -37,10 +37,16 @@ body {
 }
 
 #model_3d {
-    position: absolute;
+    bottom: 5px;
+    position: absolute !important;
     width: 200px;
     height: 200px;
     pointer-events: none !important;
+}
+
+/* Hide loading bar*/
+#model_3d div:nth-child(n + 1) {
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .obtained {
