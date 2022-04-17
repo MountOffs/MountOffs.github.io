@@ -66,7 +66,7 @@ let episodes = [
             {"time": "4:51", "event": "PLAYER", "players": 23},
             {"time": "4:56", "event": "PLAYER", "players": 22},
             {"time": "4:59", "event": "PLAYER", "players": 21},
-            {"time": "5:14", "event": "MOUNT", "mount": "Bloodbathed Frotbrood Vanquisher"},
+            {"time": "5:14", "event": "MOUNT", "mount": "Bloodbathed Frostbrood Vanquisher"},
             {"time": "5:43", "event": "PLAYER", "players": 20},
             {"time": "5:51", "event": "PLAYER", "players": 19},
             {"time": "6:15", "event": "MOUNT", "mount": "Crimson Deathcharger"},

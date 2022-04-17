@@ -10,4 +10,17 @@ let mountMapping = {
     "Raven Lord": 21473,
     "Rivendare's Deathcharger": 10718,
     "Sunhide Gronnling": 60578,
+    "Pinto": 2409,
+    "Gray Ram": 2736,
+    "Brown Elekk": 17063,
+    "Rusted Proto-Drake": 28954,
+    "Bloodbathed Frostbrood Vanquisher": 31156,
+    "Crimson Deathcharger": 25279,
+    "Corrupted Fire Hawk": 38046,
+    "Amber Primordial Direhorn": 47718,
+    "Flametalon of Alysrazor": 38783,
+    "Grand Black War Mammoth": 27241,
+    "Grand Black War Mammoth (Horde)": 27240,
+    "Ashes of Al'ar": 17890,
+    "Ultramarine Qiraji Battle Tank": 15672
 };
