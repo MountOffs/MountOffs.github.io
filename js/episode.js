@@ -74,7 +74,18 @@ function update() {
 }
 
 function updateProgress() {
-
+    let mount = getEvent("MOUNT")?.mount;
+    getMounts(mounts => {
+        console.log(mounts);
+        let mountPanel = document.getElementById("mount");
+        mountPanel.classList.remove("obtained", "missing");
+        if (!mount || mount === "-") return;
+        if (hasMount(mounts, mount)) {
+            mountPanel.classList.add("obtained");
+        } else {
+            mountPanel.classList.add("missing");
+        }
+    });
 }
 
 function onYouTubeIframeAPIReady() {
@@ -119,16 +130,6 @@ function setMount(mount) {
     let mountPanel = document.getElementById("mount");
     mountPanel.innerText = mount || "";
 
-    // if (mounts) {
-    //     mountPanel.classList.remove("obtained", "missing");
-    //     if (!mount || mount === "-") return;
-    //
-    //     if (hasMount(mount)) {
-    //         mountPanel.classList.add("obtained");
-    //     } else {
-    //         mountPanel.classList.add("missing");
-    //     }
-    // }
     let modelContainer = document.querySelector('#model_3d');
 
     if (mount !== '-') {
