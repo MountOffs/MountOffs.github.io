@@ -127,7 +127,7 @@ function createLoginDialog() {
             localStorage.setItem("realm", realm);
             localStorage.setItem("character", char);
             localStorage.setItem("mounts", JSON.stringify(mounts));
-            location.reload();
+            location.href = "profile.html";
         });
         dialog.close();
     });
