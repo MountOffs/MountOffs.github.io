@@ -1,0 +1,55 @@
+#progress {
+    font-size: 20px;
+}
+
+#episodes {
+    list-style: none;
+}
+
+#episodes > li {
+    display: flex;
+    height: 50px;
+    border: 1px var(--text-color) solid;
+    border-radius: 10px;
+    user-select: none;
+    align-items: center;
+    margin: 20px 75px 0 50px;
+}
+
+.episode {
+    width: 260px;
+    font-size: 40px;
+    padding: 0 5px;
+    border-right: 1px var(--text-color) solid;
+}
+
+.place {
+    color: darkred;
+    width: 150px;
+    font-size: 30px;
+    padding: 7px 10px;
+    border-right: 1px var(--text-color) solid;
+}
+
+.place[data-place="1"] {
+    color: gold;
+    border: none;
+}
+
+.place[data-place="2"] {
+    color: silver;
+}
+
+.place[data-place="3"] {
+    color: sandybrown;
+}
+
+.losingMountLabel {
+    font-size: 20px;
+    padding: 7px 10px;
+}
+
+.losingMount {
+    font-size: 40px;
+    padding: 7px 10px;
+}

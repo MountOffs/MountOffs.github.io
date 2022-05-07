@@ -34,15 +34,6 @@ function initIframeAPI() {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
 
-function transformTime(time) {
-    let parts = time.split(":");
-    if (parts.length === 3) {
-        return parts[0] * 60 * 60 + parts[1] * 60 + parts[2] * 1;
-    } else {
-        return parts[0] * 60 + parts[1] * 1;
-    }
-}
-
 function getEvent(type) {
     let time = player.getCurrentTime();
     return episode.events.slice().reverse().find(event => transformTime(event.time) <= time && event.event === type);
@@ -92,43 +83,6 @@ function updateProgress() {
         let state = evaluateEpisode(episode, mounts);
         console.log("State:", state);
     });
-}
-
-function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY) {
-    if (!episode.events) {
-        return null;
-    } else {
-        let placing = 0;
-        let losingMount = null;
-        let missingMounts = [];
-        episode.events.forEach(event => {
-            if (transformTime(event.time) > time) {
-                return;
-            }
-
-            if (event.event === "PLAYER") {
-                if (losingMount === null) {
-                    placing = event.players;
-                }
-            } else if (event.event === "MOUNT") {
-                let mount = event.mount;
-                if (mounts.indexOf(mount) === -1) {
-                    if (losingMount === null) {
-                        losingMount = mount;
-                    }
-
-                    missingMounts.push(mount);
-                }
-            }
-        });
-
-        return {
-            "phase": null,
-            "placing": placing,
-            "losingMount": losingMount,
-            "missingMounts": missingMounts
-        }
-    }
 }
 
 function evaluateCurrent(mounts) {

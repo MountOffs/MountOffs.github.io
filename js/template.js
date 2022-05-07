@@ -59,10 +59,13 @@ function createFooter() {
     return footer;
 }
 
-function createNode(type, text) {
+function createNode(type, text, ...clazzes) {
     let node = document.createElement(type);
     let textNode = document.createTextNode(text);
     node.appendChild(textNode);
+    clazzes.forEach(clazz => {
+        node.classList.add(clazz);
+    });
     return node;
 }
 
@@ -105,7 +108,7 @@ function createLoginDialog() {
     charLabel.id = "charLabel";
     charLabel.for = "charSelect";
 
-    let button = createNode("button", "CLOSE");
+    let button = createNode("button", "LOGIN");
 
     let charText = document.createElement("input");
     charText.type = "text";
@@ -137,6 +140,51 @@ function createLoginDialog() {
     return dialog;
 }
 
+function transformTime(time) {
+    let parts = time.split(":");
+    if (parts.length === 3) {
+        return parts[0] * 60 * 60 + parts[1] * 60 + parts[2] * 1;
+    } else {
+        return parts[0] * 60 + parts[1] * 1;
+    }
+}
+
+function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY) {
+    if (!episode.events) {
+        return null;
+    } else {
+        let placing = 0;
+        let losingMount = null;
+        let missingMounts = [];
+        episode.events.forEach(event => {
+            if (transformTime(event.time) > time) {
+                return;
+            }
+
+            if (event.event === "PLAYER") {
+                if (losingMount === null) {
+                    placing = event.players;
+                }
+            } else if (event.event === "MOUNT") {
+                let mount = event.mount;
+                if (mounts.indexOf(mount) === -1) {
+                    if (losingMount === null) {
+                        losingMount = mount;
+                    }
+
+                    missingMounts.push(mount);
+                }
+            }
+        });
+
+        return {
+            "phase": null,
+            "placing": placing,
+            "losingMount": losingMount,
+            "missingMounts": missingMounts
+        }
+    }
+}
 
 let page = document.querySelector(".page");
 if (page) {

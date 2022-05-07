@@ -1,4 +1,6 @@
 let char = localStorage.getItem("character");
+const episodeUl = document.querySelector("#episodes");
+const progress = document.querySelector("#progress");
 
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
@@ -13,11 +15,67 @@ function logout() {
     location.href = "about.html";
 }
 
-document.querySelector('h2').innerText = "Welcome, " + capitalize(char);
+document.querySelector('#name').innerText = capitalize(char);
 document.querySelector("#logout").addEventListener("click", () => {
    logout();
 });
 
+function placePrefix(place) {
+    if (place % 100 !== 10) {
+        if (place % 10 === 1) {
+            return "st";
+        } else if (place % 10 === 2) {
+            return "nd";
+        } else if (place % 10 === 3) {
+            return "rd";
+        }
+    }
+
+    return "th";
+}
+
+function placeToString(place) {
+    if (place === 1) {
+        return "VICTORY";
+    }
+
+    return place + placePrefix(place) + " place";
+}
+
+function createEpisodeStatus(episode, status) {
+    console.log(episode);
+    console.log(status);
+    let li = document.createElement("li");
+
+    let episodeSpan = createNode("span", "Episode " + episode.id, "episode");
+    let placingSpan = createNode("span", placeToString(status.placing), "place");
+    placingSpan.dataset.place = status.placing;
+    li.append(episodeSpan, placingSpan);
+
+    if (status.placing !== 1) {
+        let losingMountLabel = createNode("span", "Missing mount:", "losingMountLabel");
+        let losingMountSpan = createNode("span",  status.losingMount, "losingMount");
+        li.append(losingMountLabel, losingMountSpan);
+    }
+
+    return li;
+}
+
 getMounts(mounts => {
-    document.querySelector("#mounts").innerText = "You have " + mounts.length + " mounts";
+    let victories = 0;
+    let total = 0;
+    episodes.forEach(episode => {
+        let status = evaluateEpisode(episode, mounts);
+        if (status) {
+            let node = createEpisodeStatus(episode, status);
+            episodeUl.appendChild(node);
+
+            total++;
+            if (status.placing === 1) {
+                victories++;
+            }
+        }
+    });
+
+    progress.innerText = "Progress: " + victories + "/" + total;
 });

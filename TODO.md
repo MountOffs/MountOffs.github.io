@@ -19,6 +19,7 @@
 * semifinal/final tracking (score)
 
 ### Misc
+* Handle enter keypress on login
 * Only show landing page once
 * Patreon
 * Dynamic title
