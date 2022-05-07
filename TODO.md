@@ -3,10 +3,16 @@
 * socials
 * only show dictionary entry once
 
+### Profile
+* only show watched episodes by default
+* add (show)/(show all) buttons
+* add option to show all missing mounts
+
 ### Mount off page
 * description
 * script/visualization
 * how to overlay when youtube embed is fullscreen
+
 ### Armory Sync
 * track overall progress (semifinal/final/victory)
 * track progress in given mount off
