@@ -76,16 +76,63 @@ function update() {
 function updateProgress() {
     let mount = getEvent("MOUNT")?.mount;
     getMounts(mounts => {
-        console.log(mounts);
         let mountPanel = document.getElementById("mount");
         mountPanel.classList.remove("obtained", "missing");
-        if (!mount || mount === "-") return;
-        if (hasMount(mounts, mount)) {
-            mountPanel.classList.add("obtained");
-        } else {
-            mountPanel.classList.add("missing");
+        if (mount) {
+            if (hasMount(mounts, mount)) {
+                mountPanel.classList.add("obtained");
+            } else {
+                mountPanel.classList.add("missing");
+            }
         }
+
+        let current = evaluateCurrent(mounts);
+        console.log("Current:", current);
+
+        let state = evaluateEpisode(episode, mounts);
+        console.log("State:", state);
     });
+}
+
+function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY) {
+    if (!episode.events) {
+        return null;
+    } else {
+        let placing = 0;
+        let losingMount = null;
+        let missingMounts = [];
+        episode.events.forEach(event => {
+            if (transformTime(event.time) > time) {
+                return;
+            }
+
+            if (event.event === "PLAYER") {
+                if (losingMount === null) {
+                    placing = event.players;
+                }
+            } else if (event.event === "MOUNT") {
+                let mount = event.mount;
+                if (mounts.indexOf(mount) === -1) {
+                    if (losingMount === null) {
+                        losingMount = mount;
+                    }
+
+                    missingMounts.push(mount);
+                }
+            }
+        });
+
+        return {
+            "phase": null,
+            "placing": placing,
+            "losingMount": losingMount,
+            "missingMounts": missingMounts
+        }
+    }
+}
+
+function evaluateCurrent(mounts) {
+    return evaluateEpisode(episode, mounts, player.getCurrentTime());
 }
 
 function onYouTubeIframeAPIReady() {

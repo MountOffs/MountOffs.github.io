@@ -1,10 +1,10 @@
 # TODO
 ### Landing page
 * socials
+* only show dictionary entry once
 
 ### Mount off page
 * description
-* models of mounts
 * script/visualization
 * how to overlay when youtube embed is fullscreen
 ### Armory Sync
