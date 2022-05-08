@@ -139,7 +139,7 @@ let episodes = [
             {"time": "7:18", "event": "PLAYER", "players": 2},
             {"time": "7:22", "event": "PLAYER", "players": 1},
     ]},
-    {"id": "4", "youtubeId": "m2lXjB9-Ay8", "status": "done", "date": "24.08.2016", "events": [
+    {"id": "4", "youtubeId": "m2lXjB9-Ay8", "faction": "alliance", "status": "done", "date": "24.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 38},
             {"time": "0:10", "event": "MOUNT", "mount": "Black Stallion"},
             {"time": "0:20", "event": "PLAYER", "players": 37},
@@ -195,7 +195,7 @@ let episodes = [
             {"time": "11:34", "event": "MOUNT", "mount": "Darkmoon Dancing Bear"},
             {"time": "11:43", "event": "MOUNT", "mount": "Depleted-Kyparium Rocket"},
             {"time": "11:55", "event": "PLAYER", "players": 1}
-    ]}, //TODO: MOUNT MODELS, FACTION
+    ]},
     {"id": "5", "youtubeId": "S9E_xFxKsIs", "status": "done", "date": "25.08.2016", "events": [
         {"time": "0:00", "event": "PLAYER", "players": 17},
         {"time": "0:25", "event": "MOUNT", "mount": "Albino Drake"},

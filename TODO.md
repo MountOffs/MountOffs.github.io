@@ -13,6 +13,9 @@
 * script/visualization
 * how to overlay when youtube embed is fullscreen
 * Faction info for episodes + choosing model
+* Tooltip with info on mount mouseover (+ wowhead link?)
+* Mount animation on space
+* Mount pooling/preloading
 
 ### Armory Sync
 * track overall progress (semifinal/final/victory)
