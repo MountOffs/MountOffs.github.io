@@ -83,6 +83,7 @@ function updateProgress() {
             document.getElementById("progressContainer").dataset.lost = "1";
         } else {
             missingMountContainer.style.display = "none";
+            document.getElementById("progressContainer").dataset.lost = "0";
         }
     });
 }
