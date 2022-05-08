@@ -96,6 +96,13 @@ body {
     font-size: 25px;
 }
 
+#modelMissing {
+    color: darkred;
+    position: absolute;
+    bottom: 50px;
+    font-size: 50px;
+}
+
 #progressContainer {
     transform: translateX(-50%);
     left: 50%;

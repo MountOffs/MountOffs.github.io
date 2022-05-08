@@ -135,14 +135,18 @@ function setMount(mount) {
     mountPanel.innerText = mount || "";
 
     let modelContainer = document.querySelector('#model_3d');
+    let modelMissing = document.querySelector("#modelMissing");
 
     if (mount !== '-') {
         let displayId = mountMapping[mount];
         if (!displayId) {
-            console.warn("Display ID missing");
-            modelContainer.innerHTML = "MODEL MISSING";
+            console.warn("Display ID missing for " + mount);
+            modelContainer.innerHTML = "";
+            modelMissing.style.display = "block";
             return;
         }
+
+        modelMissing.style.display = "none";
 
         if (displayId instanceof Array) {
             displayId = displayId[0];
@@ -155,6 +159,7 @@ function setMount(mount) {
         }
     } else {
         modelContainer.innerHTML = "";
+        modelMissing.style.display = "none";
     }
 }
 

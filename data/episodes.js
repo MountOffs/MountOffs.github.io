@@ -1,5 +1,5 @@
 let episodes = [
-    {"id": "1", "youtubeId": "VJDN9YHcbE8", "status": "done", "date": "13.08.2016", "events": [
+    {"id": "1", "youtubeId": "VJDN9YHcbE8", "faction": "alliance", "status": "done", "date": "13.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 39},
             {"time": "0:51", "event": "MOUNT", "mount": "Snowy Gryphon"},
             {"time": "1:35", "event": "PLAYER", "players": 38},
@@ -40,7 +40,7 @@ let episodes = [
             {"time": "14:44", "event": "PLAYER", "players": 2},
             {"time": "14:46", "event": "PLAYER", "players": 1}
     ]},
-    {"id": "2", "youtubeId": "qARP1RXNe1k", "status": "done", "date": "19.08.2016", "events": [
+    {"id": "2", "youtubeId": "qARP1RXNe1k", "faction": "alliance", "status": "done", "date": "19.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 39},
             {"time": "0:45", "event": "MOUNT", "mount": "Pinto"},
             {"time": "0:53", "event": "PLAYER", "players": 38},
@@ -96,7 +96,7 @@ let episodes = [
             {"time": "11:47", "event": "PLAYER", "players": 2},
             {"time": "11:53", "event": "PLAYER", "players": 1}
     ]},
-    {"id": "3", "youtubeId": "-RfYmS-lUQA", "status": "done", "date": "23.08.2016", "events": [
+    {"id": "3", "youtubeId": "-RfYmS-lUQA", "faction": "alliance", "status": "done", "date": "23.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 38},
             {"time": "1:00", "event": "MOUNT", "mount": "Brown Horse"},
             {"time": "1:08", "event": "PLAYER", "players": 37},
@@ -138,7 +138,7 @@ let episodes = [
             {"time": "7:14", "event": "PLAYER", "players": 3},
             {"time": "7:18", "event": "PLAYER", "players": 2},
             {"time": "7:22", "event": "PLAYER", "players": 1},
-    ]}, //TODO: MOUNTS MODELS
+    ]},
     {"id": "4", "youtubeId": "m2lXjB9-Ay8", "status": "done", "date": "24.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 38},
             {"time": "0:10", "event": "MOUNT", "mount": "Black Stallion"},
@@ -195,7 +195,7 @@ let episodes = [
             {"time": "11:34", "event": "MOUNT", "mount": "Darkmoon Dancing Bear"},
             {"time": "11:43", "event": "MOUNT", "mount": "Depleted-Kyparium Rocket"},
             {"time": "11:55", "event": "PLAYER", "players": 1}
-    ]}, //TODO: MOUNTS MODELS
+    ]}, //TODO: MOUNT MODELS, FACTION
     {"id": "5", "youtubeId": "S9E_xFxKsIs", "status": "done", "date": "25.08.2016", "events": [
         {"time": "0:00", "event": "PLAYER", "players": 17},
         {"time": "0:25", "event": "MOUNT", "mount": "Albino Drake"},
@@ -228,7 +228,7 @@ let episodes = [
         {"time": "5:43", "event": "MOUNT", "mount": "Kor'kron Juggernaut"},
         {"time": "6:11", "event": "PLAYER", "players": 1},
 
-    ]}, //TODO: MOUNTS MODELS
+    ]}, //TODO: MOUNT MODELS, FACTION
     {"id": "6", "youtubeId": "kvi0U0FeTaY", "status": "done", "date": "27.08.2016", "events": [
         {"time": "0:00", "event": "PLAYER", "players": 25},
         {"time": "0:25", "event": "MOUNT", "mount": "Great Green Dragon Turtle"},
@@ -265,38 +265,38 @@ let episodes = [
         {"time": "6:44", "event": "MOUNT", "mount": "Felsteel Annihilator"},
         {"time": "7:20", "event": "MOUNT", "mount": "Fiery Warhorse"},
         {"time": "8:05", "event": "PLAYER", "players": 1}
-    ]}, //TODO: MOUNTS MODELS
-    {"id": "7", "youtubeId": "5VX0Ou932eg", "date": "12.03.2017"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "8", "youtubeId": "ogkNCd5px54", "date": "29.12.2017"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "9", "youtubeId": "WXdDZ5atDW4", "date": "27.07.2018"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "10", "youtubeId": "F3Awarf_GZs", "date": "03.08.2018"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "11", "youtubeId": "i8lVEXJ2OV0", "date": "11.08.2018"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "12", "youtubeId": "Mw9X00VBCNI", "date": "14.10.2018"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "13", "youtubeId": "KxtwWt39UL8", "date": "05.11.2018"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "14", "youtubeId": "usAhvofjvbo", "date": "18.11.2018"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "15", "youtubeId": "iTeqafGC6gg", "date": "22.11.2018"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "16", "youtubeId": "KZT3TIch2o4", "date": "28.11.2018"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "17", "youtubeId": "i85gebdxph4", "date": "27.12.2018"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "18", "youtubeId": "nPw_pjmg0bg", "date": "20.02.2019"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "19", "youtubeId": "MusbVDoCQFA", "date": "26.04.2019"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "20", "youtubeId": "6k6OEvEsvu0", "date": "15.05.2019"}, //uGLv0zlw8D0 //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "21", "youtubeId": "2iRWcuKixj8", "date": "03.07.2019"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "22", "youtubeId": "unkgOAgySpI", "date": "25.07.2019"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "23", "youtubeId": "U0xPH7_AADU", "date": "28.11.2019"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "24", "youtubeId": "zprDyBRklEY", "date": "27.04.2020"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "25", "youtubeId": "T50cgZ8ysls", "date": "04.05.2020"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "26", "youtubeId": "o5yPZxa_ZX8", "date": "19.05.2020"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "27", "youtubeId": "1yOkO7V24NE", "date": "11.06.2020"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "28", "youtubeId": "g-MNtkHdBkk", "date": "16.06.2020"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "29", "youtubeId": "H1-gnSgDMAU", "date": "23.07.2020"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "30", "youtubeId": "VY3WhstC_pI", "date": "14.09.2020"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "31", "youtubeId": "VE7J-raq4XM", "date": "23.10.2020"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "32", "youtubeId": "wUqb-MwbyAI", "date": "19.11.2020"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "33", "youtubeId": "P6yaaH_gffI", "date": "19.03.2021"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "34", "youtubeId": "Wq0HUcxipjg", "date": "05.04.2021"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "35", "youtubeId": "r2BC5Q2g7DI", "date": "02.05.2021"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "36", "youtubeId": "ke6pU8gJN_4", "date": "14.05.2021"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "37", "youtubeId": "Y2VfLfmuics", "date": "02.07.2021"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "38", "youtubeId": "QFzJOumsab4", "date": "10.04.2022"}, //TODO: SCRIPT, MOUNTS MODELS
-    {"id": "39", "youtubeId": "-ZWFnKymvsQ", "date": "01.05.2022"} //TODO: SCRIPT, MOUNTS MODELS
+    ]}, //TODO: MOUNT MODELS, FACTION
+    {"id": "7", "youtubeId": "5VX0Ou932eg", "date": "12.03.2017"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "8", "youtubeId": "ogkNCd5px54", "date": "29.12.2017"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "9", "youtubeId": "WXdDZ5atDW4", "date": "27.07.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "10", "youtubeId": "F3Awarf_GZs", "date": "03.08.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "11", "youtubeId": "i8lVEXJ2OV0", "date": "11.08.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "12", "youtubeId": "Mw9X00VBCNI", "date": "14.10.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "13", "youtubeId": "KxtwWt39UL8", "date": "05.11.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "14", "youtubeId": "usAhvofjvbo", "date": "18.11.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "15", "youtubeId": "iTeqafGC6gg", "date": "22.11.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "16", "youtubeId": "KZT3TIch2o4", "date": "28.11.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "17", "youtubeId": "i85gebdxph4", "date": "27.12.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "18", "youtubeId": "nPw_pjmg0bg", "date": "20.02.2019"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "19", "youtubeId": "MusbVDoCQFA", "date": "26.04.2019"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "20", "youtubeId": "6k6OEvEsvu0", "date": "15.05.2019"}, //uGLv0zlw8D0 //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "21", "youtubeId": "2iRWcuKixj8", "date": "03.07.2019"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "22", "youtubeId": "unkgOAgySpI", "date": "25.07.2019"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "23", "youtubeId": "U0xPH7_AADU", "date": "28.11.2019"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "24", "youtubeId": "zprDyBRklEY", "date": "27.04.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "25", "youtubeId": "T50cgZ8ysls", "date": "04.05.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "26", "youtubeId": "o5yPZxa_ZX8", "date": "19.05.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "27", "youtubeId": "1yOkO7V24NE", "date": "11.06.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "28", "youtubeId": "g-MNtkHdBkk", "date": "16.06.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "29", "youtubeId": "H1-gnSgDMAU", "date": "23.07.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "30", "youtubeId": "VY3WhstC_pI", "date": "14.09.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "31", "youtubeId": "VE7J-raq4XM", "date": "23.10.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "32", "youtubeId": "wUqb-MwbyAI", "date": "19.11.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "33", "youtubeId": "P6yaaH_gffI", "date": "19.03.2021"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "34", "youtubeId": "Wq0HUcxipjg", "date": "05.04.2021"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "35", "youtubeId": "r2BC5Q2g7DI", "date": "02.05.2021"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "36", "youtubeId": "ke6pU8gJN_4", "date": "14.05.2021"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "37", "youtubeId": "Y2VfLfmuics", "date": "02.07.2021"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "38", "youtubeId": "QFzJOumsab4", "date": "10.04.2022"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "39", "youtubeId": "-ZWFnKymvsQ", "date": "01.05.2022"} //TODO: SCRIPT, MOUNT MODELS, FACTION
 ];

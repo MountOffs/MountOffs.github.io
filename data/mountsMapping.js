@@ -24,4 +24,7 @@ let mountMapping = {
     "Swift Green Gryphon": 17703,
     "Purple Elekk": 19870,
     "Black War Bear": [27818, 27819],
+    "Bone-White Primal Raptor": 47825,
+    "Bloodhoof Bull": 59323,
+    "Invincible": 31007
 };
