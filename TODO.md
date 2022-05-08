@@ -36,3 +36,4 @@
 * Dynamic title
 * Mobile friendly
 * SEO
+* DEBUG: precision timer for script writing

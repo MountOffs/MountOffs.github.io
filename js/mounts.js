@@ -21,6 +21,7 @@ function getMounts(callback) {
 
 function processFactionMounts(mounts) {
     let mapping = [
+    ["Red Dragonhawk", "Blue Dragonhawk"],
     ["Armored Red Dragonhawk", "Armored Blue Dragonhawk"],
 
     //SHADOWLANDS OK
