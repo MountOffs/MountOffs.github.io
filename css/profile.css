@@ -23,6 +23,19 @@
     border-right: 1px var(--text-color) solid;
 }
 
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background: dimgrey;
+}
+
+progress::-webkit-progress-value {
+    background: darkgray;
+}
+
 .place {
     color: darkred;
     width: 150px;

@@ -1,6 +1,7 @@
 let char = localStorage.getItem("character");
 const episodeUl = document.querySelector("#episodes");
 const progress = document.querySelector("#progress");
+const progressBar = document.querySelector("#progressBar");
 
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
@@ -78,4 +79,6 @@ getMounts(mounts => {
     });
 
     progress.innerText = "Progress: " + victories + "/" + total;
+    progressBar.value = victories;
+    progressBar.max = total;
 });
