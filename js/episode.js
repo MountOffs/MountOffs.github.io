@@ -1,5 +1,6 @@
 let episode = getEpisode();
 let player;
+let mountDisplayId = null;
 
 init();
 
@@ -23,6 +24,7 @@ function initUI() {
     let enable = (episode.status === "done" || episode.status === "WIP");
     document.getElementById("mountContainer").style.display = enable ? "block" : "none";
     document.getElementById("playersContainer").style.display = enable ? "block" : "none";
+    document.getElementById("progressContainer").style.display = enable && isLoggedIn() ? "block" : "none";
 }
 
 function initIframeAPI() {
@@ -31,15 +33,6 @@ function initIframeAPI() {
     tag.src = "https://www.youtube.com/iframe_api";
     let firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-}
-
-function transformTime(time) {
-    let parts = time.split(":");
-    if (parts.length === 3) {
-        return parts[0] * 60 * 60 + parts[1] * 60 + parts[2] * 1;
-    } else {
-        return parts[0] * 60 + parts[1] * 1;
-    }
 }
 
 function getEvent(type) {
@@ -63,9 +56,47 @@ function update() {
 
     if (players) {
         setPlayers(players.players);
+        if (players.players === 1) {
+            setEpisodeSeen();
+        }
     } else {
         setPlayers("-");
     }
+
+    if (isLoggedIn()) {
+        updateProgress();
+    }
+}
+
+function setEpisodeSeen() {
+    localStorage.setItem("episode" + episode.id + "_seen", "1");
+}
+
+function updateProgress() {
+    getMounts(mounts => {
+        let placingPanel = document.getElementById("placing");
+
+        let state = evaluateCurrent(mounts);
+
+        placingPanel.innerText = state.placing;
+        placingPanel.dataset.place = state.placing;
+
+        let missingMountContainer = document.getElementById("missingMountContainer");
+        if (state.losingMount) {
+            missingMountContainer.style.display = "block";
+            let missingMount = document.getElementById("missingMount");
+            missingMount.innerText = state.losingMount;
+
+            document.getElementById("progressContainer").dataset.lost = "1";
+        } else {
+            missingMountContainer.style.display = "none";
+            document.getElementById("progressContainer").dataset.lost = "0";
+        }
+    });
+}
+
+function evaluateCurrent(mounts) {
+    return evaluateEpisode(episode, mounts, player.getCurrentTime());
 }
 
 function onYouTubeIframeAPIReady() {
@@ -110,15 +141,32 @@ function setMount(mount) {
     let mountPanel = document.getElementById("mount");
     mountPanel.innerText = mount || "";
 
-    if (mounts) {
-        mountPanel.classList.remove("obtained", "missing");
-        if (!mount || mount === "-") return;
+    let modelContainer = document.querySelector('#model_3d');
+    let modelMissing = document.querySelector("#modelMissing");
 
-        if (hasMount(mount)) {
-            mountPanel.classList.add("obtained");
-        } else {
-            mountPanel.classList.add("missing");
+    if (mount !== '-') {
+        let displayId = mountMapping[mount];
+        if (!displayId) {
+            console.warn("Display ID missing for " + mount);
+            modelContainer.innerHTML = "";
+            modelMissing.style.display = "block";
+            return;
         }
+
+        modelMissing.style.display = "none";
+
+        if (displayId instanceof Array) {
+            displayId = displayId[0];
+        }
+
+        if (mountDisplayId !== displayId) {
+            modelContainer.innerHTML = "";
+            mountDisplayId = displayId;
+            generateModel(displayId);
+        }
+    } else {
+        modelContainer.innerHTML = "";
+        modelMissing.style.display = "none";
     }
 }
 

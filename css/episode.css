@@ -31,18 +31,22 @@ body {
 
 .data {
     position: absolute;
-    border: lightgray solid 1px;
+    border: var(--text-color) solid 1px;
     width: 200px;
-    height: 100px;
     top: 40%;
 }
 
-.obtained {
-    color: lightgreen;
+#model_3d {
+    bottom: 5px;
+    position: absolute !important;
+    width: 200px;
+    height: 200px;
+    pointer-events: none !important;
 }
 
-.missing {
-    color: indianred;
+/* Hide loading bar*/
+#model_3d div:nth-child(n + 1) {
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .data div {
@@ -63,8 +67,54 @@ body {
 
 #mountContainer {
     left: 20px;
+    height: 300px;
 }
 
 #playersContainer {
     right: 20px;
+    height: 100px;
+}
+
+#placing {
+    font-size: 60px;
+}
+
+#placing[data-place="1"] {
+    color: gold !important;
+}
+
+#placing[data-place="2"] {
+    color: gray !important;
+}
+
+#placing[data-place="3"] {
+    color: sandybrown !important;
+}
+
+#missingMount {
+    padding-top: 20px;
+    font-size: 25px;
+}
+
+#modelMissing {
+    color: darkred;
+    position: absolute;
+    bottom: 50px;
+    font-size: 50px;
+}
+
+#progressContainer {
+    transform: translateX(-50%);
+    left: 50%;
+    top: 70%;
+    height: 200px;
+    width: 200px;
+}
+
+#progressContainer[data-lost="1"] > #placing {
+    color: darkred;
+}
+
+#progressContainer[data-lost="1"] #missingMount {
+    color: darkred;
 }

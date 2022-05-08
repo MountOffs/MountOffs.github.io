@@ -1,5 +1,12 @@
+:root {
+    --bg-color: rgb(15, 15, 15);
+    --text-color: lightgray;
+    --link-color: lightblue;
+    --link-hover-color: white;
+}
+
 * {
-    color: lightgray;
+    color: var(--text-color);
     font-family: Bahnschrift, sans-serif;
 }
 
@@ -8,20 +15,21 @@
     background: rgba(255, 255, 255, 0);
 }
 
-.inlineLink {
-    text-decoration: none;
-    color: lightblue;
-    transition: 0.2s;
+a:hover {
+    cursor: pointer;
+    color: var(--link-hover-color);
 }
 
-.inlineLink:hover {
-    color: white;
+.inlineLink {
+    text-decoration: none;
+    color: var(--link-color);
+    transition: 0.2s;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: var(--bg-color);
 }
 
 .nav {
@@ -59,10 +67,6 @@ body {
     transition: 0.2s;
 }
 
-.nav a:hover {
-    color: white;
-}
-
 h1 {
     text-align: center;
 }
@@ -75,4 +79,86 @@ h1 {
     justify-content: center;
     left: 25%;
     right: 25%;
+}
+
+.modal {
+    background-color: var(--bg-color);
+    border: solid 1px var(--text-color);
+}
+
+.modalContainer {
+    display: grid;
+    grid-template-areas:
+            'header header'
+            'regionLabel region'
+            'realmLabel realm'
+            'charLabel char'
+            'button button';
+    gap: 10px 20px;
+}
+
+#loginModal h2 {
+    grid-area: header;
+}
+
+#regionLabel {
+    grid-area: regionLabel;
+}
+
+#regionSelect {
+    grid-area: region;
+}
+
+#realmLabel {
+    grid-area: realmLabel;
+}
+
+#realmSelect {
+    grid-area: realm;
+}
+
+#charLabel {
+    grid-area: charLabel;
+}
+
+#charText {
+    grid-area: char;
+}
+
+#loginModal button {
+    grid-area: button;
+}
+
+#loginModal label {
+    height: 50px;
+    line-height: 50px;
+    width: 100px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+#loginModal input[type=text], #loginModal select, .modalButton {
+    background-color: rgb(20, 20, 20);
+    padding: 12px;
+    border: none;
+    box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    outline: none;
+}
+
+.modalButton {
+    cursor: pointer;
+}
+
+.modalButton:disabled, .modalButton[disabled] {
+    background-color: rgb(10, 10, 10);
+    cursor: default;
+}
+
+#loginModal input[type=text] {
+    padding: 16px;
+}
+
+option:hover {
+    background-color: white;
 }

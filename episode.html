@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <title>Mount Offs</title>
+    <script crossorigin="anonymous"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/viewer.min.js"></script>
+    <script src="js/model.js" type="module"></script>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/episode.css">
 </head>
@@ -12,19 +17,32 @@
 <a id="back"><</a>
 <div id="player"></div>
 
-<div class="data" id="mountContainer">
+<div class="data" id="mountContainer" style="display: none">
     <div class="label">Current Mount</div>
     <div id="mount">-</div>
+    <div class="model_3d" id="model_3d"></div>
+    <div id="modelMissing" style="display: none">MODEL MISSING</div>
 </div>
 
-<div class="data" id="playersContainer">
+<div class="data" id="playersContainer" style="display: none">
     <div class="label">Players remaining</div>
     <div id="players"></div>
 </div>
+
+<div class="data" id="progressContainer" style="display: none">
+    <div class="label">Your placing</div>
+    <div id="placing">-</div>
+    <div id="missingMountContainer" style="display: none">
+        <div class="label">Missing mount</div>
+        <div id="missingMount">test</div>
+    </div>
+</div>
 </body>
 <script src="data/episodes.js"></script>
+<script src="data/mountsMapping.js"></script>
 <script src="js/template.js"></script>
 <script src="js/wowapi.js"></script>
 <script src="js/mounts.js"></script>
+<script src="js/model.js"></script>
 <script src="js/episode.js"></script>
 </html>

@@ -1,5 +1,5 @@
 let episodes = [
-    {"id": "1", "youtubeId": "VJDN9YHcbE8", "status": "done", "date": "13.08.2016", "events": [
+    {"id": "1", "youtubeId": "VJDN9YHcbE8", "faction": "alliance", "status": "done", "date": "13.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 39},
             {"time": "0:51", "event": "MOUNT", "mount": "Snowy Gryphon"},
             {"time": "1:35", "event": "PLAYER", "players": 38},
@@ -40,7 +40,7 @@ let episodes = [
             {"time": "14:44", "event": "PLAYER", "players": 2},
             {"time": "14:46", "event": "PLAYER", "players": 1}
     ]},
-    {"id": "2", "youtubeId": "qARP1RXNe1k", "status": "done", "date": "19.08.2016", "events": [
+    {"id": "2", "youtubeId": "qARP1RXNe1k", "faction": "alliance", "status": "done", "date": "19.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 39},
             {"time": "0:45", "event": "MOUNT", "mount": "Pinto"},
             {"time": "0:53", "event": "PLAYER", "players": 38},
@@ -66,7 +66,7 @@ let episodes = [
             {"time": "4:51", "event": "PLAYER", "players": 23},
             {"time": "4:56", "event": "PLAYER", "players": 22},
             {"time": "4:59", "event": "PLAYER", "players": 21},
-            {"time": "5:14", "event": "MOUNT", "mount": "Bloodbathed Frotbrood Vanquisher"},
+            {"time": "5:14", "event": "MOUNT", "mount": "Bloodbathed Frostbrood Vanquisher"},
             {"time": "5:43", "event": "PLAYER", "players": 20},
             {"time": "5:51", "event": "PLAYER", "players": 19},
             {"time": "6:15", "event": "MOUNT", "mount": "Crimson Deathcharger"},
@@ -96,7 +96,7 @@ let episodes = [
             {"time": "11:47", "event": "PLAYER", "players": 2},
             {"time": "11:53", "event": "PLAYER", "players": 1}
     ]},
-    {"id": "3", "youtubeId": "-RfYmS-lUQA", "status": "done", "date": "23.08.2016", "events": [
+    {"id": "3", "youtubeId": "-RfYmS-lUQA", "faction": "alliance", "status": "done", "date": "23.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 38},
             {"time": "1:00", "event": "MOUNT", "mount": "Brown Horse"},
             {"time": "1:08", "event": "PLAYER", "players": 37},
@@ -138,9 +138,8 @@ let episodes = [
             {"time": "7:14", "event": "PLAYER", "players": 3},
             {"time": "7:18", "event": "PLAYER", "players": 2},
             {"time": "7:22", "event": "PLAYER", "players": 1},
-
     ]},
-    {"id": "4", "youtubeId": "m2lXjB9-Ay8", "status": "done", "date": "24.08.2016", "events": [
+    {"id": "4", "youtubeId": "m2lXjB9-Ay8", "faction": "alliance", "status": "done", "date": "24.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 38},
             {"time": "0:10", "event": "MOUNT", "mount": "Black Stallion"},
             {"time": "0:20", "event": "PLAYER", "players": 37},
@@ -197,37 +196,107 @@ let episodes = [
             {"time": "11:43", "event": "MOUNT", "mount": "Depleted-Kyparium Rocket"},
             {"time": "11:55", "event": "PLAYER", "players": 1}
     ]},
-    {"id": "5", "youtubeId": "S9E_xFxKsIs", "date": "25.08.2016"},
-    {"id": "6", "youtubeId": "kvi0U0FeTaY", "date": "27.08.2016"},
-    {"id": "7", "youtubeId": "5VX0Ou932eg", "date": "12.03.2017"},
-    {"id": "8", "youtubeId": "ogkNCd5px54", "date": "29.12.2017"},
-    {"id": "9", "youtubeId": "WXdDZ5atDW4", "date": "27.07.2018"},
-    {"id": "10", "youtubeId": "F3Awarf_GZs", "date": "03.08.2018"},
-    {"id": "11", "youtubeId": "i8lVEXJ2OV0", "date": "11.08.2018"},
-    {"id": "12", "youtubeId": "Mw9X00VBCNI", "date": "14.10.2018"},
-    {"id": "13", "youtubeId": "KxtwWt39UL8", "date": "05.11.2018"},
-    {"id": "14", "youtubeId": "usAhvofjvbo", "date": "18.11.2018"},
-    {"id": "15", "youtubeId": "iTeqafGC6gg", "date": "22.11.2018"},
-    {"id": "16", "youtubeId": "KZT3TIch2o4", "date": "28.11.2018"},
-    {"id": "17", "youtubeId": "i85gebdxph4", "date": "27.12.2018"},
-    {"id": "18", "youtubeId": "nPw_pjmg0bg", "date": "20.02.2019"},
-    {"id": "19", "youtubeId": "MusbVDoCQFA", "date": "26.04.2019"},
-    {"id": "20", "youtubeId": "6k6OEvEsvu0", "date": "15.05.2019"},
-    {"id": "21", "youtubeId": "2iRWcuKixj8", "date": "03.07.2019"},
-    {"id": "22", "youtubeId": "unkgOAgySpI", "date": "25.07.2019"},
-    {"id": "23", "youtubeId": "U0xPH7_AADU", "date": "28.11.2019"},
-    {"id": "24", "youtubeId": "zprDyBRklEY", "date": "27.04.2020"},
-    {"id": "25", "youtubeId": "T50cgZ8ysls", "date": "04.05.2020"},
-    {"id": "26", "youtubeId": "o5yPZxa_ZX8", "date": "19.05.2020"},
-    {"id": "27", "youtubeId": "1yOkO7V24NE", "date": "11.06.2020"},
-    {"id": "28", "youtubeId": "g-MNtkHdBkk", "date": "16.06.2020"},
-    {"id": "29", "youtubeId": "H1-gnSgDMAU", "date": "23.07.2020"},
-    {"id": "30", "youtubeId": "VY3WhstC_pI", "date": "14.09.2020"},
-    {"id": "31", "youtubeId": "VE7J-raq4XM", "date": "23.10.2020"},
-    {"id": "32", "youtubeId": "wUqb-MwbyAI", "date": "19.11.2020"},
-    {"id": "33", "youtubeId": "P6yaaH_gffI", "date": "19.03.2021"},
-    {"id": "34", "youtubeId": "Wq0HUcxipjg", "date": "05.04.2021"},
-    {"id": "35", "youtubeId": "r2BC5Q2g7DI", "date": "02.05.2021"},
-    {"id": "36", "youtubeId": "ke6pU8gJN_4", "date": "14.05.2021"},
-    {"id": "37", "youtubeId": "Y2VfLfmuics", "date": "02.07.2021"}
+    {"id": "5", "youtubeId": "S9E_xFxKsIs", "faction": "alliance", "status": "done", "date": "25.08.2016", "events": [
+        {"time": "0:00", "event": "PLAYER", "players": 17},
+        {"time": "0:25", "event": "MOUNT", "mount": "Albino Drake"},
+        {"time": "0:39", "event": "PLAYER", "players": 16},
+        {"time": "0:43", "event": "MOUNT", "mount": "Amani Battle Bear"},
+        {"time": "1:09", "event": "PLAYER", "players": 15},
+        {"time": "1:14", "event": "PLAYER", "players": 14},
+        {"time": "1:21", "event": "PLAYER", "players": 13},
+        {"time": "1:27", "event": "MOUNT", "mount": "Bloodbathed Frostbrood Vanquisher"},
+        {"time": "1:47", "event": "PLAYER", "players": 12},
+        {"time": "1:53", "event": "MOUNT", "mount": "Coalfist Gronnling"},
+        {"time": "2:00", "event": "MOUNT", "mount": "Flametalon of Alysrazor"},
+        {"time": "2:18", "event": "PLAYER", "players": 11},
+        {"time": "2:20", "event": "PLAYER", "players": 10},
+        {"time": "2:26", "event": "PLAYER", "players": 9},
+        {"time": "2:28", "event": "PLAYER", "players": 8},
+        {"time": "2:37", "event": "MOUNT", "mount": "Heavenly Golden Cloud Serpent"},
+        {"time": "3:00", "event": "PLAYER", "players": 7},
+        {"time": "3:05", "event": "PLAYER", "players": 6},
+        {"time": "3:12", "event": "PLAYER", "players": 5},
+        {"time": "3:17", "event": "MOUNT", "mount": "Invincible"},
+        {"time": "3:42", "event": "MOUNT", "mount": "Pureblood Fire Hawk"},
+        {"time": "4:05", "event": "MOUNT", "mount": "Raven Lord"},
+        {"time": "4:24", "event": "PLAYER", "players": 4},
+        {"time": "4:33", "event": "MOUNT", "mount": "Swift Zulian Panther"},
+        {"time": "4:46", "event": "MOUNT", "mount": "Sea Turtle"},
+        {"time": "5:13", "event": "MOUNT", "mount": "Quel'dorei Steed"},
+        {"time": "5:33", "event": "PLAYER", "players": 3},
+        {"time": "5:38", "event": "PLAYER", "players": 2},
+        {"time": "5:43", "event": "MOUNT", "mount": "Kor'kron Juggernaut"},
+        {"time": "6:11", "event": "PLAYER", "players": 1},
+
+    ]},
+    {"id": "6", "youtubeId": "kvi0U0FeTaY", "faction": "alliance", "status": "done", "date": "27.08.2016", "events": [
+        {"time": "0:00", "event": "PLAYER", "players": 25},
+        {"time": "0:25", "event": "MOUNT", "mount": "Great Green Dragon Turtle"},
+        {"time": "0:44", "event": "PLAYER", "players": 24},
+        {"time": "1:03", "event": "PLAYER", "players": 23},
+        {"time": "1:10", "event": "PLAYER", "players": 22},
+        {"time": "1:22", "event": "PLAYER", "players": 21},
+        {"time": "1:27", "event": "PLAYER", "players": 20},
+        {"time": "1:42", "event": "MOUNT", "mount": "Swift Frostsaber"},
+        {"time": "2:20", "event": "PLAYER", "players": 19},
+        {"time": "2:23", "event": "PLAYER", "players": 18},
+        {"time": "2:39", "event": "MOUNT", "mount": "Silver Riding Talbuk"},
+        {"time": "3:02", "event": "PLAYER", "players": 17},
+        {"time": "3:14", "event": "PLAYER", "players": 16},
+        {"time": "3:19", "event": "PLAYER", "players": 15},
+        {"time": "3:21", "event": "PLAYER", "players": 14},
+        {"time": "3:23", "event": "PLAYER", "players": 13},
+        {"time": "3:24", "event": "PLAYER", "players": 11},
+        {"time": "3:26", "event": "PLAYER", "players": 10},
+        {"time": "3:37", "event": "PLAYER", "players": 11},
+        {"time": "4:00", "event": "PLAYER", "players": 10},
+        {"time": "4:04", "event": "PLAYER", "players": 9},
+        {"time": "4:08", "event": "PLAYER", "players": 8},
+        {"time": "4:18", "event": "MOUNT", "mount": "Red Riding Nether Ray"},
+        {"time": "4:38", "event": "PLAYER", "players": 7},
+        {"time": "4:47", "event": "MOUNT", "mount": "Red Primal Raptor"},
+        {"time": "4:56", "event": "PLAYER", "players": 6},
+        {"time": "5:04", "event": "PLAYER", "players": 5},
+        {"time": "5:16", "event": "PLAYER", "players": 4},
+        {"time": "5:22", "event": "PLAYER", "players": 3},
+        {"time": "4:47", "event": "MOUNT", "mount": "Raven Lord"},
+        {"time": "5:57", "event": "PLAYER", "players": 2},
+        {"time": "6:09", "event": "MOUNT", "mount": "Experiment 12-B"},
+        {"time": "6:44", "event": "MOUNT", "mount": "Felsteel Annihilator"},
+        {"time": "7:20", "event": "MOUNT", "mount": "Fiery Warhorse"},
+        {"time": "8:05", "event": "PLAYER", "players": 1}
+    ]},
+    {"id": "7", "youtubeId": "5VX0Ou932eg", "date": "12.03.2017"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "8", "youtubeId": "ogkNCd5px54", "date": "29.12.2017"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "9", "youtubeId": "WXdDZ5atDW4", "date": "27.07.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "10", "youtubeId": "F3Awarf_GZs", "date": "03.08.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "11", "youtubeId": "i8lVEXJ2OV0", "date": "11.08.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "12", "youtubeId": "Mw9X00VBCNI", "date": "14.10.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "13", "youtubeId": "KxtwWt39UL8", "date": "05.11.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "14", "youtubeId": "usAhvofjvbo", "date": "18.11.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "15", "youtubeId": "iTeqafGC6gg", "date": "22.11.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "16", "youtubeId": "KZT3TIch2o4", "date": "28.11.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "17", "youtubeId": "i85gebdxph4", "date": "27.12.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "18", "youtubeId": "nPw_pjmg0bg", "date": "20.02.2019"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "19", "youtubeId": "MusbVDoCQFA", "date": "26.04.2019"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "20", "youtubeId": "6k6OEvEsvu0", "date": "15.05.2019"}, //uGLv0zlw8D0 //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "21", "youtubeId": "2iRWcuKixj8", "date": "03.07.2019"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "22", "youtubeId": "unkgOAgySpI", "date": "25.07.2019"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "23", "youtubeId": "U0xPH7_AADU", "date": "28.11.2019"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "24", "youtubeId": "zprDyBRklEY", "date": "27.04.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "25", "youtubeId": "T50cgZ8ysls", "date": "04.05.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "26", "youtubeId": "o5yPZxa_ZX8", "date": "19.05.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "27", "youtubeId": "1yOkO7V24NE", "date": "11.06.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "28", "youtubeId": "g-MNtkHdBkk", "date": "16.06.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "29", "youtubeId": "H1-gnSgDMAU", "date": "23.07.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "30", "youtubeId": "VY3WhstC_pI", "date": "14.09.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "31", "youtubeId": "VE7J-raq4XM", "date": "23.10.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "32", "youtubeId": "wUqb-MwbyAI", "date": "19.11.2020"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "33", "youtubeId": "P6yaaH_gffI", "date": "19.03.2021"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "34", "youtubeId": "Wq0HUcxipjg", "date": "05.04.2021"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "35", "youtubeId": "r2BC5Q2g7DI", "date": "02.05.2021"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "36", "youtubeId": "ke6pU8gJN_4", "date": "14.05.2021"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "37", "youtubeId": "Y2VfLfmuics", "date": "02.07.2021"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "38", "youtubeId": "QFzJOumsab4", "date": "10.04.2022"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
+    {"id": "39", "youtubeId": "-ZWFnKymvsQ", "date": "01.05.2022"} //TODO: SCRIPT, MOUNT MODELS, FACTION
 ];
