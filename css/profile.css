@@ -17,7 +17,7 @@
 }
 
 .episode {
-    width: 260px;
+    width: 200px;
     font-size: 40px;
     padding: 0 5px;
     border-right: 1px var(--text-color) solid;
@@ -44,9 +44,22 @@ progress::-webkit-progress-value {
     border-right: 1px var(--text-color) solid;
 }
 
+.showButton {
+    width: calc(100% - 250px);
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.showButton:hover {
+    color: white;
+}
+
 .place[data-place="1"] {
     color: gold;
     border: none;
+    text-align: center;
+    width: calc(100% - 250px);
 }
 
 .place[data-place="2"] {

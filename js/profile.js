@@ -43,20 +43,43 @@ function placeToString(place) {
     return place + placePrefix(place) + " place";
 }
 
+function seen(episode) {
+    let seen = localStorage.getItem("episode" + episode.id + "_seen");
+    return seen !== null;
+}
+
 function createEpisodeStatus(episode, status) {
     console.log(episode);
     console.log(status);
     let li = document.createElement("li");
-
     let episodeSpan = createNode("span", "Episode " + episode.id, "episode");
     let placingSpan = createNode("span", placeToString(status.placing), "place");
     placingSpan.dataset.place = status.placing;
     li.append(episodeSpan, placingSpan);
 
+    let losingMountLabel;
+    let losingMountSpan;
+
     if (status.placing !== 1) {
-        let losingMountLabel = createNode("span", "Missing mount:", "losingMountLabel");
-        let losingMountSpan = createNode("span",  status.losingMount, "losingMount");
+        losingMountLabel = createNode("span", "Missing mount:", "losingMountLabel");
+        losingMountSpan = createNode("span",  status.losingMount, "losingMount");
+
         li.append(losingMountLabel, losingMountSpan);
+    }
+
+    if (!seen(episode)) {
+        let showButton = createNode("span", "SHOW", "showButton");
+        placingSpan.style.display = "none";
+        if (losingMountSpan) losingMountSpan.style.display = "none";
+        if (losingMountLabel) losingMountLabel.style.display = "none";
+        li.append(showButton);
+
+        showButton.addEventListener("click", () => {
+            placingSpan.style.display = "inline";
+            if (losingMountSpan) losingMountSpan.style.display = "inline";
+            if (losingMountLabel) losingMountLabel.style.display = "inline";
+            showButton.style.display = "none";
+        });
     }
 
     return li;
@@ -78,7 +101,7 @@ getMounts(mounts => {
         }
     });
 
-    progress.innerText = "Progress: " + victories + "/" + total;
-    progressBar.value = victories;
-    progressBar.max = total;
+    //progress.innerText = "Progress: " + victories + "/" + total;
+    //progressBar.value = victories;
+    //progressBar.max = total;
 });

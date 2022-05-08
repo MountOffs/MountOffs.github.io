@@ -56,6 +56,9 @@ function update() {
 
     if (players) {
         setPlayers(players.players);
+        if (players.players === 1) {
+            setEpisodeSeen();
+        }
     } else {
         setPlayers("-");
     }
@@ -63,6 +66,10 @@ function update() {
     if (isLoggedIn()) {
         updateProgress();
     }
+}
+
+function setEpisodeSeen() {
+    localStorage.setItem("episode" + episode.id + "_seen", "1");
 }
 
 function updateProgress() {
