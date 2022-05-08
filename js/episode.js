@@ -24,6 +24,7 @@ function initUI() {
     let enable = (episode.status === "done" || episode.status === "WIP");
     document.getElementById("mountContainer").style.display = enable ? "block" : "none";
     document.getElementById("playersContainer").style.display = enable ? "block" : "none";
+    document.getElementById("progressContainer").style.display = enable && isLoggedIn() ? "block" : "none";
 }
 
 function initIframeAPI() {
@@ -65,23 +66,22 @@ function update() {
 }
 
 function updateProgress() {
-    let mount = getEvent("MOUNT")?.mount;
     getMounts(mounts => {
-        let mountPanel = document.getElementById("mount");
-        mountPanel.classList.remove("obtained", "missing");
-        if (mount) {
-            if (hasMount(mounts, mount)) {
-                mountPanel.classList.add("obtained");
-            } else {
-                mountPanel.classList.add("missing");
-            }
+        let placingPanel = document.getElementById("placing");
+
+        let state = evaluateCurrent(mounts);
+
+        placingPanel.innerText = state.placing;
+        placingPanel.dataset.place = state.placing;
+
+        let missingMountContainer = document.getElementById("missingMountContainer");
+        if (state.losingMount) {
+            missingMountContainer.style.display = "block";
+            let missingMount = document.getElementById("missingMount");
+            missingMount.innerText = state.losingMount;
+        } else {
+            missingMountContainer.style.display = "none";
         }
-
-        let current = evaluateCurrent(mounts);
-        console.log("Current:", current);
-
-        let state = evaluateEpisode(episode, mounts);
-        console.log("State:", state);
     });
 }
 

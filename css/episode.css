@@ -49,14 +49,6 @@ body {
     background-color: rgba(0, 0, 0, 0) !important;
 }
 
-.obtained {
-    color: lightgreen;
-}
-
-.missing {
-    color: indianred;
-}
-
 .data div {
     text-align: center;
 }
@@ -81,4 +73,33 @@ body {
 #playersContainer {
     right: 20px;
     height: 100px;
+}
+
+#placing {
+    font-size: 60px;
+}
+
+#placing[data-place="1"] {
+    color: gold;
+}
+
+#placing[data-place="2"] {
+    color: silver;
+}
+
+#placing[data-place="3"] {
+    color: sandybrown;
+}
+
+#missingMount {
+    padding-top: 20px;
+    font-size: 25px;
+}
+
+#progressContainer {
+    transform: translateX(-50%);
+    left: 50%;
+    top: 70%;
+    height: 200px;
+    width: 200px;
 }
