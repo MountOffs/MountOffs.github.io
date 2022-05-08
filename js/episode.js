@@ -13,7 +13,7 @@ const DEFAULT_SCORE = "0:0";
 init();
 
 function init() {
-    setHeader(episode.date);
+    setHeader("Episode " + episode.id);
     initBackButton();
     initUI();
     initIframeAPI();
