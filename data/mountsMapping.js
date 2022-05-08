@@ -86,5 +86,23 @@ let mountMapping = {
     "Yu'lei, Daughter of Jade": 43695,
     "Spawn of Horridon": 47238,
     "Ratstallion": 70619,
-    "Spawn of Galakras": 51479
+    "Spawn of Galakras": 51479,
+    "Bronze Drake": 25833,
+    "Red Mechanostrider": 9473,
+    "Red Drake": 25835,
+    "Riddler's Mind-Worm": 74314,
+    "Lucid Nightmare": 78092,
+    "Thundering August Cloud Serpent": 43686,
+    "Llothien Prowler": 68851,
+    "Acid Belcher": 79593,
+    "Long-Forgotten Hippogryph": 29361,
+    "Leywoven Flying Carpet": 74480,
+    "Vicious War Lion": 73817,
+    "Amani War Bear": 22464,
+    "Cloudwing Hippogryph": 63628,
+    "Cobalt Primordial Direhorn": 47716,
+    "Solar Spirehawk": 59751,
+    "Wild Dreamrunner": 76424,
+    "Hellfire Infernal": 70051
+
 };

@@ -4,6 +4,7 @@
 * only show dictionary entry once
 
 ### Profile
+* show phase progress (final/grandfinal)
 * only show watched episodes by default
 * add (show)/(show all) buttons
 * add option to show all missing mounts
@@ -16,6 +17,8 @@
 * Tooltip with info on mount mouseover (+ wowhead link?)
 * Mount animation on space
 * Mount pooling/preloading
+* Scale size per mount (some mounts too big, some too small)
+* Fix placing in final/grandfinal
 
 ### Armory Sync
 * track overall progress (semifinal/final/victory)
