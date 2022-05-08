@@ -196,7 +196,7 @@ let episodes = [
             {"time": "11:43", "event": "MOUNT", "mount": "Depleted-Kyparium Rocket"},
             {"time": "11:55", "event": "PLAYER", "players": 1}
     ]},
-    {"id": "5", "youtubeId": "S9E_xFxKsIs", "status": "done", "date": "25.08.2016", "events": [
+    {"id": "5", "youtubeId": "S9E_xFxKsIs", "faction": "alliance", "status": "done", "date": "25.08.2016", "events": [
         {"time": "0:00", "event": "PLAYER", "players": 17},
         {"time": "0:25", "event": "MOUNT", "mount": "Albino Drake"},
         {"time": "0:39", "event": "PLAYER", "players": 16},
@@ -228,8 +228,8 @@ let episodes = [
         {"time": "5:43", "event": "MOUNT", "mount": "Kor'kron Juggernaut"},
         {"time": "6:11", "event": "PLAYER", "players": 1},
 
-    ]}, //TODO: MOUNT MODELS, FACTION
-    {"id": "6", "youtubeId": "kvi0U0FeTaY", "status": "done", "date": "27.08.2016", "events": [
+    ]},
+    {"id": "6", "youtubeId": "kvi0U0FeTaY", "faction": "alliance", "status": "done", "date": "27.08.2016", "events": [
         {"time": "0:00", "event": "PLAYER", "players": 25},
         {"time": "0:25", "event": "MOUNT", "mount": "Great Green Dragon Turtle"},
         {"time": "0:44", "event": "PLAYER", "players": 24},
@@ -265,7 +265,7 @@ let episodes = [
         {"time": "6:44", "event": "MOUNT", "mount": "Felsteel Annihilator"},
         {"time": "7:20", "event": "MOUNT", "mount": "Fiery Warhorse"},
         {"time": "8:05", "event": "PLAYER", "players": 1}
-    ]}, //TODO: MOUNT MODELS, FACTION
+    ]},
     {"id": "7", "youtubeId": "5VX0Ou932eg", "date": "12.03.2017"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
     {"id": "8", "youtubeId": "ogkNCd5px54", "date": "29.12.2017"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
     {"id": "9", "youtubeId": "WXdDZ5atDW4", "date": "27.07.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION

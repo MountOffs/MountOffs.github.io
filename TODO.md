@@ -26,6 +26,7 @@
 ### Configuration
 * track all players
 * track extra events
+* cross-faction mount tracking (horse <> wolf etc)
 * semifinal/final tracking (score)
 
 ### Misc
