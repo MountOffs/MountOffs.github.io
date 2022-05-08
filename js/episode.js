@@ -2,6 +2,14 @@ let episode = getEpisode();
 let player;
 let mountDisplayId = null;
 
+const ELIMINATION_PHASE = {
+    "phase": "ELIMINATION",
+    "left": "",
+    "right": ""
+};
+
+const DEFAULT_SCORE = "0:0";
+
 init();
 
 function init() {
@@ -47,12 +55,16 @@ function update() {
 
     let mount = getEvent("MOUNT");
     let players = getEvent("PLAYER");
+    let phase = getEvent("PHASE");
+    let score = getEvent("SCORE");
 
     if (mount) {
         setMount(mount.mount);
     } else {
         setMount("-");
     }
+
+    setPhase(phase || ELIMINATION_PHASE, score?.score || DEFAULT_SCORE);
 
     if (players) {
         setPlayers(players.players);
@@ -135,6 +147,15 @@ function getEpisode() {
 
 function setHeader(header) {
     document.getElementById("header").innerText = header;
+}
+
+function setPhase(phase, score) {
+    let final = phase.phase !== "ELIMINATION";
+
+    document.getElementById("scoreContainer").style.display = final ? "block" : "none";
+    document.getElementById("score").innerText = score;
+    document.getElementById("left").innerText = phase.left;
+    document.getElementById("right").innerText = phase.right;
 }
 
 function setMount(mount) {

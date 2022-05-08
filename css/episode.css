@@ -10,6 +10,10 @@ body {
     background-size: cover;
 }
 
+span {
+    text-align: center;
+}
+
 #player {
     margin: auto;
     width: 800px;
@@ -30,6 +34,7 @@ body {
 }
 
 .data {
+    padding: 10px;
     position: absolute;
     border: var(--text-color) solid 1px;
     width: 200px;
@@ -54,7 +59,7 @@ body {
 }
 
 #players {
-    font-size: 70px;
+    font-size: 60px;
 }
 
 #mount {
@@ -72,11 +77,11 @@ body {
 
 #playersContainer {
     right: 20px;
-    height: 100px;
+    height: 300px;
 }
 
 #placing {
-    font-size: 60px;
+    font-size: 70px;
 }
 
 #placing[data-place="1"] {
@@ -103,10 +108,26 @@ body {
     font-size: 50px;
 }
 
-#progressContainer {
+#scoreContainer {
     transform: translateX(-50%);
     left: 50%;
     top: 70%;
+    height: 150px;
+    width: fit-content;
+}
+
+#score {
+    font-size: 80px;
+}
+
+#left, #right {
+    font-size: 20px;
+}
+
+#progressContainer {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
     height: 200px;
     width: 200px;
 }
