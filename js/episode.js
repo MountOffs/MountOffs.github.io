@@ -138,7 +138,17 @@ function setMount(mount) {
 
     if (mount !== '-') {
         let displayId = mountMapping[mount];
-        if (displayId && mountDisplayId !== displayId) {
+        if (!displayId) {
+            console.warn("Display ID missing");
+            modelContainer.innerHTML = "MODEL MISSING";
+            return;
+        }
+
+        if (displayId instanceof Array) {
+            displayId = displayId[0];
+        }
+
+        if (mountDisplayId !== displayId) {
             modelContainer.innerHTML = "";
             mountDisplayId = displayId;
             generateModel(displayId);

@@ -1,7 +1,7 @@
 if (!window.WH) {
     window.WH = {};
     window.WH.debug = function (...args) {
-        console.log(args);
+        console.debug(args);
     };
     window.WH.defaultAnimation = `Stand`;
 }

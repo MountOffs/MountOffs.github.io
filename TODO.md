@@ -12,6 +12,7 @@
 * description
 * script/visualization
 * how to overlay when youtube embed is fullscreen
+* Faction info for episodes + choosing model
 
 ### Armory Sync
 * track overall progress (semifinal/final/victory)

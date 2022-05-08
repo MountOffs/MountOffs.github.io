@@ -4,8 +4,7 @@ let mountMapping = {
     "Stormpike Battle Charger": 14777,
     "Amani Battle Bear": 38261,
     "Black Drake": 25831,
-    "Traveler's Tundra Mammoth": 27237,
-    "Traveler's Tundra Mammoth (Horde)": 27238,
+    "Traveler's Tundra Mammoth": [27237, 27238],
     "Ironbound Proto-Drake": 28953,
     "Raven Lord": 21473,
     "Rivendare's Deathcharger": 10718,
@@ -19,8 +18,10 @@ let mountMapping = {
     "Corrupted Fire Hawk": 38046,
     "Amber Primordial Direhorn": 47718,
     "Flametalon of Alysrazor": 38783,
-    "Grand Black War Mammoth": 27241,
-    "Grand Black War Mammoth (Horde)": 27240,
+    "Grand Black War Mammoth": [27241, 27240],
     "Ashes of Al'ar": 17890,
-    "Ultramarine Qiraji Battle Tank": 15672
+    "Ultramarine Qiraji Battle Tank": 15672,
+    "Swift Green Gryphon": 17703,
+    "Purple Elekk": 19870,
+    "Black War Bear": [27818, 27819],
 };
