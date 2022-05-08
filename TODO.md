@@ -8,6 +8,7 @@
 * only show watched episodes by default
 * add (show)/(show all) buttons
 * add option to show all missing mounts
+* Move logout button
 
 ### Mount off page
 * description
