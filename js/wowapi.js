@@ -67,6 +67,7 @@ function fetchMounts(region, realm, character, callback) {
         get(url, (response) => {
             let data = JSON.parse(response);
             let mounts = data.mounts.map(mount => mount.mount.name);
+            mounts = processFactionMounts(mounts);
             callback(mounts);
         });
     });

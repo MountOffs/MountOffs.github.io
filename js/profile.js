@@ -49,8 +49,6 @@ function seen(episode) {
 }
 
 function createEpisodeStatus(episode, status) {
-    console.log(episode);
-    console.log(status);
     let li = document.createElement("li");
     let episodeSpan = createNode("span", "Episode " + episode.id, "episode");
     let placingSpan = createNode("span", placeToString(status.placing), "place");
