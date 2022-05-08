@@ -80,15 +80,15 @@ body {
 }
 
 #placing[data-place="1"] {
-    color: gold;
+    color: gold !important;
 }
 
 #placing[data-place="2"] {
-    color: silver;
+    color: gray !important;
 }
 
 #placing[data-place="3"] {
-    color: sandybrown;
+    color: sandybrown !important;
 }
 
 #missingMount {
@@ -102,4 +102,12 @@ body {
     top: 70%;
     height: 200px;
     width: 200px;
+}
+
+#progressContainer[data-lost="1"] > #placing {
+    color: darkred;
+}
+
+#progressContainer[data-lost="1"] #missingMount {
+    color: darkred;
 }

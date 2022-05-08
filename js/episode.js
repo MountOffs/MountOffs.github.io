@@ -79,6 +79,8 @@ function updateProgress() {
             missingMountContainer.style.display = "block";
             let missingMount = document.getElementById("missingMount");
             missingMount.innerText = state.losingMount;
+
+            document.getElementById("progressContainer").dataset.lost = "1";
         } else {
             missingMountContainer.style.display = "none";
         }
