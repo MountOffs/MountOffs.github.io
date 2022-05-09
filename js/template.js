@@ -153,6 +153,7 @@ function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY) {
     if (!episode.events) {
         return null;
     } else {
+        let phase = "ELIMINATION";
         let placing = 0;
         let losingMount = null;
         let missingMounts = [];
@@ -174,11 +175,15 @@ function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY) {
 
                     missingMounts.push(mount);
                 }
+            } else if (event.event === "PHASE") {
+                if (losingMount === null) {
+                    phase = event.phase;
+                }
             }
         });
 
         return {
-            "phase": null,
+            "phase": phase,
             "placing": placing,
             "losingMount": losingMount,
             "missingMounts": missingMounts

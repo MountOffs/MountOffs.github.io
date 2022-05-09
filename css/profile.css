@@ -38,7 +38,8 @@ progress::-webkit-progress-value {
 
 .place {
     color: darkred;
-    width: 150px;
+    width: 180px;
+    text-align: center;
     font-size: 30px;
     padding: 7px 10px;
     border-right: 1px var(--text-color) solid;
@@ -55,19 +56,170 @@ progress::-webkit-progress-value {
     color: white;
 }
 
-.place[data-place="1"] {
+.place[data-place="VICTORY"] {
     color: gold;
     border: none;
-    text-align: center;
     width: calc(100% - 250px);
 }
 
-.place[data-place="2"] {
-    color: gray;
+.place[data-place="GRANDFINAL"] {
+    color: #00DD00;
 }
 
-.place[data-place="3"] {
-    color: sandybrown;
+.place[data-place="FINAL"] {
+    color: #55CC00;
+}
+
+.place[data-place="TOP 2"] {
+    color: #CCAA00;
+}
+
+.place[data-place="TOP 3"] {
+    color: #EEAA00;
+}
+
+.place[data-place="TOP 4"] {
+    color: #FFAA00;
+}
+
+.place[data-place="TOP 5"] {
+    color: #FFA500;
+}
+
+.place[data-place="TOP 6"] {
+    color: #FFA000;
+}
+
+.place[data-place="TOP 7"] {
+    color: #FF9500;
+}
+
+.place[data-place="TOP 8"] {
+    color: #FF9000;
+}
+
+.place[data-place="TOP 9"] {
+    color: #FF8500;
+}
+
+.place[data-place="TOP 10"] {
+    color: #FF8000;
+}
+
+.place[data-place="TOP 11"] {
+    color: #FF7700;
+}
+
+.place[data-place="TOP 12"] {
+    color: #FF7400;
+}
+
+.place[data-place="TOP 13"] {
+    color: #FF7000;
+}
+
+.place[data-place="TOP 14"] {
+    color: #FF6700;
+}
+
+.place[data-place="TOP 15"] {
+    color: #FF6400;
+}
+
+.place[data-place="TOP 16"] {
+    color: #FF6000;
+}
+
+.place[data-place="TOP 17"] {
+    color: #FF5700;
+}
+
+.place[data-place="TOP 18"] {
+    color: #FF5400;
+}
+
+.place[data-place="TOP 19"] {
+    color: #FF5000;
+}
+
+.place[data-place="TOP 20"] {
+    color: #FF4700;
+}
+
+.place[data-place="TOP 21"] {
+    color: #FF4400;
+}
+
+.place[data-place="TOP 22"] {
+    color: #FF4000;
+}
+
+.place[data-place="TOP 23"] {
+    color: #F03700;
+}
+
+.place[data-place="TOP 24"] {
+    color: #E83400;
+}
+
+.place[data-place="TOP 25"] {
+    color: #E03000;
+}
+
+.place[data-place="TOP 26"] {
+    color: #D82700;
+}
+
+.place[data-place="TOP 27"] {
+    color: #D02400;
+}
+
+.place[data-place="TOP 28"] {
+    color: #C82000;
+}
+
+.place[data-place="TOP 29"] {
+    color: #C01700;
+}
+
+.place[data-place="TOP 30"] {
+    color: #B81400;
+}
+
+.place[data-place="TOP 31"] {
+    color: #B01000;
+}
+
+.place[data-place="TOP 32"] {
+    color: #A80700;
+}
+
+.place[data-place="TOP 33"] {
+    color: #A00000;
+}
+
+.place[data-place="TOP 34"] {
+    color: #980000;
+}
+
+.place[data-place="TOP 35"] {
+    color: #900000;
+}
+
+.place[data-place="TOP 36"] {
+    color: #880000;
+}
+
+.place[data-place="TOP 37"] {
+    color: #800000;
+}
+
+.place[data-place="TOP 38"] {
+    color: #780000;
+}
+
+.place[data-place="TOP 39"] {
+    color: #700000;
 }
 
 .losingMountLabel {
