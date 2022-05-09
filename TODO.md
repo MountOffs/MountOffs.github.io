@@ -16,7 +16,6 @@
 * Mount animation on space
 * Mount pooling/preloading
 * Scale size per mount (some mounts too big, some too small)
-* Fix placing in final/grandfinal
 
 ### Armory Sync
 * track overall progress (semifinal/final/victory)
@@ -31,7 +30,6 @@
 * semifinal/final tracking (score)
 
 ### Misc
-* Handle enter keypress on login
 * Only show landing page once
 * Dynamic title
 * Mobile friendly
