@@ -48,17 +48,27 @@ function seen(episode) {
     return seen !== null;
 }
 
+function placing(status) {
+    if (status.losingMount === null) {
+        return "VICTORY";
+    } else if (status.phase === "ELIMINATION") {
+        return "TOP " + status.placing;
+    } else {
+        return status.phase;
+    }
+}
+
 function createEpisodeStatus(episode, status) {
     let li = document.createElement("li");
     let episodeSpan = createNode("span", "Episode " + episode.id, "episode");
-    let placingSpan = createNode("span", placeToString(status.placing), "place");
-    placingSpan.dataset.place = status.placing;
+    let placingSpan = createNode("span", placing(status), "place");
+    placingSpan.dataset.place = placing(status);
     li.append(episodeSpan, placingSpan);
 
     let losingMountLabel;
     let losingMountSpan;
 
-    if (status.placing !== 1) {
+    if (status.losingMount) {
         losingMountLabel = createNode("span", "Missing mount:", "losingMountLabel");
         losingMountSpan = createNode("span",  status.losingMount, "losingMount");
 

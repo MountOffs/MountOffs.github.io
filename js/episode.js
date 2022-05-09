@@ -2,10 +2,18 @@ let episode = getEpisode();
 let player;
 let mountDisplayId = null;
 
+const ELIMINATION_PHASE = {
+    "phase": "ELIMINATION",
+    "left": "",
+    "right": ""
+};
+
+const DEFAULT_SCORE = "0:0";
+
 init();
 
 function init() {
-    setHeader(episode.date);
+    setHeader("Episode " + episode.id);
     initBackButton();
     initUI();
     initIframeAPI();
@@ -47,6 +55,9 @@ function update() {
 
     let mount = getEvent("MOUNT");
     let players = getEvent("PLAYER");
+    let phase = getEvent("PHASE");
+    let score = getEvent("SCORE");
+    let victory = getEvent("VICTORY");
 
     if (mount) {
         setMount(mount.mount);
@@ -54,11 +65,14 @@ function update() {
         setMount("-");
     }
 
+    if (victory) {
+        setEpisodeSeen();
+    }
+
+    setPhase(phase || ELIMINATION_PHASE, score?.score || DEFAULT_SCORE);
+
     if (players) {
         setPlayers(players.players);
-        if (players.players === 1) {
-            setEpisodeSeen();
-        }
     } else {
         setPlayers("-");
     }
@@ -72,25 +86,36 @@ function setEpisodeSeen() {
     localStorage.setItem("episode" + episode.id + "_seen", "1");
 }
 
+function currentPlacing(status) {
+    if (status.phase === "ELIMINATION") {
+        if (status.placing === 1) {
+            return "VICTORY";
+        } else {
+            return "TOP " + status.placing;
+        }
+    } else {
+        return status.phase;
+    }
+}
+
 function updateProgress() {
     getMounts(mounts => {
         let placingPanel = document.getElementById("placing");
 
-        let state = evaluateCurrent(mounts);
+        let status = evaluateCurrent(mounts);
 
-        placingPanel.innerText = state.placing;
-        placingPanel.dataset.place = state.placing;
+        let placing = currentPlacing(status);
+
+        placingPanel.innerText = placing;
+        placingPanel.dataset.place = status.losingMount ? placing : "";
 
         let missingMountContainer = document.getElementById("missingMountContainer");
-        if (state.losingMount) {
+        if (status.losingMount) {
             missingMountContainer.style.display = "block";
             let missingMount = document.getElementById("missingMount");
-            missingMount.innerText = state.losingMount;
-
-            document.getElementById("progressContainer").dataset.lost = "1";
+            missingMount.innerText = status.losingMount;
         } else {
             missingMountContainer.style.display = "none";
-            document.getElementById("progressContainer").dataset.lost = "0";
         }
     });
 }
@@ -135,6 +160,15 @@ function getEpisode() {
 
 function setHeader(header) {
     document.getElementById("header").innerText = header;
+}
+
+function setPhase(phase, score) {
+    let final = phase.phase !== "ELIMINATION";
+
+    document.getElementById("scoreContainer").style.display = final ? "block" : "none";
+    document.getElementById("score").innerText = score;
+    document.getElementById("left").innerText = phase.left;
+    document.getElementById("right").innerText = phase.right;
 }
 
 function setMount(mount) {

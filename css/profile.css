@@ -1,3 +1,9 @@
+#logout {
+    float: right;
+    font-weight: normal;
+    padding-right: 5vw;
+}
+
 #progress {
     font-size: 20px;
 }
@@ -37,8 +43,8 @@ progress::-webkit-progress-value {
 }
 
 .place {
-    color: darkred;
-    width: 150px;
+    width: 180px;
+    text-align: center;
     font-size: 30px;
     padding: 7px 10px;
     border-right: 1px var(--text-color) solid;
@@ -55,19 +61,9 @@ progress::-webkit-progress-value {
     color: white;
 }
 
-.place[data-place="1"] {
-    color: gold;
+.place[data-place="VICTORY"] {
     border: none;
-    text-align: center;
     width: calc(100% - 250px);
-}
-
-.place[data-place="2"] {
-    color: gray;
-}
-
-.place[data-place="3"] {
-    color: sandybrown;
 }
 
 .losingMountLabel {

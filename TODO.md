@@ -3,9 +3,12 @@
 * socials
 * only show dictionary entry once
 
+### Play page
+* Show seen label on seen episodes
+* Scroll to first unseen episode
+
 ### Profile
-* only show watched episodes by default
-* add (show)/(show all) buttons
+* add (show all) button
 * add option to show all missing mounts
 
 ### Mount off page
@@ -16,6 +19,7 @@
 * Tooltip with info on mount mouseover (+ wowhead link?)
 * Mount animation on space
 * Mount pooling/preloading
+* Scale size per mount (some mounts too big, some too small)
 
 ### Armory Sync
 * track overall progress (semifinal/final/victory)
@@ -30,9 +34,8 @@
 * semifinal/final tracking (score)
 
 ### Misc
-* Handle enter keypress on login
 * Only show landing page once
-* Patreon
 * Dynamic title
 * Mobile friendly
 * SEO
+* DEBUG: precision timer for script writing
