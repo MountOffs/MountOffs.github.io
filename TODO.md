@@ -33,7 +33,6 @@
 ### Misc
 * Handle enter keypress on login
 * Only show landing page once
-* Patreon
 * Dynamic title
 * Mobile friendly
 * SEO
