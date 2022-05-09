@@ -3,6 +3,10 @@
 * socials
 * only show dictionary entry once
 
+### Play page
+* Show seen label on seen episodes
+* Scroll to first unseen episode
+
 ### Profile
 * add (show all) button
 * add option to show all missing mounts
