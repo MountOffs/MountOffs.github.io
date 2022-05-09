@@ -84,25 +84,36 @@ function setEpisodeSeen() {
     localStorage.setItem("episode" + episode.id + "_seen", "1");
 }
 
+function currentPlacing(status) {
+    if (status.phase === "ELIMINATION") {
+        if (status.placing === 1) {
+            return "VICTORY";
+        } else {
+            return "TOP " + status.placing;
+        }
+    } else {
+        return status.phase;
+    }
+}
+
 function updateProgress() {
     getMounts(mounts => {
         let placingPanel = document.getElementById("placing");
 
-        let state = evaluateCurrent(mounts);
+        let status = evaluateCurrent(mounts);
 
-        placingPanel.innerText = state.placing;
-        placingPanel.dataset.place = state.placing;
+        let placing = currentPlacing(status);
+
+        placingPanel.innerText = placing;
+        placingPanel.dataset.place = status.losingMount ? placing : "";
 
         let missingMountContainer = document.getElementById("missingMountContainer");
-        if (state.losingMount) {
+        if (status.losingMount) {
             missingMountContainer.style.display = "block";
             let missingMount = document.getElementById("missingMount");
-            missingMount.innerText = state.losingMount;
-
-            document.getElementById("progressContainer").dataset.lost = "1";
+            missingMount.innerText = status.losingMount;
         } else {
             missingMountContainer.style.display = "none";
-            document.getElementById("progressContainer").dataset.lost = "0";
         }
     });
 }

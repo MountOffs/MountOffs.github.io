@@ -81,22 +81,19 @@ span {
 }
 
 #placing {
-    font-size: 70px;
+    font-size: 30px;
 }
 
-#placing[data-place="1"] {
-    color: gold !important;
+#placing[data-place="FINAL"] {
+    font-size: 30px;
 }
 
-#placing[data-place="2"] {
-    color: gray !important;
-}
-
-#placing[data-place="3"] {
-    color: sandybrown !important;
+#placing[data-place="GRANDFINAL"] {
+    font-size: 30px;
 }
 
 #missingMount {
+    color: #C82000;
     padding-top: 20px;
     font-size: 25px;
 }
@@ -111,7 +108,7 @@ span {
 #scoreContainer {
     transform: translateX(-50%);
     left: 50%;
-    top: 70%;
+    top: 75%;
     height: 150px;
     width: fit-content;
 }
@@ -130,12 +127,4 @@ span {
     left: 50%;
     height: 200px;
     width: 200px;
-}
-
-#progressContainer[data-lost="1"] > #placing {
-    color: darkred;
-}
-
-#progressContainer[data-lost="1"] #missingMount {
-    color: darkred;
 }
