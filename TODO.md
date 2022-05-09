@@ -15,7 +15,6 @@
 * description
 * script/visualization
 * how to overlay when youtube embed is fullscreen
-* Faction info for episodes + choosing model
 * Tooltip with info on mount mouseover (+ wowhead link?)
 * Mount animation on space
 * Mount pooling/preloading
@@ -39,3 +38,4 @@
 * Mobile friendly
 * SEO
 * DEBUG: precision timer for script writing
+* Twitch Prime rain

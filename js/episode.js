@@ -132,7 +132,8 @@ function onYouTubeIframeAPIReady() {
         videoId: episode.youtubeId,
         playerVars: {
             'playsinline': 1,
-            'modestbranding': 1
+            'modestbranding': 1,
+            'start': episode.start || 0
         },
         events: {
             'onReady': onPlayerReady,
@@ -171,6 +172,10 @@ function setPhase(phase, score) {
     document.getElementById("right").innerText = phase.right;
 }
 
+function factionId() {
+    return episode.faction === "horde" ? 1 : 0;
+}
+
 function setMount(mount) {
     let mountPanel = document.getElementById("mount");
     mountPanel.innerText = mount || "";
@@ -190,7 +195,7 @@ function setMount(mount) {
         modelMissing.style.display = "none";
 
         if (displayId instanceof Array) {
-            displayId = displayId[0];
+            displayId = displayId[factionId()];
         }
 
         if (mountDisplayId !== displayId) {

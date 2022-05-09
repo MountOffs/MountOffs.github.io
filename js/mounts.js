@@ -77,7 +77,10 @@ function processFactionMounts(mounts) {
     ["Great Golden Kodo", "Turbostrider"],
     ["Swift Red Hawkstrider", "Great Red Elekk"],
     ["Sunreaver Hawkstrider", "Quel'dorei Steed"],
-    //
+
+    //  Tribute
+    ["Swift Horde Wolf", "Swift Alliance Steed"],
+    ["Crusader's Black Warhorse", "Crusader's White Warhorse"],
 
     //BURNING CRUSADE
     ["Swift Red Wind Rider", "Swift Red Gryphon"],
