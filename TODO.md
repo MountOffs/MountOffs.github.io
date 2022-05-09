@@ -4,12 +4,8 @@
 * only show dictionary entry once
 
 ### Profile
-* show phase progress (final/grandfinal)
-* only show watched episodes by default
-* add (show)/(show all) buttons
+* add (show all) button
 * add option to show all missing mounts
-* Move logout button
-* TOP N instead of Nth place
 
 ### Mount off page
 * description

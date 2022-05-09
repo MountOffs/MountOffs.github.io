@@ -1,3 +1,9 @@
+#logout {
+    float: right;
+    font-weight: normal;
+    padding-right: 5vw;
+}
+
 #progress {
     font-size: 20px;
 }
