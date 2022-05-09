@@ -57,6 +57,7 @@ function update() {
     let players = getEvent("PLAYER");
     let phase = getEvent("PHASE");
     let score = getEvent("SCORE");
+    let victory = getEvent("VICTORY");
 
     if (mount) {
         setMount(mount.mount);
@@ -64,13 +65,14 @@ function update() {
         setMount("-");
     }
 
+    if (victory) {
+        setEpisodeSeen();
+    }
+
     setPhase(phase || ELIMINATION_PHASE, score?.score || DEFAULT_SCORE);
 
     if (players) {
         setPlayers(players.players);
-        if (players.players === 1) {
-            setEpisodeSeen();
-        }
     } else {
         setPlayers("-");
     }

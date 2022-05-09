@@ -38,7 +38,8 @@ let episodes = [
             {"time": "13:24", "event": "MOUNT", "mount": "Sunhide Gronnling"},
             {"time": "14:05", "event": "PLAYER", "players": 3},
             {"time": "14:44", "event": "PLAYER", "players": 2},
-            {"time": "14:46", "event": "PLAYER", "players": 1}
+            {"time": "14:46", "event": "PLAYER", "players": 1},
+            {"time": "14:46", "event": "VICTORY", "winner": "Hauntah"}
     ]},
     {"id": "2", "youtubeId": "qARP1RXNe1k", "faction": "alliance", "status": "done", "date": "19.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 39},
@@ -94,7 +95,8 @@ let episodes = [
             {"time": "11:40", "event": "PLAYER", "players": 4},
             {"time": "11:43", "event": "PLAYER", "players": 3},
             {"time": "11:47", "event": "PLAYER", "players": 2},
-            {"time": "11:53", "event": "PLAYER", "players": 1}
+            {"time": "11:53", "event": "PLAYER", "players": 1},
+            {"time": "11:53", "event": "VICTORY", "winner": "Mcconnell"}
     ]},
     {"id": "3", "youtubeId": "-RfYmS-lUQA", "faction": "alliance", "status": "done", "date": "23.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 38},
@@ -138,6 +140,7 @@ let episodes = [
             {"time": "7:14", "event": "PLAYER", "players": 3},
             {"time": "7:18", "event": "PLAYER", "players": 2},
             {"time": "7:22", "event": "PLAYER", "players": 1},
+            {"time": "7:23", "event": "VICTORY", "winner": "Awry"},
     ]},
     {"id": "4", "youtubeId": "m2lXjB9-Ay8", "faction": "alliance", "status": "done", "date": "24.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 38},
@@ -194,7 +197,8 @@ let episodes = [
             {"time": "11:25", "event": "MOUNT", "mount": "Challenger's War Yeti"},
             {"time": "11:34", "event": "MOUNT", "mount": "Darkmoon Dancing Bear"},
             {"time": "11:43", "event": "MOUNT", "mount": "Depleted-Kyparium Rocket"},
-            {"time": "11:55", "event": "PLAYER", "players": 1}
+            {"time": "11:52", "event": "PLAYER", "players": 1},
+            {"time": "11:58", "event": "VICTORY", "winner": "Rankdk"}
     ]},
     {"id": "5", "youtubeId": "S9E_xFxKsIs", "faction": "alliance", "status": "done", "date": "25.08.2016", "events": [
         {"time": "0:00", "event": "PLAYER", "players": 17},
@@ -227,7 +231,7 @@ let episodes = [
         {"time": "5:38", "event": "PLAYER", "players": 2},
         {"time": "5:43", "event": "MOUNT", "mount": "Kor'kron Juggernaut"},
         {"time": "6:11", "event": "PLAYER", "players": 1},
-
+        {"time": "6:13", "event": "VICTORY", "winner": "Dark"},
     ]},
     {"id": "6", "youtubeId": "kvi0U0FeTaY", "faction": "alliance", "status": "done", "date": "27.08.2016", "events": [
         {"time": "0:00", "event": "PLAYER", "players": 25},
@@ -264,7 +268,8 @@ let episodes = [
         {"time": "6:09", "event": "MOUNT", "mount": "Experiment 12-B"},
         {"time": "6:44", "event": "MOUNT", "mount": "Felsteel Annihilator"},
         {"time": "7:20", "event": "MOUNT", "mount": "Fiery Warhorse"},
-        {"time": "8:05", "event": "PLAYER", "players": 1}
+        {"time": "8:05", "event": "PLAYER", "players": 1},
+        {"time": "8:06", "event": "VICTORY", "winner": "Cobus"} //Mcconnell
     ]},
     {"id": "7", "youtubeId": "5VX0Ou932eg", "faction": "alliance", "status": "done", "date": "12.03.2017", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 39},
@@ -364,7 +369,8 @@ let episodes = [
             {"time": "28:21", "event": "MOUNT", "mount": "Spawn of Galakras"},
             {"time": "28:51", "event": "MOUNT", "mount": "Argent Hippogryph"},
             {"time": "29:08", "event": "MOUNT", "mount": "Ashes of Al'ar"},
-            {"time": "29:50", "event": "VICTORY", "player": "Deathboy"}
+            {"time": "29:34", "event": "PLAYER", "players": 1},
+            {"time": "29:38", "event": "VICTORY", "player": "Deathboy"}
         ]},
     {"id": "8", "youtubeId": "ogkNCd5px54", "faction": "alliance", "status": "done", "date": "29.12.2017", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 37},
