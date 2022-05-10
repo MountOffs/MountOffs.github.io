@@ -170,5 +170,8 @@ let mountMapping = {
     "Vicious War Wolf": 38607,
     "Phosphorescent Stone Drake": 35740,
     "Darkmoon Dirigible": 78105,
-    "Drake of the South Wind": 35755
+    "Drake of the South Wind": 35755,
+    "Mountain Horse": 39096,
+    "Golden Primal Direhorn": 48100,
+    "Vitreous Stone Drake": 35751,
 };
