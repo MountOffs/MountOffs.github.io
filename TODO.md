@@ -38,3 +38,4 @@
 * SEO
 * DEBUG: precision timer for script writing
 * Twitch Prime rain
+* Update Readme
