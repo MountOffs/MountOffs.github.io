@@ -1,3 +1,9 @@
+:root {
+    --font-large: 2.5rem;
+    --font-medium: 1.85rem;
+    --font-small: 1.25rem;
+}
+
 #logout {
     float: right;
     font-weight: normal;
@@ -5,7 +11,7 @@
 }
 
 #progress {
-    font-size: 20px;
+    font-size: var(--font-small);
 }
 
 #episodes {
@@ -24,7 +30,7 @@
 
 .episode {
     width: 200px;
-    font-size: 40px;
+    font-size: var(--font-large);
     padding: 0 5px;
     border-right: 1px var(--text-color) solid;
 }
@@ -45,14 +51,14 @@ progress::-webkit-progress-value {
 .place {
     width: 180px;
     text-align: center;
-    font-size: 30px;
+    font-size: var(--font-medium);
     padding: 7px 10px;
     border-right: 1px var(--text-color) solid;
 }
 
 .showButton {
     width: calc(100% - 250px);
-    font-size: 30px;
+    font-size: var(--font-medium);
     text-align: center;
     cursor: pointer;
 }
@@ -67,11 +73,11 @@ progress::-webkit-progress-value {
 }
 
 .losingMountLabel {
-    font-size: 20px;
+    font-size: var(--font-small);
     padding: 7px 10px;
 }
 
 .losingMount {
-    font-size: 40px;
+    font-size: var(--font-large);
     padding: 7px 10px;
 }
