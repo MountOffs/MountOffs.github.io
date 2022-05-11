@@ -2,6 +2,8 @@
     --font-large: 2.5rem;
     --font-medium: 1.85rem;
     --font-small: 1.25rem;
+
+    --border-radius: 10px;
 }
 
 #logout {
@@ -14,25 +16,10 @@
     font-size: var(--font-small);
 }
 
-#episodes {
-    list-style: none;
-}
-
-#episodes > li {
-    display: flex;
-    height: 50px;
-    border: 1px var(--text-color) solid;
-    border-radius: 10px;
-    user-select: none;
-    align-items: center;
-    margin: 20px 75px 0 50px;
-}
-
 .episode {
-    width: 200px;
     font-size: var(--font-large);
-    padding: 0 5px;
-    border-right: 1px var(--text-color) solid;
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
 }
 
 progress {
@@ -49,18 +36,17 @@ progress::-webkit-progress-value {
 }
 
 .place {
-    width: 180px;
     text-align: center;
     font-size: var(--font-medium);
-    padding: 7px 10px;
-    border-right: 1px var(--text-color) solid;
 }
 
 .showButton {
-    width: calc(100% - 250px);
     font-size: var(--font-medium);
     text-align: center;
     cursor: pointer;
+    grid-column-end: span 3;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 .showButton:hover {
@@ -68,16 +54,31 @@ progress::-webkit-progress-value {
 }
 
 .place[data-place="VICTORY"] {
-    border: none;
-    width: calc(100% - 250px);
+    grid-column-end: span 3;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 .losingMountLabel {
     font-size: var(--font-small);
-    padding: 7px 10px;
 }
 
 .losingMount {
     font-size: var(--font-large);
-    padding: 7px 10px;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+#episodesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 5fr;
+    grid-auto-rows: 50px;
+    grid-row-gap: 10px;
+}
+
+#episodesGrid > span {
+    line-height: 50px;
+    border: 1px solid white;
+    padding: 0 10px;
+    white-space: nowrap;
 }
