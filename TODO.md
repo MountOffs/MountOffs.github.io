@@ -39,3 +39,4 @@
 * DEBUG: precision timer for script writing
 * Twitch Prime rain
 * Update Readme
+* cached page issue: https://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
