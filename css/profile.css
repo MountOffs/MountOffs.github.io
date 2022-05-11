@@ -1,3 +1,4 @@
+/*noinspection CssInvalidFunction*/
 :root {
     --font-large: clamp(1.5rem, 3vw, 2.5rem);
     --font-medium: clamp(1.25rem, 2vw, 1.85rem);
@@ -73,6 +74,7 @@ progress::-webkit-progress-value {
     grid-template-columns: min-content min-content min-content auto;
     grid-auto-rows: 50px;
     grid-row-gap: 10px;
+    margin-bottom: 20px;
 }
 
 #episodesGrid > span {
