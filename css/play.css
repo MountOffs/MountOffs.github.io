@@ -21,12 +21,13 @@ body { font-family: sans-serif; }
 }
 
 .gallery-cell {
-    width: 34%;
+    width: 35%;
     height: 300px;
     margin-right: 10px;
     text-align: center;
     line-height: 300px;
     font-size: 70px;
+    background-size: cover;
     background-position: center;
 }
 
