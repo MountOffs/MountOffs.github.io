@@ -255,5 +255,18 @@ let mountMapping = {
     "Big Battle Bear": 25335,
     "Amani Dragonhawk": 37800,
     "X-51 Nether-Rocket X-TREME": 23647,
-    "Dread Raven": 53774
+    "Dread Raven": 53774,
+    "Red Skeletal Horse": 10670,
+    "Tawny Wind Rider": 17699,
+    "Jade Pandaren Kite": 42147,
+    "Smoldering Ember Wyrm": 74104,
+    "Scintillating Mana Ray": 79486,
+    "Drake of the North Wind": 35553,
+    "Crimson Pandaren Phoenix": 44633,
+    "Emerald Pandaren Phoenix": 45520,
+    "Violet Pandaren Phoenix": 45522,
+    "Sharkbait": 80449,
+    "Leaping Veinseeker": 76706,
+    "Nightborne Manasaber": 74032,
+
 };
