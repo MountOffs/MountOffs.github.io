@@ -58,8 +58,8 @@ span {
     text-align: center;
 }
 
-#players {
-    font-size: 60px;
+#stage {
+    font-size: 30px;
 }
 
 #mount {
@@ -75,7 +75,7 @@ span {
     height: 300px;
 }
 
-#playersContainer {
+#stageContainer {
     right: 20px;
     height: 300px;
 }
@@ -105,7 +105,7 @@ span {
     font-size: 50px;
 }
 
-#scoreContainer {
+#scoreContainer, #winnerContainer {
     transform: translateX(-50%);
     left: 50%;
     top: 75%;
@@ -113,7 +113,7 @@ span {
     width: fit-content;
 }
 
-#score {
+#score, #winner {
     font-size: 80px;
 }
 

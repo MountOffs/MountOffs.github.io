@@ -31,7 +31,7 @@ function initBackButton() {
 function initUI() {
     let enable = (episode.status === "done" || episode.status === "WIP");
     document.getElementById("mountContainer").style.display = enable ? "block" : "none";
-    document.getElementById("playersContainer").style.display = enable ? "block" : "none";
+    document.getElementById("stageContainer").style.display = enable ? "block" : "none";
     document.getElementById("progressContainer").style.display = enable && isLoggedIn() ? "block" : "none";
 }
 
@@ -55,7 +55,7 @@ function update() {
 
     let mount = getEvent("MOUNT");
     let players = getEvent("PLAYER");
-    let phase = getEvent("PHASE");
+    let phase = getEvent("PHASE") || ELIMINATION_PHASE;
     let score = getEvent("SCORE");
     let victory = getEvent("VICTORY");
 
@@ -65,16 +65,13 @@ function update() {
         setMount("-");
     }
 
+    setPhase(phase, players, score?.score || DEFAULT_SCORE);
+
     if (victory) {
+        setWinner(victory.winner);
         setEpisodeSeen();
-    }
-
-    setPhase(phase || ELIMINATION_PHASE, score?.score || DEFAULT_SCORE);
-
-    if (players) {
-        setPlayers(players.players);
     } else {
-        setPlayers("-");
+        setWinner();
     }
 
     if (isLoggedIn()) {
@@ -163,8 +160,35 @@ function setHeader(header) {
     document.getElementById("header").innerText = header;
 }
 
-function setPhase(phase, score) {
+function setWinner(winner = null) {
+    let hasWinner = (winner !== null);
+
+    if (hasWinner) {
+        document.getElementById("scoreContainer").style.display = "none";
+        document.getElementById("winner").innerText = winner;
+    }
+
+    document.getElementById("winnerContainer").style.display = hasWinner ? "block": "none";
+}
+
+function setPlayers(players) {
+    document.getElementById("stage").innerText = ("TOP " + players) || "";
+}
+
+function setPhase(phase, players, score) {
     let final = phase.phase !== "ELIMINATION";
+
+    let stageSpan = document.getElementById("stage");
+
+    if (!final) {
+        if (players) {
+            stageSpan.innerText = "TOP " + players.players;
+        } else {
+            stageSpan.innerText = "-";
+        }
+    } else {
+        stageSpan.innerText = phase.phase;
+    }
 
     document.getElementById("scoreContainer").style.display = final ? "block" : "none";
     document.getElementById("score").innerText = score;
@@ -207,8 +231,4 @@ function setMount(mount) {
         modelContainer.innerHTML = "";
         modelMissing.style.display = "none";
     }
-}
-
-function setPlayers(players) {
-    document.getElementById("players").innerText = players || "";
 }

@@ -370,7 +370,7 @@ let episodes = [
             {"time": "28:51", "event": "MOUNT", "mount": "Argent Hippogryph"},
             {"time": "29:08", "event": "MOUNT", "mount": "Ashes of Al'ar"},
             {"time": "29:34", "event": "PLAYER", "players": 1},
-            {"time": "29:38", "event": "VICTORY", "player": "Deathboy"}
+            {"time": "29:38", "event": "VICTORY", "winner": "Deathboy"}
         ]},
     {"id": "8", "youtubeId": "ogkNCd5px54", "faction": "alliance", "status": "done", "date": "29.12.2017", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 37},
@@ -449,7 +449,7 @@ let episodes = [
             {"time": "8:51", "event": "MOUNT", "mount": "Ultramarine Qiraji Battle Tank"},
             {"time": "9:02", "event": "MOUNT", "mount": "Hellfire Infernal"},
             {"time": "9:12", "event": "SCORE", "score": "4:4"},
-            {"time": "9:14", "event": "VICTORY", "player": "Asmongold"}
+            {"time": "9:14", "event": "VICTORY", "winner": "Asmongold"}
     ]},
     {"id": "9", "youtubeId": "WXdDZ5atDW4", "start": 281, "faction": "horde", "status": "done", "date": "27.07.2018", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 37},
@@ -585,7 +585,7 @@ let episodes = [
             {"time": "40:12", "event": "MOUNT", "mount": "Breezestrider Stallion"},
             {"time": "40:38", "event": "SCORE", "score": "6:7"},
             {"time": "40:56", "event": "MOUNT", "mount": "Swift Horde Wolf"},
-            {"time": "41:30", "event": "VICTORY", "player": "Asmongold"}
+            {"time": "41:30", "event": "VICTORY", "winner": "Asmongold"}
         ]},
     {"id": "10", "youtubeId": "F3Awarf_GZs", "start": 137, "faction": "horde", "status": "done", "date": "03.08.2018", "events": [
         {"time": "2:30", "event": "PLAYER", "players": 38},
@@ -706,7 +706,7 @@ let episodes = [
         {"time": "29:28", "event": "SCORE", "score": "2:2"},
         {"time": "29:28", "event": "MOUNT", "mount": "Bloodfang Widow"},
         {"time": "29:48", "event": "MOUNT", "mount": "Time-Lost Proto-Drake"},
-        {"time": "30:00", "event": "VICTORY", "player": "Asmongold"}
+        {"time": "30:00", "event": "VICTORY", "winner": "Asmongold"}
     ]},
     {"id": "11", "youtubeId": "i8lVEXJ2OV0", "faction": "alliance", "status": "done", "date": "11.08.2018", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 31},
@@ -761,7 +761,7 @@ let episodes = [
             {"time": "13:00", "event": "SCORE", "score": "1:0"},
             {"time": "13:00", "event": "MOUNT", "mount": "Swift Zulian Tiger"},
             {"time": "13:10", "event": "SCORE", "score": "1:1"},
-            {"time": "13:10", "event": "VICTORY", "player": "Asmongold"}
+            {"time": "13:10", "event": "VICTORY", "winner": "Asmongold"}
     ]},
     {"id": "12", "youtubeId": "Mw9X00VBCNI", "faction": "horde", "status": "done", "date": "14.10.2018", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 37},
@@ -894,7 +894,7 @@ let episodes = [
             {"time": "43:46", "event": "MOUNT", "mount": "Fiery Warhorse"},
             {"time": "43:59", "event": "MOUNT", "mount": "Grey Riding Camel"},
             {"time": "44:11", "event": "MOUNT", "mount": "Heavenly Onyx Cloud Serpent"},
-            {"time": "44:37", "event": "VICTORY", "player": "Asmongold"}
+            {"time": "44:37", "event": "VICTORY", "winner": "Asmongold"}
     ]},
     {"id": "13", "youtubeId": "KxtwWt39UL8", "faction": "alliance", "status": "done", "date": "05.11.2018", "events": [
                     {"time": "0:00", "event": "PLAYER", "players": 39},
@@ -1148,7 +1148,7 @@ let episodes = [
                     {"time": "1:36:27", "event": "MOUNT", "mount": "Thundering Cobalt Cloud Serpent"},
                     {"time": "1:36:35", "event": "SCORE", "score": "7:8"},
                     {"time": "1:36:35", "event": "MOUNT", "mount": "Son of Galleon"},
-                    {"time": "1:36:51", "event": "VICTORY", "player": "Asmongold"}
+                    {"time": "1:36:51", "event": "VICTORY", "winner": "Asmongold"}
     ]}, //https://www.youtube.com/watch?v=Y5Kquo1Oz60
     {"id": "14", "youtubeId": "usAhvofjvbo", "faction": "horde", "status": "done", "date": "18.11.2018", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 39},
@@ -1280,7 +1280,7 @@ let episodes = [
             {"time": "42:53", "event": "SCORE", "score": "2:2"},
             {"time": "42:53", "event": "MOUNT", "mount": "Prestigious Royal Courser"},
             {"time": "43:26", "event": "MOUNT", "mount": "Swift Zulian Tiger"},
-            {"time": "43:30", "event": "VICTORY", "player": "Asmongold"}
+            {"time": "43:30", "event": "VICTORY", "winner": "Asmongold"}
     ]},
     {"id": "15", "youtubeId": "iTeqafGC6gg", "start": 300, "faction": "alliance", "status": "done", "date": "22.11.2018", "events": [
                     {"time": "0:00", "event": "PLAYER", "players": 39},
@@ -1431,7 +1431,7 @@ let episodes = [
                     {"time": "52:55", "event": "SCORE", "score": "8:9"},
                     {"time": "53:57", "event": "MOUNT", "mount": "Crimson Pandaren Phoenix"},
                     {"time": "54:40", "event": "MOUNT", "mount": "Abyss Worm"},
-                    {"time": "56:00", "event": "VICTORY", "player": "Jramm"}
+                    {"time": "56:00", "event": "VICTORY", "winner": "Jramm"}
             ]},
     {"id": "16", "youtubeId": "KZT3TIch2o4", "date": "28.11.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION
     {"id": "17", "youtubeId": "i85gebdxph4", "date": "27.12.2018"}, //TODO: SCRIPT, MOUNT MODELS, FACTION

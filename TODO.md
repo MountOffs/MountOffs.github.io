@@ -12,7 +12,6 @@
 * add option to show all missing mounts
 
 ### Mount off page
-* Players remaining final/grandfinal info
 * how to overlay when youtube embed is fullscreen
 * Tooltip with info on mount mouseover (+ wowhead link?)
 * Mount animation on space
