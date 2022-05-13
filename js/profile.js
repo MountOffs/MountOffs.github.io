@@ -1,7 +1,5 @@
 let char = localStorage.getItem("character");
-const episodeUl = document.querySelector("#episodes");
-const progress = document.querySelector("#progress");
-const progressBar = document.querySelector("#progressBar");
+const episodeGrid = document.querySelector("#episodesGrid");
 
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
@@ -21,28 +19,6 @@ document.querySelector("#logout").addEventListener("click", () => {
    logout();
 });
 
-function placePrefix(place) {
-    if (place % 100 !== 10) {
-        if (place % 10 === 1) {
-            return "st";
-        } else if (place % 10 === 2) {
-            return "nd";
-        } else if (place % 10 === 3) {
-            return "rd";
-        }
-    }
-
-    return "th";
-}
-
-function placeToString(place) {
-    if (place === 1) {
-        return "VICTORY";
-    }
-
-    return place + placePrefix(place) + " place";
-}
-
 function seen(episode) {
     let seen = localStorage.getItem("episode" + episode.id + "_seen");
     return seen !== null;
@@ -59,11 +35,11 @@ function placing(status) {
 }
 
 function createEpisodeStatus(episode, status) {
-    let li = document.createElement("li");
     let episodeSpan = createNode("span", "Episode " + episode.id, "episode");
     let placingSpan = createNode("span", placing(status), "place");
     placingSpan.dataset.place = placing(status);
-    li.append(episodeSpan, placingSpan);
+    let nodes = [];
+    nodes.push(episodeSpan, placingSpan);
 
     let losingMountLabel;
     let losingMountSpan;
@@ -72,7 +48,7 @@ function createEpisodeStatus(episode, status) {
         losingMountLabel = createNode("span", "Missing mount:", "losingMountLabel");
         losingMountSpan = createNode("span",  status.losingMount, "losingMount");
 
-        li.append(losingMountLabel, losingMountSpan);
+        nodes.push(losingMountLabel, losingMountSpan);
     }
 
     if (!seen(episode)) {
@@ -80,7 +56,7 @@ function createEpisodeStatus(episode, status) {
         placingSpan.style.display = "none";
         if (losingMountSpan) losingMountSpan.style.display = "none";
         if (losingMountLabel) losingMountLabel.style.display = "none";
-        li.append(showButton);
+        nodes.push(showButton);
 
         showButton.addEventListener("click", () => {
             placingSpan.style.display = "inline";
@@ -90,26 +66,17 @@ function createEpisodeStatus(episode, status) {
         });
     }
 
-    return li;
+    return nodes;
 }
 
 getMounts(mounts => {
-    let victories = 0;
-    let total = 0;
     episodes.forEach(episode => {
         let status = evaluateEpisode(episode, mounts);
         if (status) {
-            let node = createEpisodeStatus(episode, status);
-            episodeUl.appendChild(node);
-
-            total++;
-            if (status.placing === 1) {
-                victories++;
-            }
+            let nodes = createEpisodeStatus(episode,status);
+            nodes.forEach(node => {
+                episodeGrid.append(node);
+            });
         }
     });
-
-    //progress.innerText = "Progress: " + victories + "/" + total;
-    //progressBar.value = victories;
-    //progressBar.max = total;
 });

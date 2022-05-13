@@ -20,6 +20,5 @@ episodes.filter(e => e.status === "done").forEach(episode => {
 });
 
 function setBackground(div, episode) {
-    let imgUrl = "url('https://i.ytimg.com/vi/" + episode.youtubeId + "/hqdefault.jpg')";
-    div.style.background = imgUrl + " center";
+    div.style["background-image"] = "url('https://i.ytimg.com/vi/" + episode.youtubeId + "/hqdefault.jpg')";
 }

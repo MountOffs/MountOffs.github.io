@@ -12,7 +12,6 @@
 * add option to show all missing mounts
 
 ### Mount off page
-* Players remaining final/grandfinal info
 * how to overlay when youtube embed is fullscreen
 * Tooltip with info on mount mouseover (+ wowhead link?)
 * Mount animation on space
@@ -39,3 +38,4 @@
 * DEBUG: precision timer for script writing
 * Twitch Prime rain
 * Update Readme
+* cached page issue: https://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages

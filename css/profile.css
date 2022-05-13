@@ -1,32 +1,25 @@
+/*noinspection CssInvalidFunction*/
+:root {
+    --font-large: clamp(1.5rem, 3vw, 2.5rem);
+    --font-medium: clamp(1.25rem, 2vw, 1.85rem);
+    --font-small: clamp(1rem, 1.5vw, 1.25rem);
+
+    --border-radius: 10px;
+}
+
 #logout {
     float: right;
     font-weight: normal;
-    padding-right: 5vw;
 }
 
 #progress {
-    font-size: 20px;
-}
-
-#episodes {
-    list-style: none;
-}
-
-#episodes > li {
-    display: flex;
-    height: 50px;
-    border: 1px var(--text-color) solid;
-    border-radius: 10px;
-    user-select: none;
-    align-items: center;
-    margin: 20px 75px 0 50px;
+    font-size: var(--font-small);
 }
 
 .episode {
-    width: 200px;
-    font-size: 40px;
-    padding: 0 5px;
-    border-right: 1px var(--text-color) solid;
+    font-size: var(--font-large);
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
 }
 
 progress {
@@ -43,18 +36,17 @@ progress::-webkit-progress-value {
 }
 
 .place {
-    width: 180px;
     text-align: center;
-    font-size: 30px;
-    padding: 7px 10px;
-    border-right: 1px var(--text-color) solid;
+    font-size: var(--font-medium);
 }
 
 .showButton {
-    width: calc(100% - 250px);
-    font-size: 30px;
+    font-size: var(--font-medium);
     text-align: center;
     cursor: pointer;
+    grid-column-end: span 3;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 .showButton:hover {
@@ -62,16 +54,32 @@ progress::-webkit-progress-value {
 }
 
 .place[data-place="VICTORY"] {
-    border: none;
-    width: calc(100% - 250px);
+    grid-column-end: span 3;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 .losingMountLabel {
-    font-size: 20px;
-    padding: 7px 10px;
+    font-size: var(--font-small);
 }
 
 .losingMount {
-    font-size: 40px;
-    padding: 7px 10px;
+    font-size: var(--font-large);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+#episodesGrid {
+    display: grid;
+    grid-template-columns: min-content min-content min-content auto;
+    grid-auto-rows: 50px;
+    grid-row-gap: 10px;
+    margin-bottom: 20px;
+}
+
+#episodesGrid > span {
+    line-height: 50px;
+    border: 1px solid white;
+    padding: 0 10px;
+    white-space: nowrap;
 }
