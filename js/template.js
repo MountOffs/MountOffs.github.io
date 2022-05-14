@@ -146,7 +146,13 @@ function createLoginDialog() {
     return dialog;
 }
 
-function transformTime(time) {
+function secondsToTime(seconds) {
+    let date = new Date(0);
+    date.setSeconds(seconds); // specify value for SECONDS here
+    return date.toISOString().substr(11, 8);
+}
+
+function timeToSeconds(time) {
     let parts = time.split(":");
     if (parts.length === 3) {
         return parts[0] * 60 * 60 + parts[1] * 60 + parts[2] * 1;
@@ -164,7 +170,7 @@ function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY) {
         let losingMount = null;
         let missingMounts = [];
         episode.events.forEach(event => {
-            if (transformTime(event.time) > time) {
+            if (timeToSeconds(event.time) > time) {
                 return;
             }
 

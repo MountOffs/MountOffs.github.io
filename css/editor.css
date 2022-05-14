@@ -1,0 +1,64 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-attachment: fixed;
+    background-position: center center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 255, 0)) no-repeat, url("../images/icecrown_citadel.jpg") no-repeat, black;
+    background-size: cover;
+}
+
+#config {
+    background: black;
+}
+
+#legend {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    background: black;
+    padding: 20px;
+    border: var(--text-color) solid 1px;
+}
+
+#time {
+    font-size: 60px;
+    margin: auto;
+    text-align: center;
+}
+
+span {
+    text-align: center;
+}
+
+#player {
+    margin: auto;
+    width: 800px;
+    display: block;
+}
+
+#back {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    text-decoration: none;
+    font-size: 3em;
+    transition: 0.2s;
+}
+
+#back:hover {
+    color: white;
+}
+
+.data {
+    padding: 10px;
+    position: absolute;
+    border: var(--text-color) solid 1px;
+    width: 200px;
+    top: 40%;
+}
+
+.data div {
+    text-align: center;
+}
