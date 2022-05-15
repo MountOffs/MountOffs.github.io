@@ -3,6 +3,10 @@
 * socials
 * only show dictionary entry once
 
+### Editor
+* Show current number of players
+* Input for latest mount event
+
 ### Play page
 * Show seen label on seen episodes
 * Scroll to first unseen episode

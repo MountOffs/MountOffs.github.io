@@ -71,6 +71,7 @@ function eventString(event) {
         case "PLAYER": value = event.players; break;
         case "MOUNT": value = event.mount; break;
         case "SCORE": value = event.score; break;
+        case "PHASE": value = event.phase; break;
         case "VICTORY": value = event.winner; break;
     }
     return "[" + event.time + " - " + event.event + (value ? (" - " + value) : "") + "]";
@@ -104,10 +105,18 @@ function onYouTubeIframeAPIReady() {
 }
 
 function initKeyPressListener() {
+    //Prevent scrolling
+    window.addEventListener("keydown", e => {
+        if (["Space", "ArrowUp", "ArrowDown"].indexOf(e.code) >= 0 && e.target === document.body) {
+            e.preventDefault();
+        }
+    });
+
     window.addEventListener("keyup", e => {
         console.log("Keypress: " + e.code);
         if (e.code === "Space") {
             togglePlay();
+            e.preventDefault();
         }
 
         if (e.code === "Minus") {
@@ -138,10 +147,60 @@ function initKeyPressListener() {
             victoryEvent();
         }
 
+        if (e.code === "KeyP") {
+            phaseEvent();
+        }
+
         if (e.code === "Backspace") {
             deleteEvent();
         }
+
+        if (e.code === "ArrowLeft") {
+            scrollVideo(-5);
+        }
+
+        if (e.code === "ArrowRight") {
+            scrollVideo(+5)
+        }
+
+        if (e.code === "ArrowUp") {
+            scrollToEvent(false);
+        }
+
+        if (e.code === "ArrowDown") {
+            scrollToEvent(true);
+        }
     });
+}
+
+function phaseEvent() {
+    let currentPhase = getEvent("PHASE")?.phase;
+    if (currentPhase === "GRANDFINAL") return;
+
+    let event = createEvent("PHASE");
+
+    if (currentPhase === "FINAL") {
+        event.phase = "GRANDFINAL";
+    } else {
+        event.phase = "FINAL";
+    }
+
+    addEvent(event);
+}
+
+function scrollToEvent(forward) {
+    if (forward) {
+        let time = getNextEvent()?.time || "0:00";
+        player.seekTo(timeToSeconds(time), true);
+    } else {
+        let time = getEvent(null, 0.5)?.time || "0:00";
+        player.seekTo(timeToSeconds(time), true);
+    }
+}
+
+function scrollVideo(delta) {
+    let time = player.getCurrentTime() + delta;
+    player.seekTo(time, true);
 }
 
 function deleteEvent() {
@@ -186,9 +245,31 @@ function scoreEvent(player) {
     addEvent(event);
 }
 
-function getEvent(type) {
+function getEvent(type = null, epsilon = 0) {
     let time = player.getCurrentTime();
-    return episode.events.slice().reverse().find(event => timeToSeconds(event.time) <= time && event.event === type);
+    return episode.events.slice().reverse().find(event => {
+        let eventTime = timeToSeconds(event.time);
+        if (type && event.event !== type) return false;
+
+        if (time < eventTime) return false;
+
+        return time - eventTime >= epsilon;
+
+    });
+}
+
+function getNextEvent(type = null) {
+    let time = player.getCurrentTime();
+    return episode.events.find(event => {
+        let eventTime = timeToSeconds(event.time);
+        if (type && event.event !== type) return false;
+
+        console.log(event);
+        console.log(time + " vs " + eventTime);
+
+        return time <= eventTime;
+
+    });
 }
 
 function getScore() {
@@ -215,7 +296,7 @@ function togglePlay() {
     }
 }
 
-function onPlayerReady(event) {
+function onPlayerReady() {
     setInterval(update, 200);
     initKeyPressListener();
 }
