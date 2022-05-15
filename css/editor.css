@@ -9,17 +9,42 @@ body {
     background-size: cover;
 }
 
+#rightPanel {
+    position: absolute;
+    right: 5%;
+    top: 30%;
+}
+
+#copyBtn {
+    background-color: black;
+    font-weight: bold;
+    padding: 20px;
+    border: var(--text-color) solid 1px;
+    outline: none;
+    font-size: 32px;
+    width: 262px;
+}
+
+#copyBtn:hover {
+    color: white;
+    border: white solid 1px;
+}
+
 #config {
+    position: absolute;
+    font-size: 16px;
+    top: 10%;
+    left: 20px;
     background: black;
+    border: var(--text-color) solid 1px;
+    padding: 10px;
 }
 
 #legend {
-    position: absolute;
-    top: 30%;
-    right: 5%;
     background: black;
     padding: 20px;
     border: var(--text-color) solid 1px;
+    width: 220px;
 }
 
 #time {

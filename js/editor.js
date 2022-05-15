@@ -14,11 +14,22 @@ function init() {
     initBackButton();
     initIframeAPI();
     initConfig();
+    initCopyButton();
 }
 
 function initConfig() {
-    episode.events = [];
-    episode.events.push({"time": "0:00", "event": "PLAYER", "players": 39})
+    if (!episode.events) {
+        episode.events = [];
+        episode.events.push({"time": "0:00", "event": "PLAYER", "players": 39})
+    }
+}
+
+function copyConfig() {
+    navigator.clipboard.writeText(episodeConfigToResult()).then(function() {
+        console.log("Copied successfully");
+    }, (e) => {
+        console.error("Couldn't copy to clipboard", e);
+    });
 }
 
 function initBackButton() {
@@ -28,6 +39,10 @@ function initBackButton() {
     } else {
         back.href = "archive.html";
     }
+}
+
+function initCopyButton() {
+    document.querySelector("#copyBtn").addEventListener("click", copyConfig);
 }
 
 function initIframeAPI() {
@@ -46,14 +61,28 @@ function getTime() {
     }
 }
 
-function displayEpisodeConfig() {
-    let episodes = episode.events.map(e => JSON.stringify(e)).join(",<br/>");
-    configDiv.innerHTML = episodes;
+function episodeConfigToResult() {
+    return episode.events.map(e => JSON.stringify(e)).join(",\n");
+}
+
+function eventString(event) {
+    let value = null;
+    switch (event.event) {
+        case "PLAYER": value = event.players; break;
+        case "MOUNT": value = event.mount; break;
+        case "SCORE": value = event.score; break;
+        case "VICTORY": value = event.winner; break;
+    }
+    return "[" + event.time + " - " + event.event + (value ? (" - " + value) : "") + "]";
+}
+
+function episodeConfigToHTML() {
+    return episode.events.slice().reverse().map(eventString).join(",<br/>");
 }
 
 function update() {
     timeDiv.innerText = getTime();
-    displayEpisodeConfig();
+    configDiv.innerHTML = episodeConfigToHTML();
 }
 
 function onYouTubeIframeAPIReady() {
