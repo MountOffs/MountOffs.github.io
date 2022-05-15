@@ -190,10 +190,10 @@ function phaseEvent() {
 
 function scrollToEvent(forward) {
     if (forward) {
-        let time = getNextEvent()?.time || "0:00";
+        let time = getNextEvent("MOUNT")?.time || "0:00";
         player.seekTo(timeToSeconds(time), true);
     } else {
-        let time = getEvent(null, 0.5)?.time || "0:00";
+        let time = getEvent("MOUNT", 0.5)?.time || "0:00";
         player.seekTo(timeToSeconds(time), true);
     }
 }
