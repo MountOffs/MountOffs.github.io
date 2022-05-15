@@ -178,6 +178,8 @@ function phaseEvent() {
     if (currentPhase === "GRANDFINAL") return;
 
     let event = createEvent("PHASE");
+    event.left = "";
+    event.right = "";
 
     if (currentPhase === "FINAL") {
         event.phase = "GRANDFINAL";
