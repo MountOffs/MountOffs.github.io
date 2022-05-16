@@ -31,10 +31,10 @@
 ### Configuration
 * track all players
 * track extra events
-* cross-faction mount tracking (horse <> wolf etc)
-* semifinal/final tracking (score)
+* Mount caching
 
 ### Misc
+* Auth via battle.net > Sync horde/alliance chars
 * Only show landing page once
 * Dynamic title
 * Mobile friendly
