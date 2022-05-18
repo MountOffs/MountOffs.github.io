@@ -2,13 +2,15 @@ let episode = getEpisode();
 let player;
 let mountDisplayId = null;
 
-const ELIMINATION_PHASE = {
+const DEFAULT_PHASE_EVENT = {
     "phase": "ELIMINATION",
     "left": "",
     "right": ""
 };
 
-const DEFAULT_SCORE = "0:0";
+const DEFAULT_SCORE_EVENT = {
+    "score": "0:0"
+};
 
 init();
 
@@ -45,7 +47,7 @@ function initIframeAPI() {
 
 function getEvent(type) {
     let time = player.getCurrentTime();
-    return episode.events.slice().reverse().find(event => transformTime(event.time) <= time && event.event === type);
+    return episode.events.slice().reverse().find(event => timeToSeconds(event.time) <= time && event.event === type);
 }
 
 function update() {
@@ -55,8 +57,8 @@ function update() {
 
     let mount = getEvent("MOUNT");
     let players = getEvent("PLAYER");
-    let phase = getEvent("PHASE") || ELIMINATION_PHASE;
-    let score = getEvent("SCORE");
+    let phase = getEvent("PHASE") || DEFAULT_PHASE_EVENT;
+    let score = getEvent("SCORE") || DEFAULT_SCORE_EVENT;
     let victory = getEvent("VICTORY");
 
     if (mount) {
@@ -65,7 +67,7 @@ function update() {
         setMount("-");
     }
 
-    setPhase(phase, players, score?.score || DEFAULT_SCORE);
+    setPhase(phase, players, score.score);
 
     if (victory) {
         setWinner(victory.winner);

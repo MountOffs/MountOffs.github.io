@@ -3,6 +3,10 @@
 * socials
 * only show dictionary entry once
 
+### Editor
+* Show current number of players
+* Input for latest mount event
+
 ### Play page
 * Show seen label on seen episodes
 * Scroll to first unseen episode
@@ -27,10 +31,10 @@
 ### Configuration
 * track all players
 * track extra events
-* cross-faction mount tracking (horse <> wolf etc)
-* semifinal/final tracking (score)
+* Mount caching
 
 ### Misc
+* Auth via battle.net > Sync horde/alliance chars
 * Only show landing page once
 * Dynamic title
 * Mobile friendly
