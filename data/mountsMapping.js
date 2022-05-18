@@ -297,5 +297,16 @@ let mountMapping = { "Brown Horse": 2404,
     "Voldunai Dunescraper": 80972,
     "Cobalt Pterrordax": 89376,
     "Expedition Bloodswarmer": 76708,
-    "Obsidian Krolusk": 75600
+    "Obsidian Krolusk": 75600,
+    "Gray Kodo": 12246,
+    "Tan Riding Camel": 35134,
+    "Grand Ice Mammoth": [27242, 27239],
+    "Thundering Onyx Cloud Serpent": 51488,
+    "Island Thunderscale": 90158,
+    "Bloodgorged Hunter": 55151,
+    "Craghorn Chasm-Leaper": 87776,
+    "Siltwing Albatross": 84359,
+    "Blue Marsh Hopper": 81959,
+    "Ashenvale Chimaera": 89750,
+
 };

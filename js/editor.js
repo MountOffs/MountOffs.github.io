@@ -192,8 +192,10 @@ function phaseEvent() {
 
 function scrollToEvent(forward) {
     if (forward) {
-        let time = getNextEvent("MOUNT")?.time || "0:00";
-        player.seekTo(timeToSeconds(time), true);
+        let time = getNextEvent("MOUNT")?.time;
+        if (time) {
+            player.seekTo(timeToSeconds(time), true);
+        }
     } else {
         let time = getEvent("MOUNT", 0.5)?.time || "0:00";
         player.seekTo(timeToSeconds(time), true);
