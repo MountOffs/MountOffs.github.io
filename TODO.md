@@ -23,9 +23,8 @@
 * Scale size per mount (some mounts too big, some too small)
 
 ### Armory Sync
+* Invalidate mount cache
 * track overall progress (semifinal/final/victory)
-* track progress in given mount off
-* login page
 * separately login horde/alliance characters
 
 ### Configuration
