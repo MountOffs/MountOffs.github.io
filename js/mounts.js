@@ -27,6 +27,11 @@ function processFactionMounts(mounts) {
     //SHADOWLANDS OK
 
     //BFA OK
+
+    // Commendation
+    ["Rubyshell Crolusk", "Azureshell Krolusk"],
+    ["Bloodthirsty Dreadwing", "Priestess' Moonsaber"],
+
     ["Bloodflank Charger", "Ironclad Frostclaw"],
     ["Snapdragon Kelpstalker", "Deepcoral Snapdragon"],
     ["Broken Highland Mustang", "Highland Mustang"],
