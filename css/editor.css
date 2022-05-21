@@ -87,3 +87,21 @@ span {
 .data div {
     text-align: center;
 }
+
+.response {
+    margin-top: 20px;
+    width: 262px;
+    font-size: 20px;
+    text-align: center;
+    animation: fadeOut ease-out 4s forwards;
+    cursor: default;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -3,6 +3,8 @@ let player;
 let timeDiv = document.querySelector("#time");
 let configDiv = document.querySelector("#config");
 
+const AUTOSAVE_INTERVAL = 30000;
+
 const DEFAULT_SCORE_EVENT = {
     "score": "0:0"
 };
@@ -24,11 +26,16 @@ function initConfig() {
     }
 }
 
-function copyConfig() {
-    navigator.clipboard.writeText(episodeConfigToResult()).then(function() {
+function copyConfig(response = true) {
+    return navigator.clipboard.writeText(episodeConfigToResult()).then(function() {
         console.log("Copied successfully");
+        if (response) {
+            addResponse("Config Copied...");
+        }
+        return Promise.resolve();
     }, (e) => {
         console.error("Couldn't copy to clipboard", e);
+        return Promise.reject();
     });
 }
 
@@ -303,6 +310,22 @@ function togglePlay() {
 function onPlayerReady() {
     setInterval(update, 200);
     initKeyPressListener();
+    setInterval(autosave, AUTOSAVE_INTERVAL);
+}
+
+function autosave() {
+    copyConfig(false).then(() => {
+        addResponse("Autosaved...");
+    }).catch(() => {
+        addResponse("Autosave failed...");
+    })
+}
+
+function addResponse(text) {
+    let container = document.querySelector("#responseContainer");
+    container.innerHTML = "";
+    let response = createNode("div", text, "response");
+    container.appendChild(response);
 }
 
 function onPlayerStateChange(event) {
