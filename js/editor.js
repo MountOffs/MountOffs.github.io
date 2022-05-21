@@ -158,6 +158,10 @@ function initKeyPressListener() {
             phaseEvent();
         }
 
+        if (e.code === "KeyC") {
+            specialEvent();
+        }
+
         if (e.code === "Backspace") {
             deleteEvent();
         }
@@ -178,6 +182,11 @@ function initKeyPressListener() {
             scrollToEvent(true);
         }
     });
+}
+
+function specialEvent() {
+    let event = createEvent("SPECIAL");
+    addEvent(event);
 }
 
 function phaseEvent() {
