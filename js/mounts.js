@@ -156,7 +156,7 @@ function processFactionMounts(mounts) {
     ["Frostwolf Howler", "Stormpike Battle Charger"],
 
     //Vicious mounts
-    ["Vicious Skeletal Warhorse", "Vicious Warsaber"],
+    ["Vicious Skeletal Warhorse", "Vicious Kaldorei Warsaber"],
     ["Vicious War Wolf", "Vicious War Steed"],
     ["Vicious War Raptor", "Vicious War Ram"],
     ["Vicious War Kodo", "Vicious War Mechanostrider"],
