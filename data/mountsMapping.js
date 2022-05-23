@@ -329,5 +329,13 @@ let mountMapping = { "Brown Horse": 2404,
     "Geosynchronous World Spinner": 43638,
     "G.M.O.D.": 90189,
     "Dazar'alor Windreaver": 90194,
-    "The Hivemind": 88835
+    "The Hivemind": 88835,
+    "Silver War Talbuk": 19378,
+    "Drake of the West Wind": 35754,
+    "Ironclad Frostclaw": 91389,
+    "Kul Tiran Charger": 88974,
+    "Vicious Black Warsaber": 88755,
+    "Bruce": 90419,
+    "Steelbound Devourer": 70099,
+
 };
