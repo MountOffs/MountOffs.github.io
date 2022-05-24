@@ -342,5 +342,13 @@ let mountMapping = { "Brown Horse": 2404,
     "Stonehide Elderhorn": 67041,
     "Risen Mare": 5050,
     "Silent Glider": 90728,
-    "Sinister Gladiator's Proto-Drake": 82804
+    "Sinister Gladiator's Proto-Drake": 82804,
+    "Azshari Bloatray": 90729,
+    "Junkheap Drifter": 91634,
+    "Spectral Pterrorwing": 92078,
+    "Child of Torcali": 91787,
+    "Rubyshell Krolusk": 90394,
+    "Snapdragon Kelpstalker": 91237,
+    "Bloodthirsty Dreadwing": 60307,
+    "Kua'fon": 89375
 };

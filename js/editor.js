@@ -89,6 +89,10 @@ function showMissingModels() {
             return !displayId;
         }).map(e => e.mount);
 
+
+    //Remove duplicates
+    missingModels = [...new Set(missingModels)];
+
     if (missingModels) {
         document.querySelector("#missingModelsContainer").style.display = "block";
         document.querySelector("#missingModelHeader").addEventListener("click", () => {
