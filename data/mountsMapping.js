@@ -337,5 +337,10 @@ let mountMapping = { "Brown Horse": 2404,
     "Vicious Black Warsaber": 88755,
     "Bruce": 90419,
     "Steelbound Devourer": 70099,
-
+    "X-995 Mechanocat": 92666,
+    "Twilight Avenger": 87775,
+    "Stonehide Elderhorn": 67041,
+    "Risen Mare": 5050,
+    "Silent Glider": 90728,
+    "Sinister Gladiator's Proto-Drake": 82804
 };
