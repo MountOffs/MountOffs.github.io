@@ -9,6 +9,39 @@ body {
     background-size: cover;
 }
 
+#missingModelsContainer {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    background-color: black;
+    padding: 20px;
+    border: var(--text-color) solid 1px;
+    width: 220px;
+}
+
+#missingModelHeader {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#missingModelHeader:hover {
+    color: white;
+}
+
+#missingModels {
+    margin-top: 5px;
+}
+
+.missingModel {
+    color: red;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.missingModel:hover {
+    color: white;
+}
+
 #rightPanel {
     position: absolute;
     right: 5%;

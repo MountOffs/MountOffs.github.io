@@ -17,6 +17,7 @@ function init() {
     initIframeAPI();
     initConfig();
     initCopyButton();
+    showMissingModels();
 }
 
 function initConfig() {
@@ -27,7 +28,7 @@ function initConfig() {
 }
 
 function copyConfig(response = true) {
-    return navigator.clipboard.writeText(episodeConfigToResult()).then(function() {
+    return navigator.clipboard.writeText(episodeConfigToResult()).then(() => {
         console.log("Copied successfully");
         if (response) {
             addResponse("Config Copied...");
@@ -65,6 +66,46 @@ function getTime() {
     let timestamp = secondsToTime(Math.floor(time));
     if (timestamp.startsWith("00:")) {
         return timestamp.substring(3);
+    }
+}
+
+function copyToClipboard(text, successResponse, failureResponse) {
+    navigator.clipboard.writeText(text).then(() => {
+        addResponse(successResponse);
+    }).catch(() => {
+        addResponse(failureResponse);
+    });
+}
+
+function showMissingModels() {
+    let missingModels = episode.events.filter(e => {
+            if (e.event !== "MOUNT") return false;
+
+            let mount = e.mount;
+
+            if (mount === "") return false;
+
+            let displayId = mountMapping[mount];
+            return !displayId;
+        }).map(e => e.mount);
+
+
+    //Remove duplicates
+    missingModels = [...new Set(missingModels)];
+
+    if (missingModels) {
+        document.querySelector("#missingModelsContainer").style.display = "block";
+        document.querySelector("#missingModelHeader").addEventListener("click", () => {
+            let text = missingModels.map(m => '"' + m + '":').join(",\n");
+            copyToClipboard(text, "Copied mapping config", "Error while copying mapping config");
+        });
+        missingModels.forEach(mount => {
+            let node = createNode("div", mount, "missingModel");
+            node.addEventListener("click", () => {
+                copyToClipboard(mount, "Copied mount", "Error while copying mount");
+            });
+            document.querySelector("#missingModels").appendChild(node);
+        });
     }
 }
 
