@@ -58,8 +58,9 @@ function getTime() {
     let time = player.getCurrentTime();
     let timestamp = secondsToTime(Math.floor(time));
     if (timestamp.startsWith("00:")) {
-        return timestamp.substring(3);
+        timestamp = timestamp.substring(3);
     }
+    return timestamp;
 }
 
 function copyToClipboard(text, successResponse, failureResponse) {
