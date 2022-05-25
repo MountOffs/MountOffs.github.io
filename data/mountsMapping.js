@@ -350,4 +350,8 @@ let mountMapping = { "Brown Horse": 2404,
     "Rubyshell Krolusk": 90394,
     "Snapdragon Kelpstalker": 91237,
     "Bloodthirsty Dreadwing": 60307,
+    "Swift Green Wind Rider": 17720,
+    "Obsidian Worldbreaker": 91272,
+    "Mechagon Peacekeeper": 90710,
+    "Snapback Scuttler": 91238,
 };
