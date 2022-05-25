@@ -56,6 +56,7 @@ body {
     outline: none;
     font-size: 32px;
     width: 262px;
+    cursor: pointer;
 }
 
 #copyBtn:hover {
@@ -78,12 +79,14 @@ body {
     padding: 20px;
     border: var(--text-color) solid 1px;
     width: 220px;
+    user-select: none;
 }
 
 #time {
     font-size: 60px;
     margin: auto;
     text-align: center;
+    user-select: none;
 }
 
 span {

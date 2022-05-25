@@ -3,6 +3,8 @@ let player;
 let timeDiv = document.querySelector("#time");
 let configDiv = document.querySelector("#config");
 
+let autosave_timer;
+
 const AUTOSAVE_INTERVAL = 30000;
 
 const DEFAULT_SCORE_EVENT = {
@@ -27,17 +29,8 @@ function initConfig() {
     }
 }
 
-function copyConfig(response = true) {
-    return navigator.clipboard.writeText(episodeConfigToResult()).then(() => {
-        console.log("Copied successfully");
-        if (response) {
-            addResponse("Config Copied...");
-        }
-        return Promise.resolve();
-    }, (e) => {
-        console.error("Couldn't copy to clipboard", e);
-        return Promise.reject();
-    });
+function copyConfig(successResponse="Config copied", failureResponse="Error while copying config") {
+    copyToClipboard(episodeConfigToResult(), successResponse, failureResponse);
 }
 
 function initBackButton() {
@@ -50,7 +43,7 @@ function initBackButton() {
 }
 
 function initCopyButton() {
-    document.querySelector("#copyBtn").addEventListener("click", copyConfig);
+    document.querySelector("#copyBtn").addEventListener("click", () => copyConfig());
 }
 
 function initIframeAPI() {
@@ -72,6 +65,7 @@ function getTime() {
 function copyToClipboard(text, successResponse, failureResponse) {
     navigator.clipboard.writeText(text).then(() => {
         addResponse(successResponse);
+        resetAutosave();
     }).catch(() => {
         addResponse(failureResponse);
     });
@@ -357,18 +351,19 @@ function togglePlay() {
     }
 }
 
+function resetAutosave() {
+    clearInterval(autosave_timer);
+    autosave_timer = setInterval(autosave, AUTOSAVE_INTERVAL);
+}
+
 function onPlayerReady() {
     setInterval(update, 200);
     initKeyPressListener();
-    setInterval(autosave, AUTOSAVE_INTERVAL);
+    resetAutosave();
 }
 
 function autosave() {
-    copyConfig(false).then(() => {
-        addResponse("Autosaved...");
-    }).catch(() => {
-        addResponse("Autosave failed...");
-    })
+    copyConfig("Autosaved", "Error while autosaving");
 }
 
 function addResponse(text) {
