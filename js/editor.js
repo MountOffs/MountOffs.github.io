@@ -88,7 +88,7 @@ function showMissingModels() {
     //Remove duplicates
     missingModels = [...new Set(missingModels)];
 
-    if (missingModels) {
+    if (missingModels.length > 0) {
         document.querySelector("#missingModelsContainer").style.display = "block";
         document.querySelector("#missingModelHeader").addEventListener("click", () => {
             let text = missingModels.map(m => '"' + m + '":').join(",\n");
