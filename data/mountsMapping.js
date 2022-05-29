@@ -392,5 +392,9 @@ let mountMapping = { "Brown Horse": 2404,
     "Notorious Gladiator's Proto-Drake": 82810,
     "Beastlord's Irontusk": 90215,
     "Beastlord's Warwolf": 57466,
-    "Deepcoral Snapdragon": 91236
+    "Deepcoral Snapdragon": 91236,
+    "Gray Elekk": 19869,
+    "Green Dragon Turtle": 42250,
+    "Green Primal Raptor": 47827,
+    "Pale Thorngrazer": 59367
 };
