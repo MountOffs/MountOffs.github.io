@@ -415,5 +415,7 @@ let mountMapping = { "Brown Horse": 2404,
     "Thundering Ruby Cloud Serpent": 45797,
     "Undercity Plaguebat": 85886,
     "Vicious White Bonesteed": 88759,
-    "Scrapforged Mechaspider": 90712
+    "Scrapforged Mechaspider": 90712,
+    "Spotted Frostsaber": 6444,
+    "Grey Riding Yak": 43711
 };
