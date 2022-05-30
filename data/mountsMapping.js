@@ -417,5 +417,9 @@ let mountMapping = { "Brown Horse": 2404,
     "Vicious White Bonesteed": 88759,
     "Scrapforged Mechaspider": 90712,
     "Spotted Frostsaber": 6444,
-    "Grey Riding Yak": 43711
+    "Grey Riding Yak": 43711,
+    "Tan Riding Talbuk": 21077,
+    "Green Shado-Pan Riding Tiger": 44759,
+    "Crimson Slavermaw": 79595,
+    "Black Riding Goat": 44836
 };
