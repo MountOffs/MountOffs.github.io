@@ -421,5 +421,10 @@ let mountMapping = { "Brown Horse": 2404,
     "Tan Riding Talbuk": 21077,
     "Green Shado-Pan Riding Tiger": 44759,
     "Crimson Slavermaw": 79595,
-    "Black Riding Goat": 44836
+    "Black Riding Goat": 44836,
+    "Swift Breezestrider": 59364,
+    "Mosshide Riverwallow": 59745,
+    "Prestigious War Steed": 65760,
+    "Violet Spellwing": 79583,
+    "Corrupted Gladiator's Proto-Drake": 82782
 };
