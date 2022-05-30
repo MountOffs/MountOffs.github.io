@@ -24,6 +24,9 @@ function processFactionMounts(mounts) {
     ["Red Dragonhawk", "Blue Dragonhawk"],
     ["Armored Red Dragonhawk", "Armored Blue Dragonhawk"],
 
+    //GUILD
+    ["Kor'kron Annihilator", "Golden King"],
+
     //SHADOWLANDS OK
 
     //BFA OK
