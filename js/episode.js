@@ -82,7 +82,7 @@ function update() {
 }
 
 function setEpisodeSeen() {
-    localStorage.setItem("episode" + episode.id + "_seen", "1");
+    setLocalStorage("episode" + episode.id + "_seen", "1");
 }
 
 function currentPlacing(status) {

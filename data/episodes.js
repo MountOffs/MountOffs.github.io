@@ -4341,3 +4341,8 @@ let episodes = [
     {"id": "38", "youtubeId": "QFzJOumsab4", "date": "10.04.2022", "events": []}, //TODO: SCRIPT, MOUNT MODELS, FACTION
     {"id": "39", "youtubeId": "-ZWFnKymvsQ", "date": "01.05.2022", "events": []} //TODO: SCRIPT, MOUNT MODELS, FACTION
 ];
+
+function seen(episode) {
+    let seen = getLocalStorage("episode" + episode.id + "_seen");
+    return seen !== null;
+}

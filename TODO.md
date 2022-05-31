@@ -10,6 +10,7 @@
 ### Play page
 * Show seen label on seen episodes
 * Scroll to first unseen episode
+* What if mounts expire during game?
 
 ### Profile
 * add (show all) button
@@ -43,3 +44,4 @@
 * Update Readme
 * cached page issue: https://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
 * Trivia minigame
+* Episode selection handle seen

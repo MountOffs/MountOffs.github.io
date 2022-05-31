@@ -1,4 +1,4 @@
-let char = localStorage.getItem("character");
+let char = getLocalStorage("character");
 const episodeGrid = document.querySelector("#episodesGrid");
 
 function capitalize(word) {
@@ -6,10 +6,10 @@ function capitalize(word) {
 }
 
 function logout() {
-    localStorage.removeItem("region");
-    localStorage.removeItem("realm");
-    localStorage.removeItem("character");
-    localStorage.removeItem("mounts");
+    removeLocalStorage("region");
+    removeLocalStorage("realm");
+    removeLocalStorage("character");
+    removeLocalStorage("mounts");
 
     location.href = "about.html";
 }
@@ -18,11 +18,6 @@ document.querySelector('#name').innerText = capitalize(char);
 document.querySelector("#logout").addEventListener("click", () => {
    logout();
 });
-
-function seen(episode) {
-    let seen = localStorage.getItem("episode" + episode.id + "_seen");
-    return seen !== null;
-}
 
 function placing(status) {
     if (status.losingMount === null) {
