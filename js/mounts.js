@@ -4,17 +4,17 @@ function getMounts(callback) {
         return;
     }
 
-    let mounts = JSON.parse(localStorage.getItem("mounts"));
+    let mounts = getLocalStorage("mounts");
     if (mounts) {
         callback(mounts);
         return;
     }
 
-    let region = localStorage.getItem("region");
-    let realm = localStorage.getItem("realm");
-    let char = localStorage.getItem("character");
+    let region = getLocalStorage("region");
+    let realm = getLocalStorage("realm");
+    let char = getLocalStorage("character");
     fetchMounts(region, realm, char, (mounts) => {
-        localStorage.setItem("mounts", JSON.stringify(mounts));
+        cacheMounts(mounts);
         callback(mounts);
     });
 }

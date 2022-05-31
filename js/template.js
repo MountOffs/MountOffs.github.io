@@ -43,9 +43,9 @@ function createNav() {
 }
 
 function isLoggedIn() {
-    let region = localStorage.getItem("region");
-    let realm = localStorage.getItem("realm");
-    let char = localStorage.getItem("character");
+    let region = getLocalStorage("region");
+    let realm = getLocalStorage("realm");
+    let char = getLocalStorage("character");
     return region != null && realm != null && char != null;
 }
 
@@ -132,10 +132,10 @@ function createLoginDialog() {
         let char = charText.value.toLowerCase();
         console.log("Login: " + region + " " + realm + " " + char);
         fetchMounts(region, realm, char, (mounts) => {
-            localStorage.setItem("region", region);
-            localStorage.setItem("realm", realm);
-            localStorage.setItem("character", char);
-            localStorage.setItem("mounts", JSON.stringify(mounts));
+            setLocalStorage("region", region);
+            setLocalStorage("realm", realm);
+            setLocalStorage("character", char);
+            cacheMounts(mounts);
             location.href = "profile.html";
         });
         dialog.close();
@@ -201,6 +201,45 @@ function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY) {
             "missingMounts": missingMounts
         }
     }
+}
+
+function setLocalStorage(key, value, ttl = null) {
+    key = "_" + key;
+    const now = new Date();
+    const item = {
+        value: value
+    };
+
+    if (ttl) {
+        item.expiry = now.getTime() + ttl;
+    }
+
+    localStorage.setItem(key, JSON.stringify(item))
+}
+
+function getLocalStorage(key) {
+    key = "_" + key;
+    const itemStr = localStorage.getItem(key);
+    if (!itemStr) {
+        return null;
+    }
+    const item = JSON.parse(itemStr);
+    const now = new Date();
+    if (item.expiry && now.getTime() > item.expiry) {
+        localStorage.removeItem(key);
+        return null;
+    }
+
+    return item.value;
+}
+
+function removeLocalStorage(key) {
+    key = "_" + key;
+    localStorage.removeItem(key);
+}
+
+function cacheMounts(mounts) {
+    setLocalStorage("mounts", mounts, 24 * 60 * 60 * 1000);
 }
 
 let page = document.querySelector(".page");

@@ -90,6 +90,7 @@ function showMissingModels() {
 
     if (missingModels.length > 0) {
         document.querySelector("#missingModelsContainer").style.display = "block";
+        document.querySelector("#missingModelHeader").innerHTML = "Missing Models (" + missingModels.length + ")";
         document.querySelector("#missingModelHeader").addEventListener("click", () => {
             let text = missingModels.map(m => '"' + m + '":').join(",\n");
             copyToClipboard(text, "Copied mapping config", "Error while copying mapping config");

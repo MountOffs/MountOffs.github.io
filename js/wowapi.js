@@ -8,30 +8,14 @@ function locale(region) {
     }
 }
 
-function setCookie(name, value, expires = 365 * 24 * 60 * 60) {
-    let date = new Date();
-    date.setTime(date.getTime() + expires * 1000);
-    document.cookie = name + '=' + (value || "") + "; expires=" + date.toUTCString();
-}
-
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
-
-function getCookieToken() {
-    return getCookie("token");
-}
-
 function getToken(callback) {
-    let token = getCookieToken();
+    let token = getLocalStorage("token");
     if (!token) {
         authorize((response) => {
             let payload = JSON.parse(response);
             token = payload.access_token;
             let expires = payload.expires_in;
-            setCookie("token", token, expires);
+            setLocalStorage("token", token, expires * 1000);
 
             callback(token);
         });
@@ -62,12 +46,14 @@ function post(url, callback) {
 }
 
 function fetchMounts(region, realm, character, callback) {
+    console.log("Fetching mounts");
     getToken((token) => {
         let url = urlTemplate(region, realm, character, locale(region), token);
         get(url, (response) => {
             let data = JSON.parse(response);
             let mounts = data.mounts.map(mount => mount.mount.name);
             mounts = processFactionMounts(mounts);
+            console.log("Mounts fetched:", mounts);
             callback(mounts);
         });
     });
