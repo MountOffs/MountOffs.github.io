@@ -479,5 +479,8 @@ let mountMapping = { "Brown Horse": 2404,
     "Infested Necroray": 99441,
     "Gruesome Flayedwing": 98153,
     "Sinrunner Blanchy": 98449,
-    "Pestilent Necroray": 99440
+    "Pestilent Necroray": 99440,
+    "Vile Fiend": 76646,
+    "Slime Serpent": 97160,
+    "Marrowfang": 98151
 };
