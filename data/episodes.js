@@ -4859,7 +4859,7 @@ let episodes = [
                     {"time":"55:10","event":"MOUNT","mount":"Infested Necroray"},
                     {"time":"55:37","event":"VICTORY","winner":"Crazedbrew"}
             ]},
-    {"id": "35", "youtubeId": "r2BC5Q2g7DI", "date": "02.05.2021", "events": [
+    {"id": "35", "youtubeId": "r2BC5Q2g7DI", "faction": "alliance", "status": "done", "date": "02.05.2021", "events": [
                     {"time":"00:23","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
                     {"time":"00:56","event":"MOUNT","mount":"Wandering Ancient"},
                     {"time":"01:17","event":"MOUNT","mount":"Red Qiraji Battle Tank"},
