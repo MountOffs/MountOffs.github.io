@@ -473,5 +473,11 @@ let mountMapping = { "Brown Horse": 2404,
     "Wild Glimmerfur Prowler": 97623,
     "Swift Gloomhoof": 94357,
     "Spinemaw Gladechewer": 94349,
-    "Vicious War Spider": [96782, 96783]
+    "Vicious War Spider": [96782, 96783],
+    "Striped Frostsaber": 6080,
+    "Bulbous Necroray": 99439,
+    "Infested Necroray": 99441,
+    "Gruesome Flayedwing": 98153,
+    "Sinrunner Blanchy": 98449,
+    "Pestilent Necroray": 99440
 };
