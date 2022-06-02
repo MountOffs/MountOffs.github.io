@@ -485,5 +485,10 @@ let mountMapping = { "Brown Horse": 2404,
     "Marrowfang": 98151,
     "Chestnut Mare": 2405,
     "Chauffeured Mekgineer's Chopper": 61804,
-    "Maddened Chaosrunner": 76311
+    "Maddened Chaosrunner": 76311,
+    "Sinful Gladiator's Soul Eater": 97306,
+    "Fallen Charger": 98542,
+    "Pale Acidmaw": 94348,
+    "Silvertip Dredwing": 97367,
+    "Dauntless Duskrunner": 97870
 };
