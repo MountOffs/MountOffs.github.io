@@ -23,11 +23,7 @@ function init() {
 
 function initBackButton() {
     let back = document.getElementById("back");
-    if (episode.status === "done") {
-        back.href = "play.html";
-    } else {
-        back.href = "archive.html";
-    }
+    back.href = "play.html";
 }
 
 function initUI() {
