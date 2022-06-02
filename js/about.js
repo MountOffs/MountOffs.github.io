@@ -1,0 +1,1 @@
+document.querySelector("#total").innerText = episodes.length;
