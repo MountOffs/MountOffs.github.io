@@ -27,10 +27,7 @@ function initBackButton() {
 }
 
 function initUI() {
-    let enable = (episode.status === "done" || episode.status === "WIP");
-    document.getElementById("mountContainer").style.display = enable ? "block" : "none";
-    document.getElementById("stageContainer").style.display = enable ? "block" : "none";
-    document.getElementById("progressContainer").style.display = enable && isLoggedIn() ? "block" : "none";
+    document.getElementById("progressContainer").style.display = isLoggedIn() ? "block" : "none";
 }
 
 function initIframeAPI() {

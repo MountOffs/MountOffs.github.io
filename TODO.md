@@ -46,3 +46,4 @@
 * Trivia minigame
 * Episode selection handle seen
 * Custom 404 page
+* Twitter link in new page (hide in profile)

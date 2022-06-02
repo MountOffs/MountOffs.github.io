@@ -1,5 +1,5 @@
 let episodes = [
-    {"id": "1", "youtubeId": "VJDN9YHcbE8", "faction": "alliance", "status": "done", "date": "13.08.2016", "events": [
+    {"id": "1", "youtubeId": "VJDN9YHcbE8", "faction": "alliance", "date": "13.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 39},
             {"time": "0:51", "event": "MOUNT", "mount": "Snowy Gryphon"},
             {"time": "1:35", "event": "PLAYER", "players": 38},
@@ -41,7 +41,7 @@ let episodes = [
             {"time": "14:46", "event": "PLAYER", "players": 1},
             {"time": "14:46", "event": "VICTORY", "winner": "Hauntah"}
     ]},
-    {"id": "2", "youtubeId": "qARP1RXNe1k", "faction": "alliance", "status": "done", "date": "19.08.2016", "events": [
+    {"id": "2", "youtubeId": "qARP1RXNe1k", "faction": "alliance", "date": "19.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 39},
             {"time": "0:45", "event": "MOUNT", "mount": "Pinto"},
             {"time": "0:53", "event": "PLAYER", "players": 38},
@@ -98,7 +98,7 @@ let episodes = [
             {"time": "11:53", "event": "PLAYER", "players": 1},
             {"time": "11:53", "event": "VICTORY", "winner": "Mcconnell"}
     ]},
-    {"id": "3", "youtubeId": "-RfYmS-lUQA", "faction": "alliance", "status": "done", "date": "23.08.2016", "events": [
+    {"id": "3", "youtubeId": "-RfYmS-lUQA", "faction": "alliance", "date": "23.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 38},
             {"time": "1:00", "event": "MOUNT", "mount": "Brown Horse"},
             {"time": "1:08", "event": "PLAYER", "players": 37},
@@ -142,7 +142,7 @@ let episodes = [
             {"time": "7:22", "event": "PLAYER", "players": 1},
             {"time": "7:23", "event": "VICTORY", "winner": "Awry"},
     ]},
-    {"id": "4", "youtubeId": "m2lXjB9-Ay8", "faction": "alliance", "status": "done", "date": "24.08.2016", "events": [
+    {"id": "4", "youtubeId": "m2lXjB9-Ay8", "faction": "alliance", "date": "24.08.2016", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 38},
             {"time": "0:10", "event": "MOUNT", "mount": "Black Stallion"},
             {"time": "0:20", "event": "PLAYER", "players": 37},
@@ -200,7 +200,7 @@ let episodes = [
             {"time": "11:52", "event": "PLAYER", "players": 1},
             {"time": "11:58", "event": "VICTORY", "winner": "Rankdk"}
     ]},
-    {"id": "5", "youtubeId": "S9E_xFxKsIs", "faction": "alliance", "status": "done", "date": "25.08.2016", "events": [
+    {"id": "5", "youtubeId": "S9E_xFxKsIs", "faction": "alliance", "date": "25.08.2016", "events": [
         {"time": "0:00", "event": "PLAYER", "players": 17},
         {"time": "0:25", "event": "MOUNT", "mount": "Albino Drake"},
         {"time": "0:39", "event": "PLAYER", "players": 16},
@@ -233,7 +233,7 @@ let episodes = [
         {"time": "6:11", "event": "PLAYER", "players": 1},
         {"time": "6:13", "event": "VICTORY", "winner": "Dark"},
     ]},
-    {"id": "6", "youtubeId": "kvi0U0FeTaY", "faction": "alliance", "status": "done", "date": "27.08.2016", "events": [
+    {"id": "6", "youtubeId": "kvi0U0FeTaY", "faction": "alliance", "date": "27.08.2016", "events": [
         {"time": "0:00", "event": "PLAYER", "players": 25},
         {"time": "0:25", "event": "MOUNT", "mount": "Great Green Dragon Turtle"},
         {"time": "0:44", "event": "PLAYER", "players": 24},
@@ -271,7 +271,7 @@ let episodes = [
         {"time": "8:05", "event": "PLAYER", "players": 1},
         {"time": "8:06", "event": "VICTORY", "winner": "Cobus"} //Mcconnell
     ]},
-    {"id": "7", "youtubeId": "5VX0Ou932eg", "faction": "alliance", "status": "done", "date": "12.03.2017", "events": [
+    {"id": "7", "youtubeId": "5VX0Ou932eg", "faction": "alliance", "date": "12.03.2017", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 39},
             {"time": "1:29", "event": "MOUNT", "mount": "Brown Horse"},
             {"time": "1:47", "event": "PLAYER", "players": 38},
@@ -372,7 +372,7 @@ let episodes = [
             {"time": "29:34", "event": "PLAYER", "players": 1},
             {"time": "29:38", "event": "VICTORY", "winner": "Deathboy"}
         ]},
-    {"id": "8", "youtubeId": "ogkNCd5px54", "faction": "alliance", "status": "done", "date": "29.12.2017", "events": [
+    {"id": "8", "youtubeId": "ogkNCd5px54", "faction": "alliance", "date": "29.12.2017", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 37},
             {"time": "0:23", "event": "MOUNT", "mount": "Bronze Drake"},
             {"time": "0:28", "event": "PLAYER", "players": 36},
@@ -451,7 +451,7 @@ let episodes = [
             {"time": "9:12", "event": "SCORE", "score": "4:4"},
             {"time": "9:14", "event": "VICTORY", "winner": "Asmongold"}
     ]},
-    {"id": "9", "youtubeId": "WXdDZ5atDW4", "start": 281, "faction": "horde", "status": "done", "date": "27.07.2018", "events": [
+    {"id": "9", "youtubeId": "WXdDZ5atDW4", "start": 281, "faction": "horde", "date": "27.07.2018", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 37},
             {"time": "4:58", "event": "MOUNT", "mount": "Green Qiraji Battle Tank"},
             {"time": "5:05", "event": "PLAYER", "players": 36},
@@ -587,7 +587,7 @@ let episodes = [
             {"time": "40:56", "event": "MOUNT", "mount": "Swift Horde Wolf"},
             {"time": "41:30", "event": "VICTORY", "winner": "Asmongold"}
         ]},
-    {"id": "10", "youtubeId": "F3Awarf_GZs", "start": 137, "faction": "horde", "status": "done", "date": "03.08.2018", "events": [
+    {"id": "10", "youtubeId": "F3Awarf_GZs", "start": 137, "faction": "horde", "date": "03.08.2018", "events": [
         {"time": "2:30", "event": "PLAYER", "players": 38},
         {"time": "2:30", "event": "MOUNT", "mount": "Black Wolf"},
         {"time": "2:51", "event": "PLAYER", "players": 37},
@@ -708,7 +708,7 @@ let episodes = [
         {"time": "29:48", "event": "MOUNT", "mount": "Time-Lost Proto-Drake"},
         {"time": "30:00", "event": "VICTORY", "winner": "Asmongold"}
     ]},
-    {"id": "11", "youtubeId": "i8lVEXJ2OV0", "faction": "alliance", "status": "done", "date": "11.08.2018", "events": [
+    {"id": "11", "youtubeId": "i8lVEXJ2OV0", "faction": "alliance", "date": "11.08.2018", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 31},
             {"time": "0:10", "event": "MOUNT", "mount": "Red Qiraji Battle Tank"},
             {"time": "0:15", "event": "PLAYER", "players": 30},
@@ -763,7 +763,7 @@ let episodes = [
             {"time": "13:10", "event": "SCORE", "score": "1:1"},
             {"time": "13:10", "event": "VICTORY", "winner": "Asmongold"}
     ]},
-    {"id": "12", "youtubeId": "Mw9X00VBCNI", "faction": "horde", "status": "done", "date": "14.10.2018", "events": [
+    {"id": "12", "youtubeId": "Mw9X00VBCNI", "faction": "horde", "date": "14.10.2018", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 37},
             {"time": "1:21", "event": "MOUNT", "mount": "Amani Battle Bear"},
             {"time": "2:10", "event": "PLAYER", "players": 36},
@@ -896,7 +896,7 @@ let episodes = [
             {"time": "44:11", "event": "MOUNT", "mount": "Heavenly Onyx Cloud Serpent"},
             {"time": "44:37", "event": "VICTORY", "winner": "Asmongold"}
     ]},
-    {"id": "13", "youtubeId": "KxtwWt39UL8", "faction": "alliance", "status": "done", "date": "05.11.2018", "events": [
+    {"id": "13", "youtubeId": "KxtwWt39UL8", "faction": "alliance", "date": "05.11.2018", "events": [
                     {"time": "0:00", "event": "PLAYER", "players": 39},
                     {"time": "0:52", "event": "MOUNT", "mount": "Blue Qiraji Battle Tank"},
                     {"time": "1:38", "event": "PLAYER", "players": 38},
@@ -1150,7 +1150,7 @@ let episodes = [
                     {"time": "1:36:35", "event": "MOUNT", "mount": "Son of Galleon"},
                     {"time": "1:36:51", "event": "VICTORY", "winner": "Asmongold"}
     ]}, //https://www.youtube.com/watch?v=Y5Kquo1Oz60
-    {"id": "14", "youtubeId": "usAhvofjvbo", "faction": "horde", "status": "done", "date": "18.11.2018", "events": [
+    {"id": "14", "youtubeId": "usAhvofjvbo", "faction": "horde", "date": "18.11.2018", "events": [
             {"time": "0:00", "event": "PLAYER", "players": 39},
             {"time": "0:50", "event": "MOUNT", "mount": "Green Qiraji Battle Tank"},
             {"time": "1:11", "event": "PLAYER", "players": 38},
@@ -1282,7 +1282,7 @@ let episodes = [
             {"time": "43:26", "event": "MOUNT", "mount": "Swift Zulian Tiger"},
             {"time": "43:30", "event": "VICTORY", "winner": "Asmongold"}
     ]},
-    {"id": "15", "youtubeId": "iTeqafGC6gg", "start": 300, "faction": "alliance", "status": "done", "date": "22.11.2018", "events": [
+    {"id": "15", "youtubeId": "iTeqafGC6gg", "start": 300, "faction": "alliance", "date": "22.11.2018", "events": [
                     {"time": "0:00", "event": "PLAYER", "players": 39},
                     {"time": "5:00", "event": "MOUNT", "mount": "Armored Blue Dragonhawk"},
                     {"time": "7:14", "event": "MOUNT", "mount": "Black Drake"},
@@ -1433,7 +1433,7 @@ let episodes = [
                     {"time": "54:40", "event": "MOUNT", "mount": "Abyss Worm"},
                     {"time": "56:00", "event": "VICTORY", "winner": "Jramm"}
             ]},
-    {"id": "16", "youtubeId": "KZT3TIch2o4", "start": 181, "faction": "horde", "status": "done", "date": "28.11.2018", "events": [
+    {"id": "16", "youtubeId": "KZT3TIch2o4", "start": 181, "faction": "horde", "date": "28.11.2018", "events": [
                         {"time": "0:00", "event": "PLAYER", "players": 38},
                         {"time": "0:00", "event": "MOUNT", "mount": "Albino Drake"},
                         {"time": "3:38", "event": "PLAYER", "players": 37},
@@ -1580,7 +1580,7 @@ let episodes = [
                         {"time": "41:01", "event": "MOUNT", "mount": "Obsidian Krolusk"},
                         {"time": "42:02", "event": "VICTORY", "winner": "Asmongold"}
             ]},
-    {"id": "17", "youtubeId": "i85gebdxph4", "faction": "horde", "status": "done", "date": "27.12.2018", "events": [
+    {"id": "17", "youtubeId": "i85gebdxph4", "faction": "horde", "date": "27.12.2018", "events": [
             {"time":"0:00","event":"PLAYER","players":39},
             {"time":"01:44","event":"MOUNT","mount":"Albino Drake"},
             {"time":"02:07","event":"PLAYER","players":38},
@@ -1713,7 +1713,7 @@ let episodes = [
             {"time":"46:56","event":"MOUNT","mount":"Swift Zulian Tiger"},
             {"time":"47:30","event":"VICTORY","winner":"Shaker"}
     ]},
-    {"id": "18", "youtubeId": "nPw_pjmg0bg", "faction": "alliance", "status": "done", "date": "20.02.2019", "events": [
+    {"id": "18", "youtubeId": "nPw_pjmg0bg", "faction": "alliance", "date": "20.02.2019", "events": [
                     {"time":"0:00","event":"PLAYER","players":39},
                     {"time":"00:29","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
                     {"time":"00:36","event":"PLAYER","players":38},
@@ -1889,7 +1889,7 @@ let episodes = [
                     {"time":"35:22","event":"MOUNT","mount":"Plagued Proto-Drake"},
                     {"time":"35:51","event":"VICTORY","winner":"Asmongold"}
             ]},
-    {"id": "19", "youtubeId": "MusbVDoCQFA", "faction": "alliance", "status": "done", "date": "26.04.2019", "events": [
+    {"id": "19", "youtubeId": "MusbVDoCQFA", "faction": "alliance", "date": "26.04.2019", "events": [
                     {"time":"0:00","event":"PLAYER","players":39},
                     {"time":"00:08","event":"MOUNT","mount":"Red Qiraji Battle Tank"},
                     {"time":"00:32","event":"PLAYER","players":38},
@@ -2039,7 +2039,7 @@ let episodes = [
                     {"time":"46:26","event":"MOUNT","mount":"Amani War Bear"},
                     {"time":"47:18","event":"VICTORY","winner":"Asmongold"}
         ]},
-    {"id": "20", "youtubeId": "6k6OEvEsvu0", "start": 85, "faction": "alliance", "status": "done", "date": "15.05.2019", "events": [
+    {"id": "20", "youtubeId": "6k6OEvEsvu0", "start": 85, "faction": "alliance", "date": "15.05.2019", "events": [
                     {"time":"0:00","event":"PLAYER","players":39},
                     {"time":"01:31","event":"MOUNT","mount":"Amani Battle Bear"},
                     {"time":"01:51","event":"PLAYER","players":38},
@@ -2171,7 +2171,7 @@ let episodes = [
                     {"time":"38:10","event":"MOUNT","mount":"Mighty Caravan Brutosaur"},
                     {"time":"38:18","event":"VICTORY","winner":"Asmongold"}
             ]}, //uGLv0zlw8D0
-    {"id": "21", "youtubeId": "2iRWcuKixj8", "faction": "alliance", "status": "done", "date": "03.07.2019", "events": [
+    {"id": "21", "youtubeId": "2iRWcuKixj8", "faction": "alliance", "date": "03.07.2019", "events": [
                     {"time":"0:00","event":"PLAYER","players":39},
                     {"time":"00:48","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
                     {"time":"01:31","event":"PLAYER","players":38},
@@ -2296,7 +2296,7 @@ let episodes = [
                     {"time":"39:38","event":"MOUNT","mount":"Bloodgorged Crawg"},
                     {"time":"40:39","event":"VICTORY","winner":"Jramm"}
             ]},
-    {"id": "22", "youtubeId": "unkgOAgySpI", "faction": "horde", "status": "done", "date": "25.07.2019", "events": [
+    {"id": "22", "youtubeId": "unkgOAgySpI", "faction": "horde", "date": "25.07.2019", "events": [
             {"time":"0:00","event":"PLAYER","players":39},
             {"time":"00:27","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
             {"time":"00:47","event":"PLAYER","players":38},
@@ -2443,7 +2443,7 @@ let episodes = [
             {"time":"41:02","event":"MOUNT","mount":"Vicious War Scorpion"},
             {"time":"41:55","event":"VICTORY","winner":"Maiyun"}
         ]},
-    {"id": "23", "youtubeId": "U0xPH7_AADU", "faction": "horde", "status": "done", "date": "28.11.2019", "events": [
+    {"id": "23", "youtubeId": "U0xPH7_AADU", "faction": "horde", "date": "28.11.2019", "events": [
             {"time":"0:00","event":"PLAYER","players":39},
             {"time":"00:31","event":"MOUNT","mount":"Gray Kodo"},
             {"time":"01:30","event":"PLAYER","players":38},
@@ -2532,7 +2532,7 @@ let episodes = [
             {"time":"47:49","event":"PLAYER","players":1},
             {"time":"48:00","event":"VICTORY","winner":"Shaker"}
         ]},
-    {"id": "24", "youtubeId": "zprDyBRklEY", "start": 116, "faction": "horde", "status": "done", "date": "27.04.2020", "events": [
+    {"id": "24", "youtubeId": "zprDyBRklEY", "start": 116, "faction": "horde", "date": "27.04.2020", "events": [
                     {"time":"0:00","event":"PLAYER","players":39},
                     {"time":"02:08","event":"MOUNT","mount":"Black Wolf"},
                     {"time":"02:47","event":"PLAYER","players":38},
@@ -2750,7 +2750,7 @@ let episodes = [
                     {"time":"01:08:26","event":"MOUNT","mount":"Vicious Skeletal Warhorse"},
                     {"time":"01:09:18","event":"VICTORY","winner":"Asmongold"}
             ]},
-    {"id": "25", "youtubeId": "T50cgZ8ysls", "faction": "alliance", "status": "done", "date": "04.05.2020", "events": [
+    {"id": "25", "youtubeId": "T50cgZ8ysls", "faction": "alliance", "date": "04.05.2020", "events": [
                     {"time":"01:31","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
                     {"time":"02:02","event":"PLAYER","players":38},
                     {"time":"02:04","event":"PLAYER","players":37},
@@ -2996,7 +2996,7 @@ let episodes = [
                     {"time":"01:06:53","event":"MOUNT","mount":"Azshari Bloatray"},
                     {"time":"01:08:18","event":"VICTORY","winner":"Skatejawn"}
             ]},
-    {"id": "26", "youtubeId": "o5yPZxa_ZX8", "start": 18, "faction": "alliance", "status": "done", "date": "19.05.2020", "events": [
+    {"id": "26", "youtubeId": "o5yPZxa_ZX8", "start": 18, "faction": "alliance", "date": "19.05.2020", "events": [
                     {"time":"00:00","event":"PLAYER","players":39},
                     {"time":"01:01","event":"MOUNT","mount":"Green Qiraji Battle Tank"},
                     {"time":"01:28","event":"PLAYER","players":38},
@@ -3156,7 +3156,7 @@ let episodes = [
                     {"time":"50:34","event":"PLAYER","players":1},
                     {"time":"51:19","event":"VICTORY","winner":"Thiccgrandpa"}
             ]},
-    {"id": "27", "youtubeId": "1yOkO7V24NE", "start": 41, "faction": "alliance", "status": "done", "date": "11.06.2020", "events": [
+    {"id": "27", "youtubeId": "1yOkO7V24NE", "start": 41, "faction": "alliance", "date": "11.06.2020", "events": [
                     {"time":"00:00","event":"PLAYER","players":39},
                     {"time":"00:51","event":"MOUNT","mount":"Blue Qiraji Battle Tank"},
                     {"time":"01:43","event":"PLAYER","players":38},
@@ -3316,7 +3316,7 @@ let episodes = [
                     {"time":"54:00","event":"VICTORY","winner":"Doneire"}
 
             ]},
-    {"id": "28", "youtubeId": "g-MNtkHdBkk", "start": 18, "faction": "horde", "status": "done", "date": "16.06.2020", "events": [
+    {"id": "28", "youtubeId": "g-MNtkHdBkk", "start": 18, "faction": "horde", "date": "16.06.2020", "events": [
                     {"time":"01:06","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
                     {"time":"01:17","event":"PLAYER","players":38},
                     {"time":"01:56","event":"PLAYER","players":37},
@@ -3567,7 +3567,7 @@ let episodes = [
                     {"time":"01:12:10","event":"MOUNT","mount":"Mechacycle Model W"},
                     {"time":"01:14:07","event":"VICTORY","winner":"Skatejawn"}
             ]},
-    {"id": "29", "youtubeId": "H1-gnSgDMAU", "faction": "alliance", "status": "done", "date": "23.07.2020", "events": [
+    {"id": "29", "youtubeId": "H1-gnSgDMAU", "faction": "alliance", "date": "23.07.2020", "events": [
                     {"time":"00:57","event":"MOUNT","mount":"Blue Qiraji Battle Tank"},
                     {"time":"01:43","event":"MOUNT","mount":"Green Qiraji Battle Tank"},
                     {"time":"02:10","event":"PLAYER","players":38},
@@ -3763,7 +3763,7 @@ let episodes = [
                     {"time":"01:09:06","event":"MOUNT","mount":"Mail Muncher"},
                     {"time":"01:10:43","event":"VICTORY","winner":"Trauk"}
             ]},
-    {"id": "30", "youtubeId": "VY3WhstC_pI", "faction": "alliance", "status": "done", "date": "14.09.2020", "events": [
+    {"id": "30", "youtubeId": "VY3WhstC_pI", "faction": "alliance", "date": "14.09.2020", "events": [
                     {"time":"01:13","event":"MOUNT","mount":"Green Qiraji Battle Tank"},
                     {"time":"01:53","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
                     {"time":"02:50","event":"PLAYER","players":38},
@@ -3913,7 +3913,7 @@ let episodes = [
                     {"time":"41:23","event":"MOUNT","mount":"Infinite Timereaver"},
                     {"time":"42:04","event":"VICTORY","winner":"Asmongold"}
             ]},
-    {"id": "31", "youtubeId": "VE7J-raq4XM", "faction": "alliance", "status": "done", "date": "23.10.2020", "events": [
+    {"id": "31", "youtubeId": "VE7J-raq4XM", "faction": "alliance", "date": "23.10.2020", "events": [
                     {"time":"00:50","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
                     {"time":"01:55","event":"MOUNT","mount":"Red Qiraji Battle Tank"},
                     {"time":"04:30","event":"MOUNT","mount":"Amani Battle Bear"},
@@ -4073,7 +4073,7 @@ let episodes = [
                     {"time":"53:53","event":"MOUNT","mount":"Tomb Stalker"},
                     {"time":"54:16","event":"VICTORY","winner":"Asmongold"}
             ]},
-    {"id": "32", "youtubeId": "wUqb-MwbyAI", "faction": "alliance", "status":"done", "date": "19.11.2020", "events": [
+    {"id": "32", "youtubeId": "wUqb-MwbyAI", "faction": "alliance", "date": "19.11.2020", "events": [
                     {"time":"01:26","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
                     {"time":"01:40","event":"MOUNT","mount":"Green Qiraji Battle Tank"},
                     {"time":"02:02","event":"MOUNT","mount":"Red Qiraji Battle Tank"},
@@ -4333,7 +4333,7 @@ let episodes = [
                     {"time":"01:04:49","event":"MOUNT","mount":"Warmongering Gladiator's Felblood Gronnling"},
                     {"time":"01:05:19","event":"VICTORY","winner":"Icebreaker"}
             ]},
-    {"id": "33", "youtubeId": "P6yaaH_gffI", "faction": "alliance", "status": "done", "date": "19.03.2021", "events": [
+    {"id": "33", "youtubeId": "P6yaaH_gffI", "faction": "alliance", "date": "19.03.2021", "events": [
             {"time":"01:31","event":"MOUNT","mount":"Wandering Ancient"},
             {"time":"02:14","event":"MOUNT","mount":"Blue Qiraji Battle Tank"},
             {"time":"02:49","event":"MOUNT","mount":"Red Qiraji Battle Tank"},
@@ -4623,7 +4623,7 @@ let episodes = [
             {"time":"01:08:27","event":"MOUNT","mount":"Sintouched Deathwalker"},
             {"time":"01:08:43","event":"VICTORY","winner":"Asmongold"}
         ]},
-    {"id": "34", "youtubeId": "Wq0HUcxipjg", "faction": "alliance", "status": "done", "date": "05.04.2021", "events": [
+    {"id": "34", "youtubeId": "Wq0HUcxipjg", "faction": "alliance", "date": "05.04.2021", "events": [
                     {"time":"01:04","event":"MOUNT","mount":"Wandering Ancient"},
                     {"time":"01:15","event":"MOUNT","mount":"Green Qiraji Battle Tank"},
                     {"time":"01:27","event":"PLAYER","players":38},
@@ -4859,7 +4859,7 @@ let episodes = [
                     {"time":"55:10","event":"MOUNT","mount":"Infested Necroray"},
                     {"time":"55:37","event":"VICTORY","winner":"Crazedbrew"}
             ]},
-    {"id": "35", "youtubeId": "r2BC5Q2g7DI", "faction": "alliance", "status": "done", "date": "02.05.2021", "events": [
+    {"id": "35", "youtubeId": "r2BC5Q2g7DI", "faction": "alliance", "date": "02.05.2021", "events": [
                     {"time":"00:23","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
                     {"time":"00:56","event":"MOUNT","mount":"Wandering Ancient"},
                     {"time":"01:17","event":"MOUNT","mount":"Red Qiraji Battle Tank"},
@@ -5053,7 +5053,7 @@ let episodes = [
                     {"time":"45:36","event":"SPECIAL"},
                     {"time":"46:43","event":"VICTORY","winner":"Shamsassador"}
             ]},
-    {"id": "36", "youtubeId": "ke6pU8gJN_4", "faction": "alliance", "status": "done", "date": "14.05.2021", "events": [
+    {"id": "36", "youtubeId": "ke6pU8gJN_4", "faction": "alliance", "date": "14.05.2021", "events": [
                     {"time":"00:29","event":"MOUNT","mount":"Wandering Ancient"},
                     {"time":"00:55","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
                     {"time":"01:12","event":"PLAYER","players":38},
@@ -5184,7 +5184,7 @@ let episodes = [
                     {"time":"31:59","event":"MOUNT","mount":"Swift Zulian Tiger"},
                     {"time":"32:20","event":"VICTORY","winner":"Asmongold"}
             ]},
-    {"id": "37", "youtubeId": "Y2VfLfmuics", "faction": "alliance", "status": "done", "date": "02.07.2021", "events": [
+    {"id": "37", "youtubeId": "Y2VfLfmuics", "faction": "alliance", "date": "02.07.2021", "events": [
                     {"time":"00:32","event":"MOUNT","mount":"Wandering Ancient"},
                     {"time":"01:16","event":"MOUNT","mount":"Red Qiraji Battle Tank"},
                     {"time":"02:06","event":"PLAYER","players":38},
@@ -5363,7 +5363,7 @@ let episodes = [
                     {"time":"39:02","event":"MOUNT","mount":"Notorious Gladiator's Proto-Drake"},
                     {"time":"39:16","event":"VICTORY","winner":"Asmongold"}
             ]},
-    {"id": "38", "youtubeId": "QFzJOumsab4", "faction": "alliance", "status": "done", "date": "10.04.2022", "events": [
+    {"id": "38", "youtubeId": "QFzJOumsab4", "faction": "alliance", "date": "10.04.2022", "events": [
                     {"time":"01:31","event":"MOUNT","mount":"Wandering Ancient"},
                     {"time":"02:04","event":"MOUNT","mount":"Yellow Qiraji Battle Tank"},
                     {"time":"02:43","event":"MOUNT","mount":"Green Qiraji Battle Tank"},
@@ -5480,7 +5480,7 @@ let episodes = [
                     {"time":"48:29","event":"SPECIAL","text": ""},
                     {"time":"50:22","event":"VICTORY","winner":"Adolebitque"}
             ]},
-    {"id": "39", "youtubeId": "-ZWFnKymvsQ", "faction": "horde", "status": "done", "date": "01.05.2022", "events": [
+    {"id": "39", "youtubeId": "-ZWFnKymvsQ", "faction": "horde", "date": "01.05.2022", "events": [
                     {"time":"01:03","event":"MOUNT","mount":"Wandering Ancient"},
                     {"time":"01:40","event":"MOUNT","mount":"Bronze Drake"},
                     {"time":"02:06","event":"PLAYER","players":38},
