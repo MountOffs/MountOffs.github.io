@@ -23,18 +23,11 @@ function init() {
 
 function initBackButton() {
     let back = document.getElementById("back");
-    if (episode.status === "done") {
-        back.href = "play.html";
-    } else {
-        back.href = "archive.html";
-    }
+    back.href = "play.html";
 }
 
 function initUI() {
-    let enable = (episode.status === "done" || episode.status === "WIP");
-    document.getElementById("mountContainer").style.display = enable ? "block" : "none";
-    document.getElementById("stageContainer").style.display = enable ? "block" : "none";
-    document.getElementById("progressContainer").style.display = enable && isLoggedIn() ? "block" : "none";
+    document.getElementById("progressContainer").style.display = isLoggedIn() ? "block" : "none";
 }
 
 function initIframeAPI() {

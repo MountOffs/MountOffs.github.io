@@ -1,6 +1,6 @@
 let list = document.getElementById("episodes");
 
-episodes.filter(e => e.status === "done").forEach(episode => {
+episodes.forEach(episode => {
     let div = document.createElement("div");
     div.classList.add("gallery-cell");
     setBackground(div, episode);

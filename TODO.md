@@ -45,3 +45,6 @@
 * cached page issue: https://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
 * Trivia minigame
 * Episode selection handle seen
+* Custom 404 page
+* Twitter link in new page (hide in profile)
+* Mount Offs title non-clickable

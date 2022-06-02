@@ -31,7 +31,6 @@ function createNav() {
     links.classList.add("links");
     links.appendChild(createLink("about.html", "ABOUT"));
     links.appendChild(createLink("play.html", "PLAY"));
-    links.appendChild(createLink("archive.html", "ARCHIVE"));
     if (isLoggedIn()) {
         links.appendChild(createLink("profile.html", "PROFILE"));
     } else {

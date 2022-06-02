@@ -35,11 +35,7 @@ function copyConfig(successResponse="Config copied", failureResponse="Error whil
 
 function initBackButton() {
     let back = document.getElementById("back");
-    if (episode.status === "done") {
-        back.href = "play.html";
-    } else {
-        back.href = "archive.html";
-    }
+    back.href = "play.html";
 }
 
 function initCopyButton() {
