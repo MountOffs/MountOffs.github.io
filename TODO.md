@@ -45,3 +45,4 @@
 * cached page issue: https://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
 * Trivia minigame
 * Episode selection handle seen
+* Custom 404 page
