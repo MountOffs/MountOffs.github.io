@@ -482,5 +482,8 @@ let mountMapping = { "Brown Horse": 2404,
     "Pestilent Necroray": 99440,
     "Vile Fiend": 76646,
     "Slime Serpent": 97160,
-    "Marrowfang": 98151
+    "Marrowfang": 98151,
+    "Chestnut Mare": 2405,
+    "Chauffeured Mekgineer's Chopper": 61804,
+    "Maddened Chaosrunner": 76311
 };

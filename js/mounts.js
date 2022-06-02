@@ -21,6 +21,8 @@ function getMounts(callback) {
 
 function processFactionMounts(mounts) {
     let mapping = [
+    ["Chauffeured Mechano-Hog", "Chauffeured Mekgineer's Chopper"],
+
     ["Red Dragonhawk", "Blue Dragonhawk"],
     ["Armored Red Dragonhawk", "Armored Blue Dragonhawk"],
 
