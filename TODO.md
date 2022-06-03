@@ -40,4 +40,3 @@
 * Loader during login
 * Optimize images
 * Fix play stacked carousel on switch
-* Hide footer in profile

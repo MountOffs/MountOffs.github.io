@@ -20,6 +20,9 @@ function switchPage(page) {
     let currentPageId = page + "-page";
     let currentPage = document.querySelector(currentPageId);
     currentPage.style.display = "block";
+
+    let footer = document.querySelector(".footer");
+    footer.style.display = (page === "#profile") ? "none" : "flex";
 }
 
 function currentPage() {
