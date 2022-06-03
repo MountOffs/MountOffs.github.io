@@ -21,10 +21,7 @@ function createNav() {
     let nav = document.createElement("nav");
     nav.classList.add("nav");
 
-    let header = document.createElement("h1");
-    header.classList.add("title");
-    let headerLink = createLink("index.html", "Mount Offs");
-    header.appendChild(headerLink);
+    let header = createNode("h1", "Mount Offs", "title");
     nav.appendChild(header);
 
     let links = document.createElement("div");

@@ -17,7 +17,8 @@ html {
     transform: translateX(-50%);
     top: 150%;
     font-size: 5em;
-    font-family: Georgia,Helvetica,sans-serif;
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
     text-decoration: none;
     transition: 0.2s;
     opacity: 0;
@@ -48,21 +49,23 @@ div {
 }
 
 .desc {
-    font-family: "Calibri", sans-serif;
     font-size: 0.8em;
 }
 
 .noun {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
     font-style: italic;
-    font-family: "Calibri", sans-serif;
 }
 
 .transcript {
-    font-family: "Calibri Light", sans-serif;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
 }
 
 .word {
-    font-family: "Arial Black", sans-serif;
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
 }
 
 body {
