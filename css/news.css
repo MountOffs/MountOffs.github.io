@@ -1,0 +1,35 @@
+html {
+    height: 100%;
+}
+
+.container {
+    font-size: 3em;
+    margin: 20% 20% 20% 20%;
+}
+
+.big {
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+}
+
+li {
+    margin-left: 0.5em;
+}
+
+ul {
+    list-style: circle;
+    margin-top: 0.5em;
+}
+
+div, li {
+    background: -webkit-linear-gradient(#FFF, #AAA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 255, 0)), url("../images/icecrown_citadel.jpg") center center;
+    background-size: cover;
+}

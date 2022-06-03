@@ -52,11 +52,7 @@ function initIframeAPI() {
 
 function getTime() {
     let time = player.getCurrentTime();
-    let timestamp = secondsToTime(Math.floor(time));
-    if (timestamp.startsWith("00:")) {
-        timestamp = timestamp.substring(3);
-    }
-    return timestamp;
+    return secondsToTime(Math.floor(time));
 }
 
 function copyToClipboard(text, successResponse, failureResponse) {

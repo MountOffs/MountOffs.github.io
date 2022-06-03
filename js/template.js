@@ -145,10 +145,31 @@ function createLoginDialog() {
     return dialog;
 }
 
+function totalDuration() {
+    let durationSeconds = episodes
+        .map(episode => episode.events.filter(event => event.event === "VICTORY")[0].time)
+        .map(timeToSeconds)
+        .reduce((prev, current) => prev + current, 0);
+    return secondsToTime(durationSeconds);
+}
+
 function secondsToTime(seconds) {
-    let date = new Date(0);
-    date.setSeconds(seconds); // specify value for SECONDS here
-    return date.toISOString().substr(11, 8);
+    let h = Math.floor(seconds / 3600);
+    seconds %= 3600;
+    let m = Math.floor(seconds / 60);
+    let s = seconds % 60;
+
+    h = String(h).padStart(2, "0");
+    m = String(m).padStart(2, "0");
+    s = String(s).padStart(2, "0");
+
+    if (h === "00") {
+        return m + ":" + s;
+    } else {
+        return h + ":" + m + ":" + s;
+    }
+
+
 }
 
 function timeToSeconds(time) {
