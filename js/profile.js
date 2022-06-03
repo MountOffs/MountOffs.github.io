@@ -5,6 +5,28 @@ function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
+function initProfile() {
+    if (isLoggedIn()) {
+        document.querySelector('#name').innerText = capitalize(char);
+        document.querySelector("#logout").addEventListener("click", () => {
+            logout();
+        });
+    }
+
+    episodeGrid.innerHTML = "";
+    getMounts(mounts => {
+        episodes.forEach(episode => {
+            let status = evaluateEpisode(episode, mounts);
+            if (status) {
+                let nodes = createEpisodeStatus(episode,status);
+                nodes.forEach(node => {
+                    episodeGrid.append(node);
+                });
+            }
+        });
+    });
+}
+
 function logout() {
     removeLocalStorage("region");
     removeLocalStorage("realm");
@@ -13,13 +35,6 @@ function logout() {
 
     location.href = "index.html#about";
     switchPage("#about");
-}
-
-if (isLoggedIn()) {
-    document.querySelector('#name').innerText = capitalize(char);
-    document.querySelector("#logout").addEventListener("click", () => {
-        logout();
-    });
 }
 
 function placing(status) {
@@ -66,15 +81,3 @@ function createEpisodeStatus(episode, status) {
 
     return nodes;
 }
-
-getMounts(mounts => {
-    episodes.forEach(episode => {
-        let status = evaluateEpisode(episode, mounts);
-        if (status) {
-            let nodes = createEpisodeStatus(episode,status);
-            nodes.forEach(node => {
-                episodeGrid.append(node);
-            });
-        }
-    });
-});

@@ -16,28 +16,10 @@ function createNode(type, text, ...clazzes) {
 }
 
 function createLoginDialog() {
-    let dialog = document.createElement("dialog");
-    dialog.id = "loginModal";
-    dialog.classList.add("modal");
-    let container = document.createElement("div");
-    container.classList.add("modalContainer");
-    let h2 = createNode("h2", "Enter realm and character");
 
-    let regionLabel = createNode("label", "Region");
-    regionLabel.id = "regionLabel";
-    regionLabel.for = "regionSelect";
-
-    let regionSelect = document.createElement("select");
-    regionSelect.id = "regionSelect";
-    regionSelect.appendChild(new Option("EU", "eu"));
-    regionSelect.appendChild(new Option("US", "us"));
-
-    let realmLabel = createNode("label", "Realm");
-    realmLabel.id = "realmLabel";
-    realmLabel.for = "realmSelect";
-
-    let realmSelect = document.createElement("select");
-    realmSelect.id = "realmSelect";
+    let dialog = document.querySelector("#loginModal");
+    let regionSelect = document.querySelector("#regionSelect");
+    let realmSelect = document.querySelector("#realmSelect");
     realms.eu.forEach(realm => {
         realmSelect.appendChild(new Option(realm.name, realm.slug));
     });
@@ -50,19 +32,14 @@ function createLoginDialog() {
         });
     });
 
-    let charLabel = createNode("label", "Character");
-    charLabel.id = "charLabel";
-    charLabel.for = "charSelect";
+    let button = document.querySelector(".modalButton");
 
-    let button = createNode("button", "LOGIN");
-
-    let charText = document.createElement("input");
-    charText.type = "text";
-    charText.id = "charText";
+    let charText = document.querySelector("#charText");
     charText.addEventListener("input", (e) => {
         let value = e.target.value;
         button.disabled = (value === null || value === "");
     });
+
     charText.addEventListener("keypress", (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
@@ -71,7 +48,6 @@ function createLoginDialog() {
     });
 
     button.disabled = true;
-    button.classList.add("modalButton");
     button.addEventListener('click', () => {
         let region = regionSelect.value;
         let realm = realmSelect.value;
@@ -88,10 +64,6 @@ function createLoginDialog() {
         });
         dialog.close();
     });
-
-    container.append(h2, regionLabel, regionSelect, realmLabel, realmSelect, charLabel, charText, button);
-    dialog.appendChild(container);
-    return dialog;
 }
 
 function totalDuration() {

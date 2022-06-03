@@ -15,17 +15,19 @@
         <a id="about-anchor" href="#about">ABOUT</a>
         <a id="play-anchor" href="#play">PLAY</a>
         <a id="profile-anchor" href="#profile">PROFILE</a>
-        <a id="login-button">LOGIN</a>
+        <a id="login-button" style="display:none;">LOGIN</a>
     </div>
 </nav>
 <div class="page" id="about-page" style="display: none">
     <h2>About</h2>
     <p>
-        This website offers a new way interactive to enjoy <a class="inlineLink" target="_blank" href="https://www.twitch.tv/asmongold">Asmongold</a>'s
+        This website offers a new way interactive to enjoy <a class="inlineLink" target="_blank"
+                                                              href="https://www.twitch.tv/asmongold">Asmongold</a>'s
         Mount offs.<br/>
         Instead of being just a viewer, you can participate and track your own progress!<br/>
 
-        To start, login then hit <a id="about-play-link" class="inlineLink" href="index.html#play">Play</a> and select one of the available
+        To start, login then hit <a id="about-play-link" class="inlineLink" href="index.html#play">Play</a> and select
+        one of the available
         episodes.<br/>
     </p>
     <h3>Currently available features:</h3>
@@ -42,7 +44,8 @@
         <li>No sync available across devices</li>
     </ul>
     <p>
-        If you have any additional suggestions, hit me up on <a class="inlineLink" target="_blank" href="https://twitter.com/MountOffs">Twitter</a>.
+        If you have any additional suggestions, hit me up on <a class="inlineLink" target="_blank"
+                                                                href="https://twitter.com/MountOffs">Twitter</a>.
     </p>
 </div>
 <div class="page" id="play-page" style="display:none;">
@@ -56,6 +59,22 @@
 <div class="footer">
     <a href="https://twitter.com/MountOffs" target="_blank">© 2022 MountOffs</a>
 </div>
+<dialog id="loginModal" class="modal">
+    <div class="modalContainer">
+        <h2>Enter realm and character</h2>
+        <label id="regionLabel">Region</label>
+        <select id="regionSelect">
+            <option value="eu">EU</option>
+            <option value="us">US</option>
+        </select>
+        <label id="realmLabel">Realm</label>
+        <select id="realmSelect">
+        </select>
+        <label id="charLabel">Character</label>
+        <input type="text" id="charText">
+        <button class="modalButton">LOGIN</button>
+    </div>
+</dialog>
 </body>
 <script src="data/episodes.js"></script>
 <script src="data/realms.js"></script>

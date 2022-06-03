@@ -1,8 +1,6 @@
 function init() {
-    if (document.querySelector(".page")) {
-        switchPage(currentPage());
-        document.body.appendChild(createLoginDialog());
-    }
+
+    createLoginDialog();
 
     document.querySelector("#about-anchor").addEventListener("click", () => switchPage("#about"));
     document.querySelector("#play-anchor").addEventListener("click", () => switchPage("#play"));
@@ -13,6 +11,8 @@ function init() {
     });
 
     document.querySelector("#about-play-link").addEventListener("click", () => switchPage("#play"));
+
+    switchPage(currentPage());
 }
 
 let flkty;
@@ -46,6 +46,8 @@ function switchPage(page) {
 
     if (page === "#play") {
         initPlay();
+    } else if (page === "#profile") {
+        initProfile();
     }
 }
 
