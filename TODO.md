@@ -14,7 +14,6 @@
 * add option to show all missing mounts
 
 ### Mount off page
-* how to overlay when youtube embed is fullscreen
 * Tooltip with info on mount mouseover (+ wowhead link?)
 * Mount animation on space
 * Mount pooling/preloading
@@ -39,4 +38,4 @@
 * Trivia minigame
 * Episode selection handle seen
 * Custom 404 page
-* Hide twitter link in profile
+* Single page application for 3 main pages
