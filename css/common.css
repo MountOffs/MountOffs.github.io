@@ -65,6 +65,11 @@ body {
     letter-spacing: 0.1em;
 }
 
+.links > a.current {
+    color: white;
+    pointer-events: none;
+}
+
 .nav a {
     text-decoration: none;
     transition: 0.2s;

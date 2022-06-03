@@ -1,11 +1,3 @@
-function createLink(href, text) {
-    let a = document.createElement("a");
-    a.href = href;
-    let textNode = document.createTextNode(text);
-    a.appendChild(textNode);
-    return a;
-}
-
 function createLoginBtn() {
     let a = document.createElement("a");
     a.onclick = function () {
@@ -17,25 +9,22 @@ function createLoginBtn() {
     return a;
 }
 
-function createNav() {
-    let nav = document.createElement("nav");
-    nav.classList.add("nav");
+function currentPage() {
+    let path = document.location.pathname;
+    return path.substring(path.lastIndexOf('/') + 1);
+}
 
-    let header = createNode("h1", "Mount Offs", "title");
-    nav.appendChild(header);
+function updateNavbar() {
+    let current = document.querySelector("[href='" + currentPage() + "']");
+    current.classList.add("current");
 
-    let links = document.createElement("div");
-    links.classList.add("links");
-    links.appendChild(createLink("about.html", "ABOUT"));
-    links.appendChild(createLink("play.html", "PLAY"));
-    if (isLoggedIn()) {
-        links.appendChild(createLink("profile.html", "PROFILE"));
-    } else {
+    if (!isLoggedIn()) {
+        let links = document.querySelector(".links");
+        let profile = document.querySelector("#profile");
+        profile.remove();
+
         links.appendChild(createLoginBtn());
     }
-    nav.appendChild(links);
-
-    return nav;
 }
 
 function isLoggedIn() {
@@ -43,16 +32,6 @@ function isLoggedIn() {
     let realm = getLocalStorage("realm");
     let char = getLocalStorage("character");
     return region != null && realm != null && char != null;
-}
-
-function createFooter() {
-    let footer = document.createElement("div");
-    footer.classList.add("footer");
-
-    let link = createLink("https://twitter.com/MountOffs", "© 2022 MountOffs");
-    footer.appendChild(link);
-
-    return footer;
 }
 
 function createNode(type, text, ...clazzes) {
@@ -261,8 +240,6 @@ function cacheMounts(mounts) {
 
 let page = document.querySelector(".page");
 if (page) {
-    document.body.insertBefore(createNav(), page);
+    updateNavbar();
     document.body.appendChild(createLoginDialog());
 }
-
-document.body.appendChild(createFooter());
