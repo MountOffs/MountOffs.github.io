@@ -23,7 +23,7 @@ function init() {
 
 function initBackButton() {
     let back = document.getElementById("back");
-    back.href = "play.html";
+    back.href = "index.html#play";
 }
 
 function initUI() {

@@ -7,6 +7,8 @@ function init() {
     document.querySelector("#about-anchor").addEventListener("click", () => switchPage("#about"));
     document.querySelector("#play-anchor").addEventListener("click", () => switchPage("#play"));
     document.querySelector("#profile-anchor").addEventListener("click", () => switchPage("#profile"));
+
+    document.querySelector("#about-play-link").addEventListener("click", () => switchPage("#play"));
 }
 
 let flkty;

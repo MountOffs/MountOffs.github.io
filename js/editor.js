@@ -35,7 +35,7 @@ function copyConfig(successResponse="Config copied", failureResponse="Error whil
 
 function initBackButton() {
     let back = document.getElementById("back");
-    back.href = "play.html";
+    back.href = "index.html#play";
 }
 
 function initCopyButton() {

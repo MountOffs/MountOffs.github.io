@@ -94,7 +94,7 @@ function createLoginDialog() {
             setLocalStorage("realm", realm);
             setLocalStorage("character", char);
             cacheMounts(mounts);
-            location.href = "profile.html";
+            location.href = "index.html#profile";
         });
         dialog.close();
     });

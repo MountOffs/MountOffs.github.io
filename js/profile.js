@@ -11,7 +11,7 @@ function logout() {
     removeLocalStorage("character");
     removeLocalStorage("mounts");
 
-    location.href = "about.html";
+    location.href = "index.html";
 }
 
 document.querySelector('#name').innerText = capitalize(char);
