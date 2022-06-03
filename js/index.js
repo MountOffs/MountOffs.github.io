@@ -4,9 +4,9 @@ function init() {
         document.body.appendChild(createLoginDialog());
     }
 
-    document.querySelector("#about").addEventListener("click", () => switchPage("#about"));
-    document.querySelector("#play").addEventListener("click", () => switchPage("#play"));
-    document.querySelector("#profile").addEventListener("click", () => switchPage("#profile"));
+    document.querySelector("#about-anchor").addEventListener("click", () => switchPage("#about"));
+    document.querySelector("#play-anchor").addEventListener("click", () => switchPage("#play"));
+    document.querySelector("#profile-anchor").addEventListener("click", () => switchPage("#profile"));
 }
 
 function switchPage(page) {
@@ -33,7 +33,7 @@ function updateNavbar(page) {
         link.classList.remove("current");
     });
 
-    let current = document.querySelector(page);
+    let current = document.querySelector(page + "-anchor");
     current.classList.add("current");
 
     if (!isLoggedIn()) {
