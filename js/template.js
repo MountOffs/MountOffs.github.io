@@ -11,12 +11,7 @@ function createLoginBtn() {
 
 function currentPage() {
     let path = document.location.pathname;
-    path = path.substring(1); //remove first /
-    if (path.startsWith("mountoffs/")) {
-        path = path.substring("mountoffs/".length);
-    }
-
-    return path;
+    return path.substring(path.lastIndexOf('/') + 1);
 }
 
 function updateNavbar() {
