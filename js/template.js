@@ -1,15 +1,3 @@
-function createLoginBtn() {
-    let a = document.createElement("a");
-    a.onclick = function () {
-        const modal = document.querySelector('#loginModal');
-        modal.showModal();
-    };
-    let textNode = document.createTextNode("LOGIN");
-    a.appendChild(textNode);
-    return a;
-}
-
-
 function isLoggedIn() {
     let region = getLocalStorage("region");
     let realm = getLocalStorage("realm");
@@ -94,7 +82,9 @@ function createLoginDialog() {
             setLocalStorage("realm", realm);
             setLocalStorage("character", char);
             cacheMounts(mounts);
+
             location.href = "index.html#profile";
+            switchPage("#profile");
         });
         dialog.close();
     });

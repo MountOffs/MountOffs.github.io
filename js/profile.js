@@ -11,13 +11,16 @@ function logout() {
     removeLocalStorage("character");
     removeLocalStorage("mounts");
 
-    location.href = "index.html";
+    location.href = "index.html#about";
+    switchPage("#about");
 }
 
-document.querySelector('#name').innerText = capitalize(char);
-document.querySelector("#logout").addEventListener("click", () => {
-   logout();
-});
+if (isLoggedIn()) {
+    document.querySelector('#name').innerText = capitalize(char);
+    document.querySelector("#logout").addEventListener("click", () => {
+        logout();
+    });
+}
 
 function placing(status) {
     if (status.losingMount === null) {

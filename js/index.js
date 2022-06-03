@@ -7,6 +7,10 @@ function init() {
     document.querySelector("#about-anchor").addEventListener("click", () => switchPage("#about"));
     document.querySelector("#play-anchor").addEventListener("click", () => switchPage("#play"));
     document.querySelector("#profile-anchor").addEventListener("click", () => switchPage("#profile"));
+    document.querySelector("#login-button").addEventListener("click", () => {
+        const modal = document.querySelector('#loginModal');
+        modal.showModal();
+    });
 
     document.querySelector("#about-play-link").addEventListener("click", () => switchPage("#play"));
 }
@@ -62,13 +66,11 @@ function updateNavbar(page) {
     let current = document.querySelector(page + "-anchor");
     current.classList.add("current");
 
-    if (!isLoggedIn()) {
-        let links = document.querySelector(".links");
-        let profile = document.querySelector("#profile");
-        profile.remove();
+    let profile = document.querySelector("#profile-anchor");
+    let login = document.querySelector("#login-button");
 
-        links.appendChild(createLoginBtn());
-    }
+    profile.style.display = isLoggedIn() ? "inline" : "none";
+    login.style.display = isLoggedIn() ? "none" : "inline";
 }
 
 init();
