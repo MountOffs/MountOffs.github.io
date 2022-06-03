@@ -9,6 +9,20 @@ function init() {
     document.querySelector("#profile-anchor").addEventListener("click", () => switchPage("#profile"));
 }
 
+let flkty;
+
+function initPlay() {
+    if (!flkty) {
+        //for initial DOM loading on #play
+        document.addEventListener("DOMContentLoaded", () => {
+            flkty = new Flickity("#episodes", {"wrapAround": true});
+        });
+
+        //for lazy loading when switching to play
+        flkty = new Flickity("#episodes", {"wrapAround": true});
+    }
+}
+
 function switchPage(page) {
     updateNavbar(page);
 
@@ -23,9 +37,16 @@ function switchPage(page) {
 
     let footer = document.querySelector(".footer");
     footer.style.display = (page === "#profile") ? "none" : "flex";
+
+    if (page === "#play") {
+        initPlay();
+    }
 }
 
 function currentPage() {
+    if (!document.location.hash) {
+        return "#about";
+    }
     return document.location.hash; //i.e. #about
 }
 

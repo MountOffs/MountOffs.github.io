@@ -1,4 +1,4 @@
-let list = document.getElementById("episodes");
+let list = document.querySelector("#episodes");
 
 episodes.forEach(episode => {
     let div = document.createElement("div");
