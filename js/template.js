@@ -50,6 +50,7 @@ function createFooter() {
     footer.classList.add("footer");
 
     let link = createLink("https://twitter.com/MountOffs", "© 2022 MountOffs");
+    link.target = "_blank";
     footer.appendChild(link);
 
     return footer;

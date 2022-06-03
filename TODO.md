@@ -3,16 +3,13 @@
 * socials
 * only show dictionary entry once
 
-### Editor
-* Show current number of players
-* Input for latest mount event
-
 ### Play page
 * Show seen label on seen episodes
 * Scroll to first unseen episode
 * What if mounts expire during game?
 
 ### Profile
+* Update button to refresh mounts
 * add (show all) button
 * add option to show all missing mounts
 
@@ -24,26 +21,22 @@
 * Scale size per mount (some mounts too big, some too small)
 
 ### Armory Sync
-* Invalidate mount cache
 * track overall progress (semifinal/final/victory)
 * separately login horde/alliance characters
 
 ### Configuration
-* track all players
 * track extra events
 * Mount caching
 
 ### Misc
 * Auth via battle.net > Sync horde/alliance chars
 * Only show landing page once
-* Dynamic title
 * Mobile friendly
 * SEO
-* DEBUG: precision timer for script writing
 * Twitch Prime rain
 * Update Readme
 * cached page issue: https://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
 * Trivia minigame
 * Episode selection handle seen
 * Custom 404 page
-* Twitter link in new page (hide in profile)
+* Hide twitter link in profile

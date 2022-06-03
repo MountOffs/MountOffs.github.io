@@ -15,7 +15,7 @@ const DEFAULT_SCORE_EVENT = {
 init();
 
 function init() {
-    setHeader("Episode " + episode.id);
+    setTitle();
     initBackButton();
     initUI();
     initIframeAPI();
@@ -134,7 +134,7 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-function onPlayerReady(event) {
+function onPlayerReady() {
     setInterval(update, 500);
 }
 
@@ -151,8 +151,10 @@ function getEpisode() {
     return episodes.filter(entry => entry.id === getId())[0];
 }
 
-function setHeader(header) {
+function setTitle() {
+    let header = "Episode " + episode.id;
     document.getElementById("header").innerText = header;
+    document.title = header + " - Mount Offs";
 }
 
 function setWinner(winner = null) {
