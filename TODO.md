@@ -40,3 +40,4 @@
 * Custom 404 page
 * Single page application for 3 main pages
 * Loader during login
+* Optimize images

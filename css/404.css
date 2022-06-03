@@ -1,0 +1,30 @@
+html {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.big {
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+    font-size: 4em;
+    user-select: none;
+}
+
+div, li {
+    background: -webkit-linear-gradient(#FFF, #AAA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 255, 0)), url("../images/invincible_googly.png") center center;
+    background-size: cover;
+}
