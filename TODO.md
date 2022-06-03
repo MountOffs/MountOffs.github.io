@@ -39,3 +39,5 @@
 * Single page application for 3 main pages
 * Loader during login
 * Optimize images
+* Fix play stacked carousel on switch
+* Fix profile scroll on switch

@@ -9,23 +9,6 @@ function createLoginBtn() {
     return a;
 }
 
-function currentPage() {
-    let path = document.location.pathname;
-    return path.substring(path.lastIndexOf('/') + 1);
-}
-
-function updateNavbar() {
-    let current = document.querySelector("[href='" + currentPage() + "']");
-    current.classList.add("current");
-
-    if (!isLoggedIn()) {
-        let links = document.querySelector(".links");
-        let profile = document.querySelector("#profile");
-        profile.remove();
-
-        links.appendChild(createLoginBtn());
-    }
-}
 
 function isLoggedIn() {
     let region = getLocalStorage("region");
@@ -236,10 +219,4 @@ function removeLocalStorage(key) {
 
 function cacheMounts(mounts) {
     setLocalStorage("mounts", mounts, 24 * 60 * 60 * 1000);
-}
-
-let page = document.querySelector(".page");
-if (page) {
-    updateNavbar();
-    document.body.appendChild(createLoginDialog());
 }
