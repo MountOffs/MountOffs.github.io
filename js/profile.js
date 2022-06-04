@@ -64,7 +64,7 @@ function createEpisodeStatus(episode, status) {
         nodes.push(losingMountLabel, losingMountSpan);
     }
 
-    if (!seen(episode)) {
+    if (!seen(episode.id)) {
         let showButton = createNode("span", "SHOW", "showButton");
         placingSpan.style.display = "none";
         if (losingMountSpan) losingMountSpan.style.display = "none";
