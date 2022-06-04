@@ -1,7 +1,4 @@
 # TODO
-### Landing page
-* socials
-* only show dictionary entry once
 
 ### Play page
 * Show seen label on seen episodes
@@ -10,6 +7,7 @@
 
 ### Profile
 * Update button to refresh mounts
+* Show last updated timestamp
 * add (show all) button
 * add option to show all missing mounts
 
@@ -29,7 +27,6 @@
 
 ### Misc
 * Auth via battle.net > Sync horde/alliance chars
-* Only show landing page once
 * Mobile friendly
 * SEO
 * Twitch Prime rain
@@ -39,3 +36,5 @@
 * Single page application for 3 main pages
 * Loader during login
 * Optimize images
+* Profile episode status from template
+* Cleanup CSS

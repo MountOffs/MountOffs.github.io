@@ -3,23 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <title>Mount Offs</title>
+    <title>Asmongold Mount Off Competitions | MountOffs</title>
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/flickity.css">
+    <link rel="stylesheet" href="css/play.css" media="screen">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/splash.css">
 </head>
 <body>
-<div class="container">
-    <div class="dictionary">
-        <span class="word">mount off</span>
-        <span class="transcript"> [maʊnt ɒf] </span>
-        <span class="noun">n. </span><br/>
-        <span class="desc">A competition where participants determine who has the most impressive mount collection</span>
+<nav class="nav"><h1 class="title">Mount Offs</h1>
+    <div class="links">
+        <a id="about-anchor" href="#about">ABOUT</a>
+        <a id="play-anchor" href="#play">PLAY</a>
+        <a id="profile-anchor" href="#profile">PROFILE</a>
+        <a id="login-button" style="display:none;">LOGIN</a>
     </div>
+</nav>
+<div class="page" id="about-page" style="display: none">
+    <h2>About</h2>
+    <p>
+        This website offers a new way interactive to enjoy <a class="inlineLink" target="_blank"
+                                                              href="https://www.twitch.tv/asmongold">Asmongold</a>'s
+        Mount offs.<br/>
+        Instead of being just a viewer, you can participate and track your own progress!<br/>
 
-    <a class="enter" href="about.html">ENTER</a>
+        To start, login then hit <a id="about-play-link" class="inlineLink" href="index.html#play">Play</a> and select
+        one of the available
+        episodes.<br/>
+    </p>
+    <h3>Currently available features:</h3>
+    <ul>
+        <li>Watch mount offs and track your own progress</li>
+        <li>Check your profile to see your overall progress and missing mounts</li>
+        <li><span id="total"></span> episodes of mount off action</li>
+    </ul>
+    <h3>Known issues:</h3>
+    <ul>
+        <li>In case lately acquired mounts are not diplayed, manual relogin might be required</li>
+        <li>Currently no mobile support</li>
+    </ul>
+    <p>
+        If you have any issues or suggestions, hit me up
+        <a class="inlineLink" target="_blank" href="https://twitter.com/MountOffs">@MountOffs</a>.
+    </p>
 </div>
+<div class="page" id="play-page" style="display:none;">
+    <div id="episodes" class="gallery">
+    </div>
+</div>
+<div class="page" id="profile-page" style="display: none">
+    <h2>Welcome, <span id="name"></span><a id="logout">Logout</a></h2>
+    <div id="episodesGrid"></div>
+</div>
+<div class="footer">
+    <a href="https://twitter.com/MountOffs" target="_blank">© 2022 MountOffs</a>
+</div>
+<div class="splashOverlay">
+    <div class="splashContainer">
+        <div class="dictionary">
+            <span class="word">mount off</span>
+            <span class="transcript"> [maʊnt ɒf] </span>
+            <span class="noun">n. </span><br/>
+            <span class="desc">A competition where participants determine who has the most impressive mount collection</span>
+        </div>
+        <a class="enter" href="#">ENTER</a>
+    </div>
+</div>
+<dialog id="loginModal" class="modal">
+    <div class="modalContainer">
+        <h2>Enter realm and character</h2>
+        <label id="regionLabel" for="regionSelect">Region</label>
+        <select id="regionSelect">
+            <option value="eu">EU</option>
+            <option value="us">US</option>
+        </select>
+        <label id="realmLabel" for="realmSelect">Realm</label>
+        <select id="realmSelect">
+        </select>
+        <label id="charLabel" for="charText">Character</label>
+        <input type="text" id="charText">
+        <button class="modalButton">LOGIN</button>
+    </div>
+</dialog>
 </body>
+<script src="data/episodes.js"></script>
+<script src="data/realms.js"></script>
 <script src="js/template.js"></script>
 <script src="js/wowapi.js"></script>
 <script src="js/mounts.js"></script>
+<script src="js/about.js"></script>
+<script src="js/flickity.pkgd.min.js"></script>
+<script src="js/play.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/index.js"></script>
 </html>

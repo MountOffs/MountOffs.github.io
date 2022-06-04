@@ -7,6 +7,15 @@
     --border-radius: 10px;
 }
 
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 #logout {
     float: right;
     font-weight: normal;
