@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/flickity.css">
     <link rel="stylesheet" href="css/play.css" media="screen">
     <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/splash.css">
 </head>
 <body>
 <nav class="nav"><h1 class="title">Mount Offs</h1>
@@ -59,18 +60,29 @@
 <div class="footer">
     <a href="https://twitter.com/MountOffs" target="_blank">© 2022 MountOffs</a>
 </div>
+<div class="splashOverlay">
+    <div class="splashContainer">
+        <div class="dictionary">
+            <span class="word">mount off</span>
+            <span class="transcript"> [maʊnt ɒf] </span>
+            <span class="noun">n. </span><br/>
+            <span class="desc">A competition where participants determine who has the most impressive mount collection</span>
+        </div>
+        <a class="enter" href="#">ENTER</a>
+    </div>
+</div>
 <dialog id="loginModal" class="modal">
     <div class="modalContainer">
         <h2>Enter realm and character</h2>
-        <label id="regionLabel">Region</label>
+        <label id="regionLabel" for="regionSelect">Region</label>
         <select id="regionSelect">
             <option value="eu">EU</option>
             <option value="us">US</option>
         </select>
-        <label id="realmLabel">Realm</label>
+        <label id="realmLabel" for="realmSelect">Realm</label>
         <select id="realmSelect">
         </select>
-        <label id="charLabel">Character</label>
+        <label id="charLabel" for="charText">Character</label>
         <input type="text" id="charText">
         <button class="modalButton">LOGIN</button>
     </div>

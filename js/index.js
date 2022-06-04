@@ -12,10 +12,23 @@ function init() {
 
     document.querySelector("#about-play-link").addEventListener("click", () => switchPage("#play"));
 
+    initSplash();
+
     switchPage(currentPage());
 }
 
+function initSplash() {
+    let splashSeen = getLocalStorage("splashSeen");
+    document.querySelector(".splashOverlay").style.display = splashSeen ? "none" : "block";
+    document.querySelector(".enter").addEventListener("click", closeSplash);
+}
+
 let flkty;
+
+function closeSplash() {
+    setLocalStorage("splashSeen", true);
+    document.querySelector(".splashOverlay").style.display = "none";
+}
 
 function initPlay() {
     if (!flkty) {

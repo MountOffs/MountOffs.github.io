@@ -40,3 +40,4 @@
 * Loader during login
 * Optimize images
 * Profile episode status from template
+* Cleanup CSS
