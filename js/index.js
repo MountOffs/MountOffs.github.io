@@ -14,7 +14,7 @@ function init() {
     document.querySelector("#about-play-link").addEventListener("click", () => switchPage("#play"));
 
     initEpisodeSelection();
-    initSplash();
+    //initSplash();
 
     switchPage(currentPage());
 }
