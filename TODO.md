@@ -1,10 +1,5 @@
 # TODO
 
-### Play page
-* Show seen label on seen episodes
-* Scroll to first unseen episode
-* What if mounts expire during game?
-
 ### Profile
 * Update button to refresh mounts
 * Show last updated timestamp

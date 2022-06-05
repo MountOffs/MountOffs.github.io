@@ -64,7 +64,7 @@ function update() {
 
     if (victory) {
         setWinner(victory.winner);
-        setEpisodeSeen();
+        setEpisodeSeen(episode.id);
     } else {
         setWinner();
     }
@@ -72,10 +72,6 @@ function update() {
     if (isLoggedIn()) {
         updateProgress();
     }
-}
-
-function setEpisodeSeen() {
-    setLocalStorage("episode" + episode.id + "_seen", "1");
 }
 
 function currentPlacing(status) {

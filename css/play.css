@@ -11,6 +11,14 @@ body { font-family: sans-serif; }
     background: rgba(50, 50, 50, 0.1);
 }
 
+.flickity-page-dots .dot.seen {
+    background: #070;
+}
+
+.gallery-cell.seen > a {
+    color: #8C8;
+}
+
 .backdrop {
     position: absolute;
     height: 100%;

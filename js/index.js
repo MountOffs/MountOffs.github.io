@@ -1,3 +1,5 @@
+let flkty;
+
 function init() {
 
     createLoginDialog();
@@ -23,22 +25,51 @@ function initSplash() {
     document.querySelector(".enter").addEventListener("click", closeSplash);
 }
 
-let flkty;
-
 function closeSplash() {
     setLocalStorage("splashSeen", true);
     document.querySelector(".splashOverlay").style.display = "none";
 }
 
+function updateFlickity() {
+    let dots = document.querySelectorAll(".dot");
+    dots.forEach(dot => {
+        let id = dot.ariaLabel.substring(9);
+        if (seen(id)) {
+            dot.classList.add("seen");
+        }
+    });
+
+    let cells = document.querySelectorAll(".gallery-cell");
+    for (let i = 0; i < cells.length; i++) {
+        let cell = cells[i];
+        let id = i + 1;
+        if (seen(id)) {
+            cell.classList.add("seen");
+        }
+    }
+
+    let unseenId = firstUnseenEpisode();
+    if (unseenId) {
+        flkty.select(unseenId - 1);
+    }
+}
+
 function initPlay() {
     if (!flkty) {
         //for initial DOM loading on #play
-        document.addEventListener("DOMContentLoaded", () => {
-            flkty = new Flickity("#episodes", {"wrapAround": true});
-        });
-
-        //for lazy loading when switching to play
-        flkty = new Flickity("#episodes", {"wrapAround": true});
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", () => {
+                flkty = new Flickity("#episodes", {
+                    wrapAround: true,
+                });
+            });
+            setTimeout(updateFlickity, 50);
+        } else {
+            flkty = new Flickity("#episodes", {
+                wrapAround: true,
+            });
+            setTimeout(updateFlickity, 50);
+        }
     }
 }
 
@@ -72,7 +103,6 @@ function currentPage() {
 }
 
 function updateNavbar(page) {
-    console.log("Update navbar: " + page);
     let links = document.querySelectorAll(".links > a");
     links.forEach(link => {
         link.classList.remove("current");

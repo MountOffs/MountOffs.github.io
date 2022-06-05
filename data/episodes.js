@@ -5693,7 +5693,33 @@ let episodes = [
             ]}
 ];
 
-function seen(episode) {
-    let seen = getLocalStorage("episode" + episode.id + "_seen");
+function clearSeen() {
+    for (let i = 1; i <= episodes.length; i++) {
+        removeLocalStorage("episode" + i + "_seen");
+    }
+}
+
+function setAllSeen() {
+    for (let i = 1; i <= episodes.length; i++) {
+        setEpisodeSeen(i);
+    }
+}
+
+function setEpisodeSeen(episodeId) {
+    setLocalStorage("episode" + episodeId + "_seen", "1");
+}
+
+function firstUnseenEpisode() {
+    for (let i = 1; i <= episodes.length; i++) {
+        if (!seen(i)) {
+            return i;
+        }
+    }
+
+    return null;
+}
+
+function seen(episodeId) {
+    let seen = getLocalStorage("episode" + episodeId + "_seen");
     return seen !== null;
 }
