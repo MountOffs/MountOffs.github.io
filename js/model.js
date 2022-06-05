@@ -66,7 +66,3 @@ function generateModel(modelId, aspect = 1, containerSelector = '#model_3d') {
     // eslint-disable-next-line no-undef
     return new WowModelViewer(models);
 }
-
-// export {
-//     generateModel
-// };

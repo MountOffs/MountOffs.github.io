@@ -1,7 +1,6 @@
 let flkty;
 
 function init() {
-
     createLoginDialog();
 
     document.querySelector("#about-anchor").addEventListener("click", () => switchPage("#about"));
@@ -14,9 +13,37 @@ function init() {
 
     document.querySelector("#about-play-link").addEventListener("click", () => switchPage("#play"));
 
+    initEpisodeSelection();
     initSplash();
 
     switchPage(currentPage());
+}
+
+function setBackground(div, episode) {
+    div.style["background-image"] = "url('https://i.ytimg.com/vi/" + episode.youtubeId + "/hqdefault.jpg')";
+}
+
+function initEpisodeSelection() {
+    let list = document.querySelector("#episodes");
+
+    episodes.forEach(episode => {
+        let div = document.createElement("div");
+        div.classList.add("gallery-cell");
+        setBackground(div, episode);
+
+        let backdrop = document.createElement("div");
+        backdrop.classList.add("backdrop");
+        div.appendChild(backdrop);
+
+        let a = document.createElement("a");
+        let text = document.createTextNode("Episode " + episode.id);
+        a.appendChild(text);
+        a.title = episode.date;
+        a.href = "episode.html?id=" + episode.id;
+
+        div.appendChild(a);
+        list.appendChild(div);
+    });
 }
 
 function initSplash() {
@@ -54,7 +81,7 @@ function updateFlickity() {
     }
 }
 
-function initPlay() {
+function processPlay() {
     if (!flkty) {
         //for initial DOM loading on #play
         if (document.readyState === "loading") {
@@ -89,9 +116,11 @@ function switchPage(page) {
     footer.style.display = (page === "#profile") ? "none" : "flex";
 
     if (page === "#play") {
-        initPlay();
+        processPlay();
     } else if (page === "#profile") {
-        initProfile();
+        processProfile();
+    } else if (page === "#about") {
+        processAbout();
     }
 }
 
@@ -100,6 +129,57 @@ function currentPage() {
         return "#about";
     }
     return document.location.hash; //i.e. #about
+}
+
+function createLoginDialog() {
+
+    let dialog = document.querySelector("#loginModal");
+    let regionSelect = document.querySelector("#regionSelect");
+    let realmSelect = document.querySelector("#realmSelect");
+    realms.eu.forEach(realm => {
+        realmSelect.appendChild(new Option(realm.name, realm.slug));
+    });
+
+    regionSelect.addEventListener("change", (e) => {
+        let value = e.target.value;
+        realmSelect.innerHTML = "";
+        realms[value].forEach(realm => {
+            realmSelect.appendChild(new Option(realm.name, realm.slug));
+        });
+    });
+
+    let button = document.querySelector(".modalButton");
+
+    let charText = document.querySelector("#charText");
+    charText.addEventListener("input", (e) => {
+        let value = e.target.value;
+        button.disabled = (value === null || value === "");
+    });
+
+    charText.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            button.click();
+        }
+    });
+
+    button.disabled = true;
+    button.addEventListener('click', () => {
+        let region = regionSelect.value;
+        let realm = realmSelect.value;
+        let char = charText.value.toLowerCase();
+        console.log("Login: " + region + " " + realm + " " + char);
+        fetchMounts(region, realm, char, (mounts) => {
+            setLocalStorage("region", region);
+            setLocalStorage("realm", realm);
+            setLocalStorage("character", char);
+            cacheMounts(mounts);
+
+            location.href = "index.html#profile";
+            switchPage("#profile");
+        });
+        dialog.close();
+    });
 }
 
 function updateNavbar(page) {
@@ -117,5 +197,94 @@ function updateNavbar(page) {
     profile.style.display = isLoggedIn() ? "inline" : "none";
     login.style.display = isLoggedIn() ? "none" : "inline";
 }
+
+function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+function processAbout() {
+    document.querySelector("#total").innerText = episodes.length;
+}
+
+function processProfile() {
+    if (isLoggedIn()) {
+        let char = getLocalStorage("character");
+        document.querySelector('#name').innerText = capitalize(char);
+        document.querySelector("#logout").addEventListener("click", () => {
+            logout();
+        });
+    }
+
+    let episodeGrid = document.querySelector("#episodesGrid");
+
+    episodeGrid.innerHTML = "";
+    getMounts(mounts => {
+        episodes.forEach(episode => {
+            let status = evaluateEpisode(episode, mounts);
+            if (status) {
+                let nodes = createEpisodeStatus(episode,status);
+                nodes.forEach(node => {
+                    episodeGrid.append(node);
+                });
+            }
+        });
+    });
+}
+
+function logout() {
+    removeLocalStorage("region");
+    removeLocalStorage("realm");
+    removeLocalStorage("character");
+    removeLocalStorage("mounts");
+
+    location.href = "index.html#about";
+    switchPage("#about");
+}
+
+function placing(status) {
+    if (status.losingMount === null) {
+        return "VICTORY";
+    } else if (status.phase === "ELIMINATION") {
+        return "TOP " + status.placing;
+    } else {
+        return status.phase;
+    }
+}
+
+function createEpisodeStatus(episode, status) {
+    let episodeSpan = createNode("span", "Episode " + episode.id, "episode");
+    let placingSpan = createNode("span", placing(status), "place");
+    placingSpan.dataset.place = placing(status);
+    let nodes = [];
+    nodes.push(episodeSpan, placingSpan);
+
+    let losingMountLabel;
+    let losingMountSpan;
+
+    if (status.losingMount) {
+        losingMountLabel = createNode("span", "Missing mount:", "losingMountLabel");
+        losingMountSpan = createNode("span",  status.losingMount, "losingMount");
+
+        nodes.push(losingMountLabel, losingMountSpan);
+    }
+
+    if (!seen(episode.id)) {
+        let showButton = createNode("span", "SHOW", "showButton");
+        placingSpan.style.display = "none";
+        if (losingMountSpan) losingMountSpan.style.display = "none";
+        if (losingMountLabel) losingMountLabel.style.display = "none";
+        nodes.push(showButton);
+
+        showButton.addEventListener("click", () => {
+            placingSpan.style.display = "inline";
+            if (losingMountSpan) losingMountSpan.style.display = "inline";
+            if (losingMountLabel) losingMountLabel.style.display = "inline";
+            showButton.style.display = "none";
+        });
+    }
+
+    return nodes;
+}
+
 
 init();

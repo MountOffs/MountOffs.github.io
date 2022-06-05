@@ -27,4 +27,5 @@
 * Twitch Prime rain
 * Trivia minigame
 * Loader during login
-* Cleanup CSS
+* Cleanup JS
+* Optimize Youtube loading on episode page
