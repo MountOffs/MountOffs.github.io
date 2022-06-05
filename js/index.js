@@ -163,22 +163,33 @@ function createLoginDialog() {
         }
     });
 
+    let errorMsg = document.querySelector(".error");
+    let loader = document.querySelector(".lds-ellipsis");
+
     button.disabled = true;
     button.addEventListener('click', () => {
         let region = regionSelect.value;
         let realm = realmSelect.value;
         let char = charText.value.toLowerCase();
+        loader.classList.remove("disabled");
+
         console.log("Login: " + region + " " + realm + " " + char);
-        fetchMounts(region, realm, char, (mounts) => {
+        fetchMounts(region, realm, char).then(mounts => {
             setLocalStorage("region", region);
             setLocalStorage("realm", realm);
             setLocalStorage("character", char);
             cacheMounts(mounts);
+            loader.classList.add("disabled");
+            dialog.close();
 
             location.href = "index.html#profile";
             switchPage("#profile");
+        }).catch(error => {
+            loader.classList.add("disabled");
+            errorMsg.innerText = "Couldn't fetch user";
+            console.error(error);
         });
-        dialog.close();
+        errorMsg.innerText = "";
     });
 }
 
@@ -218,7 +229,7 @@ function processProfile() {
     let episodeGrid = document.querySelector("#episodesGrid");
 
     episodeGrid.innerHTML = "";
-    getMounts(mounts => {
+    getMounts().then(mounts => {
         episodes.forEach(episode => {
             let status = evaluateEpisode(episode, mounts);
             if (status) {

@@ -171,8 +171,119 @@ progress::-webkit-progress-value {
     width: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 255, 0)), url("../images/icecrown_citadel.webp") center center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 255, 0)), var(--bg-image) center center;
     background-size: cover;
+}
+
+.lds-ellipsis.disabled {
+    display: none;
+}
+
+.lds-ellipsis {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 10px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--text-color);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+#loginModal .error {
+    color: darkred;
+    height: 25px;
+}
+
+#loginModal button {
+    grid-area: button;
+}
+
+#loginModal input[type=text]:focus, #loginModal select:focus, #loginModal .modalButton:focus {
+    box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+#loginModal h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#loginModal label {
+    height: 50px;
+    line-height: 50px;
+    width: 100px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+#loginModal input[type=text], #loginModal select, .modalButton {
+    background-color: rgb(20, 20, 20);
+    padding: 12px;
+    border: none;
+    box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    outline: none;
+}
+
+.modalButton {
+    cursor: pointer;
+}
+
+.modalButton:disabled, .modalButton[disabled] {
+    background-color: rgb(10, 10, 10);
+    cursor: default;
+}
+
+#loginModal input[type=text] {
+    padding: 16px;
 }
 
 .gallery {

@@ -5,6 +5,7 @@
     --text-color: lightgray;
     --link-color: lightblue;
     --link-hover-color: white;
+    --bg-image: url("../images/icecrown_citadel.webp");
 }
 
 * {
@@ -38,7 +39,7 @@ body {
 .nav {
     padding-bottom: 1.7em;
     padding-top: 3.4em;
-    background-image: url('../images/icecrown_citadel.webp');
+    background-image: var(--bg-image);
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -131,40 +132,6 @@ h1 {
 
 #charText {
     grid-area: char;
-}
-
-#loginModal button {
-    grid-area: button;
-}
-
-#loginModal label {
-    height: 50px;
-    line-height: 50px;
-    width: 100px;
-    text-align: right;
-    margin-right: 20px;
-}
-
-#loginModal input[type=text], #loginModal select, .modalButton {
-    background-color: rgb(20, 20, 20);
-    padding: 12px;
-    border: none;
-    box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.5);
-    font-size: 15px;
-    outline: none;
-}
-
-.modalButton {
-    cursor: pointer;
-}
-
-.modalButton:disabled, .modalButton[disabled] {
-    background-color: rgb(10, 10, 10);
-    cursor: default;
-}
-
-#loginModal input[type=text] {
-    padding: 16px;
 }
 
 option:hover {
