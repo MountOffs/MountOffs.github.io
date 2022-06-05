@@ -31,6 +31,10 @@
 * Twitch Prime rain
 * Trivia minigame
 * Loader during login
-* Cleanup JS
+* Optimize JS
+    * Minify JS
+    * https://flaviocopes.com/javascript-async-defer/
 * Optimize Youtube loading on episode page
-* FOUT: https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/
+* Fonts
+    * https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/
+    * https://css-tricks.com/the-best-font-loading-strategies-and-how-to-execute-them/#loading-fonts-with-self-hosted-fonts
