@@ -7,6 +7,24 @@ html {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
+}
+
+a {
+    color: black;
+    background: -webkit-linear-gradient(#FFF, #AAA);
+    mix-blend-mode: screen;
+    margin-top: 50px;
+    font-weight: 600;
+    font-size: 2em;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.5;
+    color: black;
 }
 
 .big {
@@ -14,9 +32,6 @@ html {
     font-weight: 800;
     font-size: 4em;
     user-select: none;
-}
-
-div, li {
     background: -webkit-linear-gradient(#FFF, #AAA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

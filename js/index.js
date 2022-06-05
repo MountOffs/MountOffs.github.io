@@ -13,9 +13,37 @@ function init() {
 
     document.querySelector("#about-play-link").addEventListener("click", () => switchPage("#play"));
 
+    initEpisodeSelection();
     initSplash();
 
     switchPage(currentPage());
+}
+
+function setBackground(div, episode) {
+    div.style["background-image"] = "url('https://i.ytimg.com/vi/" + episode.youtubeId + "/hqdefault.jpg')";
+}
+
+function initEpisodeSelection() {
+    let list = document.querySelector("#episodes");
+
+    episodes.forEach(episode => {
+        let div = document.createElement("div");
+        div.classList.add("gallery-cell");
+        setBackground(div, episode);
+
+        let backdrop = document.createElement("div");
+        backdrop.classList.add("backdrop");
+        div.appendChild(backdrop);
+
+        let a = document.createElement("a");
+        let text = document.createTextNode("Episode " + episode.id);
+        a.appendChild(text);
+        a.title = episode.date;
+        a.href = "episode.html?id=" + episode.id;
+
+        div.appendChild(a);
+        list.appendChild(div);
+    });
 }
 
 function initSplash() {
@@ -53,7 +81,7 @@ function updateFlickity() {
     }
 }
 
-function initPlay() {
+function processPlay() {
     if (!flkty) {
         //for initial DOM loading on #play
         if (document.readyState === "loading") {
@@ -88,11 +116,11 @@ function switchPage(page) {
     footer.style.display = (page === "#profile") ? "none" : "flex";
 
     if (page === "#play") {
-        initPlay();
+        processPlay();
     } else if (page === "#profile") {
-        initProfile();
+        processProfile();
     } else if (page === "#about") {
-        initAbout();
+        processAbout();
     }
 }
 
@@ -174,11 +202,11 @@ function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
-function initAbout() {
+function processAbout() {
     document.querySelector("#total").innerText = episodes.length;
 }
 
-function initProfile() {
+function processProfile() {
     if (isLoggedIn()) {
         let char = getLocalStorage("character");
         document.querySelector('#name').innerText = capitalize(char);

@@ -1,3 +1,215 @@
+const urlTemplate = (region, realm, character, locale, token) => `https://${region}.api.blizzard.com/profile/wow/character/${realm}/${character}/collections/mounts?namespace=profile-${region}&locale=${locale}&access_token=${token}`;
+
+function getLocalStorage(key) {
+    key = "_" + key;
+    const itemStr = localStorage.getItem(key);
+    if (!itemStr) {
+        return null;
+    }
+    const item = JSON.parse(itemStr);
+    const now = new Date();
+    if (item.expiry && now.getTime() > item.expiry) {
+        localStorage.removeItem(key);
+        return null;
+    }
+
+    return item.value;
+}
+
+function setLocalStorage(key, value, ttl = null) {
+    key = "_" + key;
+    const now = new Date();
+    const item = {
+        value: value
+    };
+
+    if (ttl) {
+        item.expiry = now.getTime() + ttl;
+    }
+
+    localStorage.setItem(key, JSON.stringify(item))
+}
+
+function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY) {
+    if (!episode.events) {
+        return null;
+    } else {
+        let phase = "ELIMINATION";
+        let placing = 0;
+        let losingMount = null;
+        let missingMounts = [];
+        episode.events.forEach(event => {
+            if (timeToSeconds(event.time) > time) {
+                return;
+            }
+
+            if (event.event === "PLAYER") {
+                if (losingMount === null) {
+                    placing = event.players;
+                }
+            } else if (event.event === "MOUNT") {
+                let mount = event.mount;
+                if (mounts.indexOf(mount) === -1) {
+                    if (losingMount === null) {
+                        losingMount = mount;
+                    }
+
+                    missingMounts.push(mount);
+                }
+            } else if (event.event === "PHASE") {
+                if (losingMount === null) {
+                    phase = event.phase;
+                }
+            }
+        });
+
+        return {
+            "phase": phase,
+            "placing": placing,
+            "losingMount": losingMount,
+            "missingMounts": missingMounts
+        }
+    }
+}
+
+function timeToSeconds(time) {
+    let parts = time.split(":");
+    if (parts.length === 3) {
+        return parts[0] * 60 * 60 + parts[1] * 60 + parts[2] * 1;
+    } else {
+        return parts[0] * 60 + parts[1] * 1;
+    }
+}
+
+function secondsToTime(seconds) {
+    let h = Math.floor(seconds / 3600);
+    seconds %= 3600;
+    let m = Math.floor(seconds / 60);
+    let s = seconds % 60;
+
+    h = String(h).padStart(2, "0");
+    m = String(m).padStart(2, "0");
+    s = String(s).padStart(2, "0");
+
+    if (h === "00") {
+        return m + ":" + s;
+    } else {
+        return h + ":" + m + ":" + s;
+    }
+}
+
+function totalDuration() {
+    let durationSeconds = episodes
+        .map(episode => episode.events.filter(event => event.event === "VICTORY")[0].time)
+        .map(timeToSeconds)
+        .reduce((prev, current) => prev + current, 0);
+    return secondsToTime(durationSeconds);
+}
+
+function clearSeen() {
+    for (let i = 1; i <= episodes.length; i++) {
+        removeLocalStorage("episode" + i + "_seen");
+    }
+}
+
+function setAllSeen() {
+    for (let i = 1; i <= episodes.length; i++) {
+        setEpisodeSeen(i);
+    }
+}
+
+function setEpisodeSeen(episodeId) {
+    setLocalStorage("episode" + episodeId + "_seen", "1");
+}
+
+function firstUnseenEpisode() {
+    for (let i = 1; i <= episodes.length; i++) {
+        if (!seen(i)) {
+            return i;
+        }
+    }
+
+    return null;
+}
+
+function seen(episodeId) {
+    let seen = getLocalStorage("episode" + episodeId + "_seen");
+    return seen !== null;
+}
+
+function locale(region) {
+    switch (region) {
+        case "eu": return "en_GB";
+        case "us": return "en_US";
+        default: return "en_GB";
+    }
+}
+
+function getToken(callback) {
+    let token = getLocalStorage("token");
+    if (!token) {
+        authorize((response) => {
+            let payload = JSON.parse(response);
+            token = payload.access_token;
+            let expires = payload.expires_in;
+            setLocalStorage("token", token, expires * 1000);
+
+            callback(token);
+        });
+    } else {
+        callback(token);
+    }
+}
+
+function authorize(callback) {
+    post("https://us.battle.net/oauth/token", (response) => {
+        callback(response);
+    })
+}
+
+function post(url, callback) {
+    const request = new XMLHttpRequest();
+    request.open("POST", url);
+    const digest = "YzI3NGFjOGFmM2Q2NDgyMDliMjQ1NzBhZTBkOWFkY2I6Vjh4cndIZ2JmcjV4Nk4xWHZnREFVYzNscHhKN3prWHg=";
+    request.setRequestHeader("Authorization", "Basic " + digest);
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    request.send("grant_type=client_credentials");
+
+    request.onreadystatechange = () => {
+        if (request.readyState === 4) {
+            callback(request.response);
+        }
+    };
+}
+
+function fetchMounts(region, realm, character, callback) {
+    console.log("Fetching mounts");
+    getToken((token) => {
+        let url = urlTemplate(region, realm, character, locale(region), token);
+        get(url, (response) => {
+            let data = JSON.parse(response);
+            let mounts = data.mounts.map(mount => mount.mount.name);
+            mounts = processFactionMounts(mounts);
+            console.log("Mounts fetched:", mounts);
+            callback(mounts);
+        });
+    });
+}
+
+function get(url, callback) {
+    const request = new XMLHttpRequest();
+    request.open("GET", url);
+    request.send();
+
+    request.onreadystatechange = () => {
+        if (request.readyState === 4) {
+            callback(request.response);
+        }
+    };
+}
+
+
+
 function getMounts(callback) {
     if (!isLoggedIn()) {
         callback([]);
@@ -181,7 +393,6 @@ function processFactionMounts(mounts) {
     ];
 
     mapping.forEach(pair => {
-        console.log(pair);
         if (mounts.indexOf(pair[0]) >= 0) {
             mounts.push(pair[1]);
         } else if (mounts.indexOf(pair[1]) >= 0) {
@@ -192,6 +403,28 @@ function processFactionMounts(mounts) {
     return mounts;
 }
 
-function hasMount(mounts, mount) {
-    return mounts.indexOf(mount) > -1;
+function isLoggedIn() {
+    let region = getLocalStorage("region");
+    let realm = getLocalStorage("realm");
+    let char = getLocalStorage("character");
+    return region != null && realm != null && char != null;
+}
+
+function createNode(type, text, ...clazzes) {
+    let node = document.createElement(type);
+    let textNode = document.createTextNode(text);
+    node.appendChild(textNode);
+    clazzes.forEach(clazz => {
+        node.classList.add(clazz);
+    });
+    return node;
+}
+
+function removeLocalStorage(key) {
+    key = "_" + key;
+    localStorage.removeItem(key);
+}
+
+function cacheMounts(mounts) {
+    setLocalStorage("mounts", mounts, 24 * 60 * 60 * 1000);
 }
