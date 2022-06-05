@@ -5,6 +5,7 @@
     --text-color: lightgray;
     --link-color: lightblue;
     --link-hover-color: white;
+    --bg-image: url("../images/icecrown_citadel.webp");
 }
 
 * {
@@ -38,7 +39,7 @@ body {
 .nav {
     padding-bottom: 1.7em;
     padding-top: 3.4em;
-    background-image: url('../images/icecrown_citadel.webp');
+    background-image: var(--bg-image);
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;

@@ -171,7 +171,7 @@ progress::-webkit-progress-value {
     width: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 255, 0)), url("../images/icecrown_citadel.webp") center center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 255, 0)), var(--bg-image) center center;
     background-size: cover;
 }
 
