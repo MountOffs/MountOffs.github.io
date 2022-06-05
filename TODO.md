@@ -30,7 +30,6 @@
     * SEO Check: https://freetools.seobility.net/en/seocheck/mountoffs.com
 * Twitch Prime rain
 * Trivia minigame
-* Loader during login
 * Optimize JS
     * Minify JS
         * https://developers.google.com/speed/docs/insights/MinifyResources
