@@ -5,6 +5,7 @@
 * Show last updated timestamp
 * add (show all) button
 * add option to show all missing mounts
+* Allow to toggle unobtainable
 
 ### Mount off page
 * Tooltip with info on mount mouseover (+ wowhead link?)
@@ -29,3 +30,4 @@
 * Loader during login
 * Cleanup JS
 * Optimize Youtube loading on episode page
+* FOUT: https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/
