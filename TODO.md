@@ -25,11 +25,7 @@
 * Mobile friendly
 * SEO
 * Twitch Prime rain
-* cached page issue: https://stackoverflow.com/questions/12556593/determining-a-page-is-outdated-on-github-pages
 * Trivia minigame
-* Episode selection handle seen
-* Single page application for 3 main pages
 * Loader during login
-* Optimize images
 * Profile episode status from template
 * Cleanup CSS
