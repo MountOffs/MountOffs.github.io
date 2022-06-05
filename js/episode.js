@@ -87,7 +87,7 @@ function currentPlacing(status) {
 }
 
 function updateProgress() {
-    getMounts(mounts => {
+    getMounts().then(mounts => {
         let placingPanel = document.getElementById("placing");
 
         let status = evaluateCurrent(mounts);

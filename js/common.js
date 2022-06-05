@@ -145,90 +145,92 @@ function locale(region) {
     }
 }
 
-function getToken(callback) {
+function getToken() {
     let token = getLocalStorage("token");
     if (!token) {
-        authorize((response) => {
+        return authorize().then(response => {
             let payload = JSON.parse(response);
             token = payload.access_token;
             let expires = payload.expires_in;
             setLocalStorage("token", token, expires * 1000);
 
-            callback(token);
+            return Promise.resolve(token);
         });
     } else {
-        callback(token);
+        return Promise.resolve(token);
     }
 }
 
-function authorize(callback) {
-    post("https://us.battle.net/oauth/token", (response) => {
-        callback(response);
-    })
+function authorize() {
+    return post("https://us.battle.net/oauth/token");
 }
 
-function post(url, callback) {
-    const request = new XMLHttpRequest();
-    request.open("POST", url);
-    const digest = "YzI3NGFjOGFmM2Q2NDgyMDliMjQ1NzBhZTBkOWFkY2I6Vjh4cndIZ2JmcjV4Nk4xWHZnREFVYzNscHhKN3prWHg=";
-    request.setRequestHeader("Authorization", "Basic " + digest);
-    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    request.send("grant_type=client_credentials");
+function post(url) {
+    return new Promise(function(resolve, reject) {
+        const request = new XMLHttpRequest();
+        request.open("POST", url);
+        const digest = "YzI3NGFjOGFmM2Q2NDgyMDliMjQ1NzBhZTBkOWFkY2I6Vjh4cndIZ2JmcjV4Nk4xWHZnREFVYzNscHhKN3prWHg=";
+        request.setRequestHeader("Authorization", "Basic " + digest);
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        request.send("grant_type=client_credentials");
 
-    request.onreadystatechange = () => {
-        if (request.readyState === 4) {
-            callback(request.response);
-        }
-    };
+        request.onreadystatechange = () => {
+            if (request.readyState === 4) {
+                resolve(request.response);
+            }
+        };
+    });
 }
 
-function fetchMounts(region, realm, character, callback) {
+function fetchMounts(region, realm, character) {
     console.log("Fetching mounts");
-    getToken((token) => {
+    return getToken().then(token => {
         let url = urlTemplate(region, realm, character, locale(region), token);
-        get(url, (response) => {
+        return get(url).then((response) => {
             let data = JSON.parse(response);
-            let mounts = data.mounts.map(mount => mount.mount.name);
-            mounts = processFactionMounts(mounts);
-            console.log("Mounts fetched:", mounts);
-            callback(mounts);
+            if (data.mounts) {
+                let mounts = data.mounts.map(mount => mount.mount.name);
+                mounts = processFactionMounts(mounts);
+                console.log("Mounts fetched:", mounts);
+                return Promise.resolve(mounts);
+            } else {
+                return Promise.reject(data);
+            }
         });
     });
 }
 
-function get(url, callback) {
-    const request = new XMLHttpRequest();
-    request.open("GET", url);
-    request.send();
+function get(url) {
+    return new Promise(function (resolve, reject) {
+        const request = new XMLHttpRequest();
+        request.open("GET", url);
+        request.send();
 
-    request.onreadystatechange = () => {
-        if (request.readyState === 4) {
-            callback(request.response);
-        }
-    };
+        request.onreadystatechange = () => {
+            if (request.readyState === 4) {
+                resolve(request.response);
+            }
+        };
+    });
 }
 
-
-
-function getMounts(callback) {
+function getMounts() {
     if (!isLoggedIn()) {
-        callback([]);
-        return;
+        return Promise.resolve([]);
     }
 
     let mounts = getLocalStorage("mounts");
     if (mounts) {
-        callback(mounts);
-        return;
+        return Promise.resolve(mounts);
     }
 
     let region = getLocalStorage("region");
     let realm = getLocalStorage("realm");
     let char = getLocalStorage("character");
-    fetchMounts(region, realm, char, (mounts) => {
+    return fetchMounts(region, realm, char).then(mounts => {
         cacheMounts(mounts);
-        callback(mounts);
-    });
+        return mounts;
+    })
 }
 
 function processFactionMounts(mounts) {
