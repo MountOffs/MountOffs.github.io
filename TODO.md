@@ -33,6 +33,8 @@
 * Loader during login
 * Optimize JS
     * Minify JS
+        * https://developers.google.com/speed/docs/insights/MinifyResources
+        * https://www.fabiosilvalima.com/angular-build-in-azure-devops/
     * https://flaviocopes.com/javascript-async-defer/
 * Optimize Youtube loading on episode page
 * Fonts
