@@ -27,5 +27,4 @@
 * Twitch Prime rain
 * Trivia minigame
 * Loader during login
-* Profile episode status from template
 * Cleanup CSS
