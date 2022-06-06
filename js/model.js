@@ -6,7 +6,6 @@ if (!window.WH) {
     window.WH.defaultAnimation = `Stand`;
 }
 
-// eslint-disable-next-line no-undef
 class WowModelViewer extends ZamModelViewer {
     getListAnimations() {
         return [...new Set(this.renderer.models[0].an.map(e => e.j))];
@@ -55,7 +54,6 @@ function generateModel(modelId, aspect = 1, containerSelector = '#model_3d') {
     const models = {
         type: 2,
         contentPath: `https://wow.zamimg.com/modelviewer/live/`,
-        // eslint-disable-next-line no-undef
         container: jQuery(containerSelector),
         aspect: aspect,
         hd: true,
@@ -63,6 +61,25 @@ function generateModel(modelId, aspect = 1, containerSelector = '#model_3d') {
     };
     window.models = models;
 
-    // eslint-disable-next-line no-undef
-    return new WowModelViewer(models);
+    let viewer = new WowModelViewer(models);
+    let canvas = viewer.renderer.canvas[0];
+    $(canvas).off("dblclick mousedown mousemove mouseup DOMMouseScroll touchend touchmove touchstart");
+
+    let timeout;
+
+    $(canvas).on("click", () => {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+
+        let mountSpecialDuration = viewer.renderer.models[0].an.filter(animation => animation.j === "MountSpecial")[0].g;
+        let animationOffset = -100;
+        viewer.renderer.models[0].setAnimation("MountSpecial");
+
+        timeout = setTimeout(() => {
+            viewer.renderer.models[0].setAnimation("Stand");
+        }, mountSpecialDuration + animationOffset);
+    });
+
+    return viewer;
 }
