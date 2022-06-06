@@ -45,7 +45,6 @@ span {
     position: absolute !important;
     width: 200px;
     height: 200px;
-    pointer-events: none !important;
 }
 
 /* Hide loading bar*/
