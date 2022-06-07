@@ -8,7 +8,6 @@
 * Allow to toggle unobtainable
 
 ### Mount off page
-* Tooltip with info on mount mouseover (+ wowhead link?)
 * Mount model clipping
 * Mount pooling/preloading
 * Scale size per mount (some mounts too big, some too small)
