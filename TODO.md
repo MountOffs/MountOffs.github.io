@@ -21,6 +21,7 @@
 * Mount caching
 
 ### Misc
+* Click outside login dialog closes it
 * Auth via battle.net > Sync horde/alliance chars
 * Mobile friendly
 * SEO

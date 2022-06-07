@@ -64,7 +64,7 @@ body {
     text-decoration: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .footer {
         display: none;
     }
@@ -98,50 +98,6 @@ body {
 
 h1 {
     text-align: center;
-}
-
-.modal {
-    background-color: var(--bg-color);
-    border: solid 1px var(--text-color);
-}
-
-.modalContainer {
-    display: grid;
-    grid-template-areas:
-            'header header'
-            'regionLabel region'
-            'realmLabel realm'
-            'charLabel char'
-            'button button';
-    gap: 10px 20px;
-}
-
-#loginModal h2 {
-    grid-area: header;
-}
-
-#regionLabel {
-    grid-area: regionLabel;
-}
-
-#regionSelect {
-    grid-area: region;
-}
-
-#realmLabel {
-    grid-area: realmLabel;
-}
-
-#realmSelect {
-    grid-area: realm;
-}
-
-#charLabel {
-    grid-area: charLabel;
-}
-
-#charText {
-    grid-area: char;
 }
 
 option:hover {

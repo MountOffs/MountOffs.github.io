@@ -9,6 +9,18 @@ function init() {
     document.querySelector("#login-button").addEventListener("click", () => {
         const modal = document.querySelector('#loginModal');
         modal.showModal();
+
+        setTimeout(() => {
+            let closeDialog = (e) => {
+                if (e.target === modal) {
+                    console.log("modal = this");
+                    window.removeEventListener("click", closeDialog);
+                    modal.close();
+                }
+            };
+
+            window.addEventListener("click", closeDialog);
+        }, 0);
     });
 
     document.querySelector("#about-play-link").addEventListener("click", () => switchPage("#play"));
@@ -137,7 +149,6 @@ function currentPage() {
 }
 
 function createLoginDialog() {
-
     let dialog = document.querySelector("#loginModal");
     let regionSelect = document.querySelector("#regionSelect");
     let realmSelect = document.querySelector("#realmSelect");
