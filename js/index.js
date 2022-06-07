@@ -113,7 +113,12 @@ function switchPage(page) {
     currentPage.style.display = "block";
 
     let footer = document.querySelector(".footer");
-    footer.style.display = (page === "#profile") ? "none" : "flex";
+    if (page === "#profile") {
+        footer.classList.add("hide");
+    } else {
+        footer.classList.remove("hide");
+    }
+
 
     if (page === "#play") {
         processPlay();

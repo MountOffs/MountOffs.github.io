@@ -46,8 +46,28 @@ body {
     background-repeat: no-repeat;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 25%;
+    right: 25%;
+}
+
+.footer.hide {
+    display: none;
+}
+
 .footer a {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .footer {
+        display: none;
+    }
 }
 
 .page {
@@ -78,16 +98,6 @@ body {
 
 h1 {
     text-align: center;
-}
-
-.footer {
-    position: fixed;
-    bottom: 0.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 25%;
-    right: 25%;
 }
 
 .modal {
