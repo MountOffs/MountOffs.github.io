@@ -109,7 +109,7 @@ function updateProgress() {
 }
 
 function evaluateCurrent(mounts) {
-    return evaluateEpisode(episode, mounts, player.getCurrentTime());
+    return evaluateEpisode(episode, mounts, OBTAINABILITY_ALL, player.getCurrentTime());
 }
 
 function onYouTubeIframeAPIReady() {

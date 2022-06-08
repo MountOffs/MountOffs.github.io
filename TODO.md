@@ -5,7 +5,6 @@
 * Show last updated timestamp
 * add (show all) button
 * add option to show all missing mounts
-* Allow to toggle unobtainable
 
 ### Mount off page
 * Mount model clipping

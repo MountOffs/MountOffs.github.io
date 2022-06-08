@@ -2,7 +2,6 @@ const urlTemplate = (region, realm, character, locale, token) => `https://${regi
 
 const OBTAINABILITY_ALL = "all"; // Farmable + BMAH + TCG + Unobtainable
 const OBTAINABILITY_OBTAINABLE = "obtainable"; // Farmable + BMAH + TCG
-const OBTAINABILITY_BMAH = "bmah"; // Farmable + BMAH
 const OBTAINABILITY_FARMABLE = "farmable"; // Farmable
 
 function getLocalStorage(key) {
@@ -40,12 +39,11 @@ function ignoreMount(mount, policy) {
     switch (policy) {
         case OBTAINABILITY_ALL: return false;
         case OBTAINABILITY_OBTAINABLE: return obtainability === "unobtainable";
-        case OBTAINABILITY_BMAH: return obtainability in ["unobtainable", "tcg"];
         case OBTAINABILITY_FARMABLE: return obtainability !== "farmable";
     }
 }
 
-function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY, policy = OBTAINABILITY_ALL) {
+function evaluateEpisode(episode, mounts, policy, time = Number.POSITIVE_INFINITY) {
     if (!episode.events) {
         return null;
     } else {

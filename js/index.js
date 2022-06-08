@@ -233,11 +233,23 @@ function processAbout() {
     document.querySelector("#total").innerText = episodes.length;
 }
 
-function processProfile() {
+function drawProfileProgress(mounts, policy = OBTAINABILITY_ALL) {
     let episodeGrid = document.querySelector("#episodesGrid");
+    episodeGrid.innerHTML = "";
+    episodes.forEach(episode => {
+        let status = evaluateEpisode(episode, mounts, policy);
+        if (status) {
+            let nodes = createEpisodeStatus(episode,status);
+            nodes.forEach(node => {
+                episodeGrid.append(node);
+            });
+        }
+    });
+}
+
+function processProfile() {
     let loader = document.querySelector("#profile-page .lds-ellipsis");
 
-    episodeGrid.innerHTML = "";
     loader.classList.remove("disabled");
     getMounts().then(mounts => {
         loader.classList.add("disabled");
@@ -249,15 +261,15 @@ function processProfile() {
             logout();
         });
 
-        episodes.forEach(episode => {
-            let status = evaluateEpisode(episode, mounts);
-            if (status) {
-                let nodes = createEpisodeStatus(episode,status);
-                nodes.forEach(node => {
-                    episodeGrid.append(node);
-                });
-            }
+        let radios = document.querySelectorAll("input[type='radio']");
+        radios.forEach(radio => {
+           radio.addEventListener("change", (e) => {
+               let policy = e.target.value;
+               drawProfileProgress(mounts, policy);
+           });
         });
+
+        drawProfileProgress(mounts);
     });
 }
 

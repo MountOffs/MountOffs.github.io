@@ -9,6 +9,8 @@ html {
     --font-small: clamp(1rem, 1.5vw, 1.25rem);
 
     --border-radius: 10px;
+
+    accent-color: black;
 }
 
 body {
@@ -181,6 +183,21 @@ progress::-webkit-progress-value {
 
 #profile-page .lds-ellipsis {
     position: relative;
+}
+
+#policy {
+    border: solid 1px var(--text-color);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    padding: 10px;
+    bottom: 70px;
+    height: 60px;
+}
+
+#policy > p {
+    margin: 0 0 10px 0;
 }
 
 .lds-ellipsis {
