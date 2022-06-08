@@ -1,5 +1,10 @@
 const urlTemplate = (region, realm, character, locale, token) => `https://${region}.api.blizzard.com/profile/wow/character/${realm}/${character}/collections/mounts?namespace=profile-${region}&locale=${locale}&access_token=${token}`;
 
+const OBTAINABILITY_ALL = "all"; // Farmable + BMAH + TCG + Unobtainable
+const OBTAINABILITY_OBTAINABLE = "obtainable"; // Farmable + BMAH + TCG
+const OBTAINABILITY_BMAH = "bmah"; // Farmable + BMAH
+const OBTAINABILITY_FARMABLE = "farmable"; // Farmable
+
 function getLocalStorage(key) {
     key = "_" + key;
     const itemStr = localStorage.getItem(key);
@@ -30,7 +35,17 @@ function setLocalStorage(key, value, ttl = null) {
     localStorage.setItem(key, JSON.stringify(item))
 }
 
-function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY) {
+function ignoreMount(mount, policy) {
+    let obtainability = mountMapping[mount].state || "farmable";
+    switch (policy) {
+        case OBTAINABILITY_ALL: return false;
+        case OBTAINABILITY_OBTAINABLE: return obtainability === "unobtainable";
+        case OBTAINABILITY_BMAH: return obtainability in ["unobtainable", "tcg"];
+        case OBTAINABILITY_FARMABLE: return obtainability !== "farmable";
+    }
+}
+
+function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY, policy = OBTAINABILITY_ALL) {
     if (!episode.events) {
         return null;
     } else {
@@ -50,6 +65,10 @@ function evaluateEpisode(episode, mounts, time = Number.POSITIVE_INFINITY) {
             } else if (event.event === "MOUNT") {
                 let mount = event.mount;
                 if (mounts.indexOf(mount) === -1) {
+                    if (ignoreMount(mount, policy)) {
+                        return;
+                    }
+
                     if (losingMount === null) {
                         losingMount = mount;
                     }
