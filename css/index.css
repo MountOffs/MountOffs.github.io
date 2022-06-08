@@ -179,6 +179,10 @@ progress::-webkit-progress-value {
     display: none;
 }
 
+#profile-page .lds-ellipsis {
+    position: relative;
+}
+
 .lds-ellipsis {
     display: inline-block;
     position: absolute;

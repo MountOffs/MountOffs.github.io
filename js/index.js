@@ -180,7 +180,7 @@ function createLoginDialog() {
     });
 
     let errorMsg = document.querySelector(".error");
-    let loader = document.querySelector(".lds-ellipsis");
+    let loader = document.querySelector(".modalContainer .lds-ellipsis");
 
     button.disabled = true;
     button.addEventListener('click', () => {
@@ -234,18 +234,21 @@ function processAbout() {
 }
 
 function processProfile() {
-    if (isLoggedIn()) {
+    let episodeGrid = document.querySelector("#episodesGrid");
+    let loader = document.querySelector("#profile-page .lds-ellipsis");
+
+    episodeGrid.innerHTML = "";
+    loader.classList.remove("disabled");
+    getMounts().then(mounts => {
+        loader.classList.add("disabled");
+
         let char = getLocalStorage("character");
-        document.querySelector('#name').innerText = capitalize(char);
+        document.querySelector('#welcome').innerText = "Welcome, " +capitalize(char);
+        document.querySelector("#logout").innerText = "Logout";
         document.querySelector("#logout").addEventListener("click", () => {
             logout();
         });
-    }
 
-    let episodeGrid = document.querySelector("#episodesGrid");
-
-    episodeGrid.innerHTML = "";
-    getMounts().then(mounts => {
         episodes.forEach(episode => {
             let status = evaluateEpisode(episode, mounts);
             if (status) {
