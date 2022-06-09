@@ -1,5 +1,10 @@
 # TODO
 
+### Responsive UI
+* Header background floating
+* Episode selection page
+    * 1+ episode per screen
+
 ### Profile
 * Update button to refresh mounts
 * Show last updated timestamp
@@ -13,20 +18,16 @@
 ### Armory Sync
 * Auth via battle.net > Sync horde/alliance chars
 * separately login horde/alliance characters
-
-### Configuration
-* track extra events
-* Mount caching
-
-### Responsive UI
-* Header background floating
-* Episode selection page
-    * 1+ episode per screen
     
 ### SEO
 * Video metadata in sitemap: https://developers.google.com/search/docs/advanced/sitemaps/video-sitemaps
 * robots.txt: https://www.seobility.net/en/wiki/Robots.txt?utm_source=google&utm_medium=cpc&utm_campaign=wiki_en&utm_term={robots%20txt}&utm_content=lp_robots.txt&gclid=Cj0KCQjwqPGUBhDwARIsANNwjV6OY0Wkfqpl663XK7v39Gv9c7SdRhf5T2lubmLVHgOYGu1Eq26nX-gaAq6cEALw_wcB
 * SEO Check: https://freetools.seobility.net/en/seocheck/mountoffs.com
+
+### Extra features
+* track extra events
+* Twitch Prime rain
+* Trivia minigame
 
 ### Optimization
 * Mount model pooling/preloading
@@ -39,7 +40,3 @@
 * Fonts
     * https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/
     * https://css-tricks.com/the-best-font-loading-strategies-and-how-to-execute-them/#loading-fonts-with-self-hosted-fonts
-    
-### Misc    
-* Twitch Prime rain
-* Trivia minigame
