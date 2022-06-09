@@ -447,3 +447,7 @@ function removeLocalStorage(key) {
 function cacheMounts(mounts) {
     setLocalStorage("mounts", mounts, 24 * 60 * 60 * 1000);
 }
+
+function getMountPolicy() {
+    return getLocalStorage("policy") || OBTAINABILITY_ALL;
+}

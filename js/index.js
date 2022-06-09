@@ -255,21 +255,29 @@ function processProfile() {
         loader.classList.add("disabled");
 
         let char = getLocalStorage("character");
+        document.querySelector("#policy").style.display = "block";
         document.querySelector('#welcome').innerText = "Welcome, " +capitalize(char);
         document.querySelector("#logout").innerText = "Logout";
         document.querySelector("#logout").addEventListener("click", () => {
             logout();
         });
 
+        let savedPolicy = getMountPolicy();
+
         let radios = document.querySelectorAll("input[type='radio']");
         radios.forEach(radio => {
-           radio.addEventListener("change", (e) => {
-               let policy = e.target.value;
-               drawProfileProgress(mounts, policy);
-           });
+            if (radio.value === savedPolicy) {
+                radio.checked = "checked";
+            }
+
+            radio.addEventListener("change", (e) => {
+                let policy = e.target.value;
+                setLocalStorage("policy", policy);
+                drawProfileProgress(mounts, policy);
+            });
         });
 
-        drawProfileProgress(mounts);
+        drawProfileProgress(mounts, savedPolicy);
     });
 }
 
