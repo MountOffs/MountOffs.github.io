@@ -9,6 +9,18 @@ function init() {
     document.querySelector("#login-button").addEventListener("click", () => {
         const modal = document.querySelector('#loginModal');
         modal.showModal();
+
+        setTimeout(() => {
+            let closeDialog = (e) => {
+                if (e.target === modal) {
+                    console.log("modal = this");
+                    window.removeEventListener("click", closeDialog);
+                    modal.close();
+                }
+            };
+
+            window.addEventListener("click", closeDialog);
+        }, 0);
     });
 
     document.querySelector("#about-play-link").addEventListener("click", () => switchPage("#play"));
@@ -113,7 +125,12 @@ function switchPage(page) {
     currentPage.style.display = "block";
 
     let footer = document.querySelector(".footer");
-    footer.style.display = (page === "#profile") ? "none" : "flex";
+    if (page === "#profile") {
+        footer.classList.add("hide");
+    } else {
+        footer.classList.remove("hide");
+    }
+
 
     if (page === "#play") {
         processPlay();
@@ -132,7 +149,6 @@ function currentPage() {
 }
 
 function createLoginDialog() {
-
     let dialog = document.querySelector("#loginModal");
     let regionSelect = document.querySelector("#regionSelect");
     let realmSelect = document.querySelector("#realmSelect");
@@ -164,7 +180,7 @@ function createLoginDialog() {
     });
 
     let errorMsg = document.querySelector(".error");
-    let loader = document.querySelector(".lds-ellipsis");
+    let loader = document.querySelector(".modalContainer .lds-ellipsis");
 
     button.disabled = true;
     button.addEventListener('click', () => {
@@ -217,28 +233,43 @@ function processAbout() {
     document.querySelector("#total").innerText = episodes.length;
 }
 
+function drawProfileProgress(mounts, policy = OBTAINABILITY_ALL) {
+    let episodeGrid = document.querySelector("#episodesGrid");
+    episodeGrid.innerHTML = "";
+    episodes.forEach(episode => {
+        let status = evaluateEpisode(episode, mounts, policy);
+        if (status) {
+            let nodes = createEpisodeStatus(episode,status);
+            nodes.forEach(node => {
+                episodeGrid.append(node);
+            });
+        }
+    });
+}
+
 function processProfile() {
-    if (isLoggedIn()) {
+    let loader = document.querySelector("#profile-page .lds-ellipsis");
+
+    loader.classList.remove("disabled");
+    getMounts().then(mounts => {
+        loader.classList.add("disabled");
+
         let char = getLocalStorage("character");
-        document.querySelector('#name').innerText = capitalize(char);
+        document.querySelector('#welcome').innerText = "Welcome, " +capitalize(char);
+        document.querySelector("#logout").innerText = "Logout";
         document.querySelector("#logout").addEventListener("click", () => {
             logout();
         });
-    }
 
-    let episodeGrid = document.querySelector("#episodesGrid");
-
-    episodeGrid.innerHTML = "";
-    getMounts().then(mounts => {
-        episodes.forEach(episode => {
-            let status = evaluateEpisode(episode, mounts);
-            if (status) {
-                let nodes = createEpisodeStatus(episode,status);
-                nodes.forEach(node => {
-                    episodeGrid.append(node);
-                });
-            }
+        let radios = document.querySelectorAll("input[type='radio']");
+        radios.forEach(radio => {
+           radio.addEventListener("change", (e) => {
+               let policy = e.target.value;
+               drawProfileProgress(mounts, policy);
+           });
         });
+
+        drawProfileProgress(mounts);
     });
 }
 

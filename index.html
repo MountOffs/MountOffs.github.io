@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -57,7 +58,17 @@
     </div>
 </div>
 <div class="page" id="profile-page" style="display: none">
-    <h2>Welcome, <span id="name"></span><a id="logout">Logout</a></h2>
+    <h2><span id="welcome"></span><a id="logout"></a></h2>
+    <div id="policy">
+        <p>Mount Obtainability</p>
+        <input type="radio" id="policy1" name="policy" value="all" checked="checked">
+        <label title="All mounts" for="policy1">All</label>
+        <input type="radio" id="policy2" name="policy" value="obtainable">
+        <label title="Farmable, BMAH, TCG mounts" for="policy2">Obtainable</label>
+        <input type="radio" id="policy3" name="policy" value="farmable">
+        <label title="Only in-game farmable mounts" for="policy3">Farmable</label>
+    </div>
+    <div class="lds-ellipsis disabled"><div></div><div></div><div></div><div></div></div>
     <div id="episodesGrid"></div>
 </div>
 <div class="footer">
@@ -86,7 +97,7 @@
         <select id="realmSelect">
         </select>
         <label id="charLabel" for="charText">Character</label>
-        <input type="text" id="charText">
+        <input autocomplete="off" type="text" id="charText">
         <button class="modalButton">LOGIN</button>
         <div class="lds-ellipsis disabled"><div></div><div></div><div></div><div></div></div>
         <div class="error"></div>
@@ -94,6 +105,7 @@
 </dialog>
 </body>
 <script src="data/episodes.js"></script>
+<script src="data/mountsMapping.js"></script>
 <script src="data/realms.js"></script>
 <script src="js/common.js"></script>
 <script src="js/flickity.pkgd.min.js"></script>

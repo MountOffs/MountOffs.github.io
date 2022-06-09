@@ -109,7 +109,7 @@ function updateProgress() {
 }
 
 function evaluateCurrent(mounts) {
-    return evaluateEpisode(episode, mounts, player.getCurrentTime());
+    return evaluateEpisode(episode, mounts, OBTAINABILITY_ALL, player.getCurrentTime());
 }
 
 function onYouTubeIframeAPIReady() {
@@ -201,8 +201,8 @@ function setMount(mount) {
     let modelMissing = document.querySelector("#modelMissing");
 
     if (mount !== '-') {
-        let displayId = mountMapping[mount];
-        if (!displayId) {
+        let config = mountMapping[mount];
+        if (!config) {
             console.warn("Display ID missing for " + mount);
             modelContainer.innerHTML = "";
             modelMissing.style.display = "block";
@@ -210,6 +210,8 @@ function setMount(mount) {
         }
 
         modelMissing.style.display = "none";
+
+        let displayId = config.displayId;
 
         if (displayId instanceof Array) {
             displayId = displayId[factionId()];

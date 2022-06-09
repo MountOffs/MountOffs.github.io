@@ -678,7 +678,7 @@ let episodes = [
             {"time": "22:30", "event": "SCORE", "score": "3:2"},
             {"time": "22:30", "event": "MOUNT", "mount": "Swift Razzashi Raptor"},
             {"time": "22:50", "event": "SCORE", "score": "3:3"},
-            {"time": "22:50", "event": "MOUNT", "mount": "Kor'Kron Juggernaut"},
+            {"time": "22:50", "event": "MOUNT", "mount": "Kor'kron Juggernaut"},
             {"time": "23:03", "event": "MOUNT", "mount": "Giant Coldsnout"},
             {"time": "23:18", "event": "SCORE", "score": "4:3"},
             {"time": "23:18", "event": "MOUNT", "mount": "Ultramarine Qiraji Battle Tank"},

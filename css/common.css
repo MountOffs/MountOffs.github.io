@@ -46,8 +46,28 @@ body {
     background-repeat: no-repeat;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 25%;
+    right: 25%;
+}
+
+.footer.hide {
+    display: none;
+}
+
 .footer a {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .footer {
+        display: none;
+    }
 }
 
 .page {
@@ -78,60 +98,6 @@ body {
 
 h1 {
     text-align: center;
-}
-
-.footer {
-    position: fixed;
-    bottom: 0.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 25%;
-    right: 25%;
-}
-
-.modal {
-    background-color: var(--bg-color);
-    border: solid 1px var(--text-color);
-}
-
-.modalContainer {
-    display: grid;
-    grid-template-areas:
-            'header header'
-            'regionLabel region'
-            'realmLabel realm'
-            'charLabel char'
-            'button button';
-    gap: 10px 20px;
-}
-
-#loginModal h2 {
-    grid-area: header;
-}
-
-#regionLabel {
-    grid-area: regionLabel;
-}
-
-#regionSelect {
-    grid-area: region;
-}
-
-#realmLabel {
-    grid-area: realmLabel;
-}
-
-#realmSelect {
-    grid-area: realm;
-}
-
-#charLabel {
-    grid-area: charLabel;
-}
-
-#charText {
-    grid-area: char;
 }
 
 option:hover {

@@ -9,6 +9,8 @@ html {
     --font-small: clamp(1rem, 1.5vw, 1.25rem);
 
     --border-radius: 10px;
+
+    accent-color: black;
 }
 
 body {
@@ -87,6 +89,7 @@ progress::-webkit-progress-value {
     grid-template-columns: min-content min-content min-content auto;
     grid-auto-rows: 50px;
     grid-row-gap: 10px;
+    margin-top: -50px;
     margin-bottom: 20px;
 }
 
@@ -179,6 +182,26 @@ progress::-webkit-progress-value {
     display: none;
 }
 
+#profile-page .lds-ellipsis {
+    position: relative;
+}
+
+#policy {
+    border: solid 1px var(--text-color);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: var(--border-radius);
+    width: 250px;
+    padding: 10px;
+    bottom: 70px;
+    height: 60px;
+}
+
+#policy > p {
+    margin: 0 0 10px 0;
+}
+
 .lds-ellipsis {
     display: inline-block;
     position: absolute;
@@ -238,6 +261,52 @@ progress::-webkit-progress-value {
     }
 }
 
+.modal {
+    background-color: var(--bg-color);
+    border: solid 1px var(--text-color);
+    padding: 0;
+}
+
+.modalContainer {
+    padding: 16px;
+    display: grid;
+    grid-template-areas:
+            'header header'
+            'regionLabel region'
+            'realmLabel realm'
+            'charLabel char'
+            'button button';
+    gap: 10px 20px;
+}
+
+#loginModal h2 {
+    grid-area: header;
+}
+
+#regionLabel {
+    grid-area: regionLabel;
+}
+
+#regionSelect {
+    grid-area: region;
+}
+
+#realmLabel {
+    grid-area: realmLabel;
+}
+
+#realmSelect {
+    grid-area: realm;
+}
+
+#charLabel {
+    grid-area: charLabel;
+}
+
+#charText {
+    grid-area: char;
+}
+
 #loginModal .error {
     color: darkred;
     height: 25px;
@@ -266,6 +335,7 @@ progress::-webkit-progress-value {
 
 #loginModal input[type=text], #loginModal select, .modalButton {
     background-color: rgb(20, 20, 20);
+    color: var(--text-color);
     padding: 12px;
     border: none;
     box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.5);

@@ -72,8 +72,8 @@ function showMissingModels() {
 
             if (mount === "") return false;
 
-            let displayId = mountMapping[mount];
-            return !displayId;
+            let config = mountMapping[mount];
+            return !config;
         }).map(e => e.mount);
 
 
