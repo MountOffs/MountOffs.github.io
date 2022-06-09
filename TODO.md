@@ -30,6 +30,7 @@
 * Trivia minigame
 
 ### Optimization
+* Add mount off rules to about page
 * Mount model pooling/preloading
 * Optimize JS
     * Minify JS
