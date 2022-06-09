@@ -89,6 +89,7 @@ progress::-webkit-progress-value {
     grid-template-columns: min-content min-content min-content auto;
     grid-auto-rows: 50px;
     grid-row-gap: 10px;
+    margin-top: -50px;
     margin-bottom: 20px;
 }
 
@@ -190,6 +191,7 @@ progress::-webkit-progress-value {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: var(--border-radius);
     width: 250px;
     padding: 10px;
     bottom: 70px;
