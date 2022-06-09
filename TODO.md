@@ -5,6 +5,8 @@
 * Show last updated timestamp
 * add (show all) button
 * add option to show all missing mounts
+* remember mount policy config
+* use mount policy config in episode view
 
 ### Mount off page
 * Mount model clipping
