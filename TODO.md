@@ -20,7 +20,13 @@
 * separately login horde/alliance characters
     
 ### SEO
+* SPA https://github.com/rafgraph/spa-github-pages
+* https://developers.google.com/search/docs/advanced/guidelines/search-console
+* https://developers.google.com/search?card=developer&filter=javascript
 * Video metadata in sitemap: https://developers.google.com/search/docs/advanced/sitemaps/video-sitemaps
+* JS SEO: 
+    https://developers.google.com/search/docs/advanced/javascript/javascript-seo-basics
+    https://developers.google.com/search/docs/advanced/guidelines/get-started-developers
 * robots.txt: https://www.seobility.net/en/wiki/Robots.txt?utm_source=google&utm_medium=cpc&utm_campaign=wiki_en&utm_term={robots%20txt}&utm_content=lp_robots.txt&gclid=Cj0KCQjwqPGUBhDwARIsANNwjV6OY0Wkfqpl663XK7v39Gv9c7SdRhf5T2lubmLVHgOYGu1Eq26nX-gaAq6cEALw_wcB
 * SEO Check: https://freetools.seobility.net/en/seocheck/mountoffs.com
 
