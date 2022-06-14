@@ -1,9 +1,6 @@
 # TODO
 
 ### Responsive UI
-* Header background floating
-* Episode selection page
-    * 1+ episode per screen
 
 ### Profile
 * Update button to refresh mounts

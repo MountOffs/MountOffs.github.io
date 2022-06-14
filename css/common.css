@@ -63,12 +63,6 @@ body {
     text-decoration: none;
 }
 
-@media only screen and (max-width: 800px) {
-    .footer {
-        display: none;
-    }
-}
-
 .page {
     padding: 1em 2em;
 }
@@ -265,4 +259,10 @@ option:hover {
 
 [data-place="TOP 39"] {
     color: #700000;
+}
+
+@media only screen and (max-width: 800px) {
+    .footer {
+        display: none;
+    }
 }

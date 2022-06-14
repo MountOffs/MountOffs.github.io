@@ -539,3 +539,13 @@ https://flickity.metafizzy.co
 .flickity-page-dots .dot.is-selected {
     opacity: 1;
 }
+
+@media only screen and (max-width: 800px) {
+    .gallery-cell {
+        width: 100%;
+    }
+
+    .flickity-page-dots .dot {
+        display: none;
+    }
+}
