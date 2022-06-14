@@ -40,9 +40,8 @@ body {
     padding-bottom: 1.7em;
     padding-top: 3.4em;
     background-image: var(--bg-image);
-    background-position: center center;
+    background-position: top;
     background-size: cover;
-    background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
