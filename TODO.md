@@ -1,6 +1,8 @@
 # TODO
 
 ### Responsive UI
+* Profile page
+* Episode page
 
 ### Profile
 * Update button to refresh mounts
