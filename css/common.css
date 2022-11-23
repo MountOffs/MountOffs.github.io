@@ -40,9 +40,8 @@ body {
     padding-bottom: 1.7em;
     padding-top: 3.4em;
     background-image: var(--bg-image);
-    background-position: center center;
+    background-position: top;
     background-size: cover;
-    background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
@@ -62,12 +61,6 @@ body {
 
 .footer a {
     text-decoration: none;
-}
-
-@media only screen and (max-width: 800px) {
-    .footer {
-        display: none;
-    }
 }
 
 .page {
@@ -266,4 +259,10 @@ option:hover {
 
 [data-place="TOP 39"] {
     color: #700000;
+}
+
+@media only screen and (max-width: 800px) {
+    .footer {
+        display: none;
+    }
 }
