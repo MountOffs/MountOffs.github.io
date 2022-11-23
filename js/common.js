@@ -265,7 +265,7 @@ function processFactionMounts(mounts) {
     //BFA OK
 
     // Commendation
-    ["Rubyshell Crolusk", "Azureshell Krolusk"],
+    ["Rubyshell Krolusk", "Azureshell Krolusk"],
     ["Bloodthirsty Dreadwing", "Priestess' Moonsaber"],
 
     ["Bloodflank Charger", "Ironclad Frostclaw"],
